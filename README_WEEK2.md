@@ -119,3 +119,25 @@ dev R@20 0.585 / AllGold@20 0.447; test R@20 0.575 (the paper's own pipeline sco
 Throughput measured on an M2 Air (MPS): 8.8 pairs/s, so 2 epochs over the train split is about
 2.2 h and reranking dev's top-60 about 15 min. A desktop CUDA GPU is roughly 10-15x faster with
 `--amp`, which also makes full-pool inference (`--depth 1000`) practical.
+
+### Attribution of the retrieval gain so far (dev, paired bootstrap over articles)
+
+| step | delta in pooled R@20 | status |
+|---|---|---|
+| paper pipeline 0.534 → MonoT5 + context 0.585 | +0.050 [+0.026,+0.073] | isolated: one variable |
+| MonoT5 + context → fine-tuned cross-encoder 0.647 | +0.062 [+0.037,+0.090] | still a bundle |
+| of which: the `[C]`/`[/C]` centre markers | +0.003 [-0.010,+0.023] | **no effect, dropped** |
+
+The bundle still mixes the model swap (MonoT5-base trained on MS MARCO vs PubMedBERT), in-domain
+fine-tuning, the listwise objective, and the negative sampling range. `scripts/run_ablations.sh`
+separates them one variable at a time:
+
+```bash
+bash scripts/run_ablations.sh                                      # ~40 min per run on M2 MPS
+EXTRA="--amp --groups-per-batch 8 --lr 3e-5" bash scripts/run_ablations.sh    # ~5 min per run on CUDA
+```
+
+It skips runs that already have a metrics file, and ends with paired comparisons against the
+baseline recipe. **Compare runs with `scripts/compare_runs.py`, not by eyeballing two independent
+confidence intervals**: each interval carries the variance of article difficulty, which both systems
+share, so on 10-20 articles they overlap even when one system wins on 9 of 10 articles.
