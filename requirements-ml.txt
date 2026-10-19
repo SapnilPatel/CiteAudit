@@ -1,0 +1,11 @@
+# Retrieval harness + cross-encoder training. Versions are the ones these results were run with.
+# On a CUDA machine install torch from the CUDA index first, e.g. for CUDA 12.1:
+#   pip install torch --index-url https://download.pytorch.org/whl/cu121
+# then: pip install -r requirements-ml.txt
+torch>=2.4
+transformers>=4.44
+tokenizers>=0.19
+sentencepiece>=0.2      # T5/MonoT5 tokenizer
+protobuf>=4             # needed to convert the MonoT5 sentencepiece model
+numpy>=1.23
+pytest>=7
