@@ -1,0 +1,19 @@
+.DS_Store
+__pycache__/
+*.pyc
+.venv/
+env/
+upstream/
+checkpoints/
+*.ckpt
+*.pt
+*.bin
+results/*.jsonl
+results/*.log
+
+# derived data and large run outputs: regenerate with the scripts, keep the metrics
+results/**/*.jsonl
+results/cache/
+results/*.log
+annotations_extracted/
+.pytest_cache/
