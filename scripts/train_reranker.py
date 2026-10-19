@@ -10,14 +10,22 @@ candidates  The pool and the prev/next context window are imported from
             candidates evaluation will rank. Windows cross chunk boundaries, which
             matters because half the corpus chunks hold a single sentence.
 
-input       `citance [SEP] prev [C] center [/C] next`, with `[C]`/`[/C]` added to the
-            tokenizer. The label is a property of the *center* sentence only. This is the
-            fix for the blur that costs zero-shot MonoT5 its top-rank precision (R@1
-            0.100 → 0.063, MRR 0.323 → 0.253 once context is on): a neighbour's window
-            contains the gold sentence's text and scores nearly as high, because MonoT5
-            has no notion of which sentence the window is about. Marking the center and
-            training against center labels teaches that distinction instead of patching it
-            afterwards.
+shapes      Every batch is padded to exactly `--max-len`. Dynamic padding makes MPS compile
+            and cache a separate graph per input shape; with one shape per batch length the
+            cache grew until the process was swapping 6 GB on a 16 GB machine.
+
+input       `citance [SEP] prev center next`, and the label is a property of the *center*
+            sentence alone. That label is what fixes the blur which costs zero-shot MonoT5
+            its top-rank precision (R@1 0.100 → 0.063, MRR 0.323 → 0.253 once context is
+            on): a neighbour's window contains the gold sentence's text and scores nearly
+            as high, because MonoT5 has no notion of which sentence the window is about.
+
+            Delimiting the centre with added `[C]`/`[/C]` tokens (`--center-markers`) was
+            the obvious way to make that explicit and it turns out to be unnecessary: on
+            dev, paired over articles, it moves R@20 by +0.003 [-0.010,+0.023], R@1 by
+            -0.007 and MRR by -0.008. The training signal carries it; the markers do not.
+            Default is off, so the checkpoint stays a plain fine-tune with no vocabulary
+            change.
 
 negatives   Sampled from BM25 ranks `--neg-from`..`--neg-to` (default 5-100) of the same
             claim, with every gold sentence of that claim removed. The top ranks are
@@ -82,11 +90,22 @@ def bm25_order(queries, cache_path=None):
     return out
 
 
-def window(texts, i):
-    """The model's text_b: neighbours kept in order, center delimited."""
-    prev = texts[i - 1] if i > 0 else ''
-    nxt = texts[i + 1] if i + 1 < len(texts) else ''
-    return ' '.join(x for x in (prev, f'{CENTER_OPEN} {texts[i]} {CENTER_CLOSE}', nxt) if x)
+def window(texts, i, neighbour_chars=200, mark=True, context=True):
+    """The model's text_b: neighbours in order, centre delimited.
+
+    Neighbours are clipped here, keeping the side adjacent to the centre, rather than left
+    to the tokenizer. `truncation` cuts the tail of the longer sequence, which on a long
+    window removes the closing marker and can remove the centre sentence itself — the one
+    the label refers to. Sentence lengths are heavy-tailed (p50 136 tokens, p99 485, max
+    2810 for query + window), so this is not a rare case.
+    """
+    centre = f'{CENTER_OPEN} {texts[i]} {CENTER_CLOSE}' if mark else texts[i]
+    if not context:
+        return centre
+    # `s[-n:]` with n == 0 returns the whole string, so clip by an explicit end index
+    prev = texts[i - 1][len(texts[i - 1]) - neighbour_chars:] if i > 0 and neighbour_chars else ''
+    nxt = texts[i + 1][:neighbour_chars] if i + 1 < len(texts) and neighbour_chars else ''
+    return ' '.join(x for x in (prev, centre, nxt) if x)
 
 
 def build_groups(queries, order, n_neg, lo, hi, rng):
@@ -108,20 +127,21 @@ def build_groups(queries, order, n_neg, lo, hi, rng):
     return groups, skipped
 
 
-def encode(tokzr, query, texts, idxs, max_len, device):
+def encode(tokzr, query, texts, idxs, max_len, device, mark=True, context=True, nchars=200):
     """One query against several candidate windows (prediction path)."""
-    enc = tokzr([query] * len(idxs), [window(texts, i) for i in idxs],
-                padding=True, truncation='longest_first', max_length=max_len,
+    enc = tokzr([query] * len(idxs),
+                [window(texts, i, nchars, mark, context) for i in idxs],
+                padding='max_length', truncation='longest_first', max_length=max_len,
                 return_tensors='pt')
     return {k: v.to(device) for k, v in enc.items()}
 
 
-def load_model(model_name, device, checkpoint=None):
+def load_model(model_name, device, checkpoint=None, add_markers=True):
     import torch
     from transformers import AutoModelForSequenceClassification, AutoTokenizer
     src = checkpoint or model_name
     tokzr = AutoTokenizer.from_pretrained(src)
-    if CENTER_OPEN not in tokzr.get_vocab():
+    if add_markers and CENTER_OPEN not in tokzr.get_vocab():
         tokzr.add_special_tokens({'additional_special_tokens': [CENTER_OPEN, CENTER_CLOSE]})
     model = AutoModelForSequenceClassification.from_pretrained(src, num_labels=1)
     model.resize_token_embeddings(len(tokzr))
@@ -129,7 +149,7 @@ def load_model(model_name, device, checkpoint=None):
 
 
 def train(a, device):
-    tokzr, model, torch = load_model(a.model, device, a.init_from)
+    tokzr, model, torch = load_model(a.model, device, a.init_from, a.center_markers)
     rng = random.Random(a.seed)
     torch.manual_seed(a.seed)
 
@@ -147,7 +167,11 @@ def train(a, device):
     sched = torch.optim.lr_scheduler.LambdaLR(
         opt, lambda s: s / max(warmup, 1) if s < warmup else
         max(0., (total - s) / max(total - warmup, 1)))
-    loss_fn = torch.nn.CrossEntropyLoss()
+    listwise = a.loss == 'listwise'
+    loss_fn = torch.nn.CrossEntropyLoss() if listwise else torch.nn.BCEWithLogitsLoss()
+    if not listwise:  # 1 for the gold at position 0 of each group, 0 for its negatives
+        bce_target = torch.zeros(a.groups_per_batch, a.negatives + 1, device=device)
+        bce_target[:, 0] = 1.
 
     model.train()
     amp = (lambda: torch.autocast(device.split(':')[0], dtype=torch.bfloat16)) if a.amp \
@@ -162,13 +186,14 @@ def train(a, device):
             # all groups are the same width, and a single forward is much faster than one per group
             pairs = [(q['query'], q['texts'], i) for q, gold, negs in batch for i in [gold] + negs]
             enc = tokzr([q for q, _, _ in pairs],
-                        [window(t, i) for _, t, i in pairs],
-                        padding=True, truncation='longest_first', max_length=a.max_len,
-                        return_tensors='pt').to(device)
+                        [window(t, i, a.neighbour_chars, a.center_markers, a.context)
+                         for _, t, i in pairs],
+                        padding='max_length', truncation='longest_first',
+                        max_length=a.max_len, return_tensors='pt').to(device)
             with amp():
-                scores = model(**enc).logits.view(len(batch), a.negatives + 1)
-                loss = loss_fn(scores.float(),
-                               torch.zeros(len(batch), dtype=torch.long, device=device))
+                scores = model(**enc).logits.view(len(batch), a.negatives + 1).float()
+                loss = (loss_fn(scores, torch.zeros(len(batch), dtype=torch.long, device=device))
+                        if listwise else loss_fn(scores, bce_target[:len(batch)]))
             loss.backward()
             torch.nn.utils.clip_grad_norm_(model.parameters(), 1.0)
             opt.step()
@@ -194,7 +219,8 @@ def train(a, device):
 def predict(a, device, tokzr=None, model=None):
     import torch
     if model is None:
-        tokzr, model, torch = load_model(a.model, device, a.init_from or a.out)
+        tokzr, model, torch = load_model(a.model, device, a.init_from or a.out,
+                                         a.center_markers)
     model.eval()
     amp = (lambda: torch.autocast(device.split(':')[0], dtype=torch.bfloat16)) if a.amp \
         else contextlib.nullcontext
@@ -207,7 +233,8 @@ def predict(a, device, tokzr=None, model=None):
             scores = []
             for lo in range(0, len(head), a.batch_size):
                 chunk = head[lo:lo + a.batch_size]
-                enc = encode(tokzr, q['query'], q['texts'], chunk, a.max_len, device)
+                enc = encode(tokzr, q['query'], q['texts'], chunk, a.max_len, device,
+                             a.center_markers, a.context, a.neighbour_chars)
                 with torch.inference_mode(), amp():
                     scores.extend(model(**enc).logits.squeeze(-1).float().tolist())
             ranked = [head[i] for i in rank_by(scores)] + order[q['id']][a.depth:]
@@ -245,6 +272,17 @@ def main():
     p.add_argument('--warmup', type=float, default=0.1)
     p.add_argument('--max-len', type=int, default=192,
                    help='citance + a 3-sentence window is ~120 tokens; 192 leaves headroom')
+    p.add_argument('--loss', default='listwise', choices=['listwise', 'bce'],
+                   help='listwise: softmax cross-entropy inside the group. bce: independent '
+                        'per-pair sigmoid, the ablation for whether group competition matters')
+    p.add_argument('--no-context', dest='context', action='store_false',
+                   help='ablation: score the candidate sentence alone, no neighbours')
+    p.add_argument('--neighbour-chars', type=int, default=200,
+                   help='characters kept from each neighbour, on the side facing the centre')
+    p.add_argument('--center-markers', action='store_true',
+                   help='delimit the centre sentence with added [C]/[/C] tokens. Measured '
+                        'equivalent to leaving them out (see the module docstring), so off '
+                        'by default: in-domain training supplies the distinction by itself')
     p.add_argument('--amp', action='store_true',
                    help='bfloat16 autocast for training and inference. Worth it on CUDA '
                         '(tensor cores); measured no faster than fp32 on M2 MPS')
