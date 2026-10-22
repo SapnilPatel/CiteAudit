@@ -93,7 +93,7 @@ def rank_by(scores):
     return sorted(range(len(scores)), key=lambda i: (-scores[i], i))
 
 
-def make_monot5(model_name, batch_size):
+def make_monot5(model_name, batch_size, max_len=512):
     import torch
     from transformers import AutoTokenizer, AutoModelForSeq2SeqLM
     dev = 'cuda' if torch.cuda.is_available() else 'mps' if torch.backends.mps.is_available() else 'cpu'
@@ -108,7 +108,8 @@ def make_monot5(model_name, batch_size):
         for lo in range(0, len(passages), batch_size):
             chunk = passages[lo:lo + batch_size]
             enc = tokzr([f'Query: {query} Document: {p} Relevant:' for p in chunk],
-                        return_tensors='pt', padding=True, truncation=True, max_length=512).to(dev)
+                        return_tensors='pt', padding=True, truncation=True,
+                        max_length=max_len).to(dev)
             dec = torch.full((len(chunk), 1), start, dtype=torch.long, device=dev)
             with torch.inference_mode():
                 logits = model(**enc, decoder_input_ids=dec).logits[:, -1, [true_id, false_id]]
@@ -186,10 +187,19 @@ def main():
     p.add_argument('--b', type=float, default=0.4)
     p.add_argument('--rerank-depth', type=int, default=60, help='BM25 candidates passed to MonoT5')
     p.add_argument('--monot5-model', default='castorini/monot5-base-med-msmarco')
+    p.add_argument('--monot5-max-len', type=int, default=512,
+                   help='truncation length for the MonoT5 prompt. Match it to the length a '
+                        'trained reranker is given before comparing the two.')
     p.add_argument('--batch-size', type=int, default=32)
     p.add_argument('--context', action='store_true', help='rerank sentence with prev/next neighbour')
     p.add_argument('--rankings-in', type=Path, help='JSONL of {id, ranked:[keys]} for --ranker file')
     p.add_argument('--rankings-out', type=Path, help='write {id, article, gold, ranked} JSONL')
+    p.add_argument('--rank-all', action='store_true',
+                   help='also rank the citances that have no gold evidence. They cannot be scored '
+                        'and never enter the metrics, but the classification stage needs rankings '
+                        'for every claim: those citances are the NOT ENOUGH INFO class, and giving '
+                        'them an empty evidence document in one arm and a full one in the other '
+                        'makes the label trivially guessable from input length.')
     p.add_argument('--metrics-out', type=Path)
     p.add_argument('--resume', action='store_true',
                    help='reuse rankings already in --rankings-out and only score the remaining queries')
@@ -201,18 +211,24 @@ def main():
     no_gold = [q for q in queries if not q['gold']]
     gold_outside_pool = sum(bool(q['gold'] - set(q['keys'])) for q in queries if q['gold'])
     queries = [q for q in queries if q['gold']]
+    # `no_gold` citances are ranked only to be exported; they contribute no metrics, and
+    # query_metrics would divide by len(gold) == 0.
+    to_rank = queries + no_gold if a.rank_all else queries
 
     external = None
     if a.ranker == 'file':
         if not a.rankings_in:
             p.error('--ranker file needs --rankings-in')
         external = {r['id']: r['ranked'] for r in read_jsonl(a.rankings_in)}
-        missing = [q['id'] for q in queries if q['id'] not in external]
+        missing = [q['id'] for q in to_rank if q['id'] not in external]
         if missing:
-            raise SystemExit(f'{len(missing)} evaluable queries missing from {a.rankings_in}, e.g. {missing[:5]}')
+            raise SystemExit(f'{len(missing)} of {len(to_rank)} queries missing from '
+                             f'{a.rankings_in}, e.g. {missing[:5]}'
+                             + ('. --rank-all needs a rankings file covering the no-gold '
+                                'citances too.' if a.rank_all else ''))
     monot5 = None
     if a.ranker == 'bm25-monot5':
-        monot5, device = make_monot5(a.monot5_model, a.batch_size)
+        monot5, device = make_monot5(a.monot5_model, a.batch_size, a.monot5_max_len)
         print(f'MonoT5 {a.monot5_model} on {device}', flush=True)
 
     done = {}
@@ -221,16 +237,17 @@ def main():
             p.error('--resume needs --rankings-out')
         if a.rankings_out.exists():
             done = {r['id']: r['ranked'] for r in read_jsonl(a.rankings_out)}
-            print(f'resuming: {len(done)} of {len(queries)} queries already ranked', flush=True)
+            print(f'resuming: {len(done)} of {len(to_rank)} queries already ranked', flush=True)
 
     rows = []
     if a.rankings_out:
         a.rankings_out.parent.mkdir(parents=True, exist_ok=True)
     out = a.rankings_out.open('a' if done else 'w', encoding='utf8') if a.rankings_out else None
-    for n, q in enumerate(queries, 1):
+    for n, q in enumerate(to_rank, 1):
         if q['id'] in done:
-            rows.append({'id': q['id'], 'article': q['article'],
-                         **dict(zip(('m', 'c'), query_metrics(done[q['id']], q['gold'])))})
+            if q['gold']:
+                rows.append({'id': q['id'], 'article': q['article'],
+                             **dict(zip(('m', 'c'), query_metrics(done[q['id']], q['gold'])))})
             continue
         if external is not None:
             ranked = external[q['id']]
@@ -242,10 +259,11 @@ def main():
                 s = monot5(q['query'], passages)
                 order = [head[i] for i in rank_by(s)] + order[a.rerank_depth:]
                 if n % 50 == 0:
-                    print(f'  {n}/{len(queries)}', flush=True)
+                    print(f'  {n}/{len(to_rank)}', flush=True)
             ranked = [q['keys'][i] for i in order]
-        m, c = query_metrics(ranked, q['gold'])
-        rows.append({'id': q['id'], 'article': q['article'], 'm': m, 'c': c})
+        if q['gold']:
+            m, c = query_metrics(ranked, q['gold'])
+            rows.append({'id': q['id'], 'article': q['article'], 'm': m, 'c': c})
         if out:
             out.write(json.dumps({'id': q['id'], 'article': q['article'], 'gold': sorted(q['gold']),
                                   'ranked': ranked}) + '\n')

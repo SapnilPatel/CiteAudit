@@ -1,0 +1,17 @@
+{
+  "rankings": "results/retrieval/dev_monot5_paper_all.jsonl",
+  "split": "dev",
+  "topk": 20,
+  "order": "doc",
+  "claims": 316,
+  "labels": {
+    "ACCURATE": 191,
+    "NOT_ACCURATE": 101,
+    "NOT ENOUGH INFO": 24
+  },
+  "mean_sentences_per_doc": 20.0,
+  "gold_sentences_total": 597,
+  "gold_sentences_retrieved": 319,
+  "claims_losing_all_evidence": 56,
+  "claims_losing_some_evidence": 100
+}

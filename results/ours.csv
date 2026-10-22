@@ -39,12 +39,20 @@ retrieval,citance_monot5_fullpool_ctx,Recall@50,,0.806,
 retrieval,citance_monot5_fullpool_ctx,Recall@100,,0.923,
 retrieval,citance_monot5_fullpool_ctx,MRR,,0.226,
 retrieval,citance_monot5_fullpool_ctx,AllGold@20,,0.460,
-classification,top20,Micro-F1,0.59,,
-classification,top20,Macro-F1,0.52,,
-classification,top20,ACCURATE-F1,0.69,,
-classification,top20,NOT_ACCURATE-F1,0.43,,
-classification,top20,IRRELEVANT-F1,0.42,,
-classification,gold_evidence,Micro-F1,0.73,,
-classification,gold_evidence,Macro-F1,0.75,,
-classification,gold_context_plus_evidence,Micro-F1,0.75,,
-classification,gold_context_plus_evidence,Macro-F1,0.78,,
+retrieval,citance_ce_crossencoder,Recall@1,,0.119,
+retrieval,citance_ce_crossencoder,Recall@5,,0.385,
+retrieval,citance_ce_crossencoder,Recall@10,,0.523,
+retrieval,citance_ce_crossencoder,Recall@20,,0.638,"ours: BM25 top-60 + fine-tuned PubMedBERT cross-encoder with neighbour-sentence context; +0.109 R@20 over the paper's pipeline, 17/20 articles (findings S11)"
+retrieval,citance_ce_crossencoder,Recall@50,,0.708,
+retrieval,citance_ce_crossencoder,Recall@100,,0.818,
+retrieval,citance_ce_crossencoder,MRR,,0.365,
+retrieval,citance_ce_crossencoder,AllGold@20,,0.493,
+classification,top20,Micro-F1,0.59,,"paper's test-split figure; ours not filled because our MultiVerS numbers are dev-only and the checkpoint's training input is unreconstructable (findings S9, S10)"
+classification,top20,Macro-F1,0.52,,"paper's test-split figure; ours not filled because our MultiVerS numbers are dev-only and the checkpoint's training input is unreconstructable (findings S9, S10)"
+classification,top20,ACCURATE-F1,0.69,,"paper's test-split figure; ours not filled because our MultiVerS numbers are dev-only and the checkpoint's training input is unreconstructable (findings S9, S10)"
+classification,top20,NOT_ACCURATE-F1,0.43,,"paper's test-split figure; ours not filled because our MultiVerS numbers are dev-only and the checkpoint's training input is unreconstructable (findings S9, S10)"
+classification,top20,IRRELEVANT-F1,0.42,,"paper's test-split figure; ours not filled because our MultiVerS numbers are dev-only and the checkpoint's training input is unreconstructable (findings S9, S10)"
+classification,gold_evidence,Micro-F1,0.73,,"paper's test-split figure; ours not filled because our MultiVerS numbers are dev-only and the checkpoint's training input is unreconstructable (findings S9, S10)"
+classification,gold_evidence,Macro-F1,0.75,,"paper's test-split figure; ours not filled because our MultiVerS numbers are dev-only and the checkpoint's training input is unreconstructable (findings S9, S10)"
+classification,gold_context_plus_evidence,Micro-F1,0.75,,"paper's test-split figure; ours not filled because our MultiVerS numbers are dev-only and the checkpoint's training input is unreconstructable (findings S9, S10)"
+classification,gold_context_plus_evidence,Macro-F1,0.78,,"paper's test-split figure; ours not filled because our MultiVerS numbers are dev-only and the checkpoint's training input is unreconstructable (findings S9, S10)"
