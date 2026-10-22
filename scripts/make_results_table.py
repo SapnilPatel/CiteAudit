@@ -17,7 +17,9 @@ for _, r in df.iterrows():
     paper = r.get("paper_value")
     ours = r.get("ours")
     try:
-        diff = float(ours) - float(paper) if pd.notna(ours) else None
+        # Both sides are needed: a row with no published figure (our own ablations) or no
+        # measurement of ours has no difference to report, and float(nan) would print "+nan".
+        diff = float(ours) - float(paper) if pd.notna(ours) and pd.notna(paper) else None
     except Exception:
         diff = None
     lines.append(

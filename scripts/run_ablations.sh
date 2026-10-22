@@ -35,10 +35,14 @@ run bce       --loss bce                    # is in-group competition what helps
 run bertbase  --model bert-base-uncased     # how much comes from biomedical pretraining?
 
 echo; echo "=== paired comparisons against the pilot ==="
-for v in nomark noctx neg0 bce bertbase; do
-  for m in Recall@20 MRR; do
-    $PY scripts/compare_runs.py "results/retrieval/${SPLIT}_ce_pilot.jsonl" \
-        "results/retrieval/${SPLIT}_ce_${v}.jsonl" --metric $m \
-        | grep -E "delta" | sed "s/^/  pilot - ${v}  ${m}:  /"
+# compare_runs.py prints delta = A - B, so the variant goes FIRST and the delta reads
+# variant - pilot: a negative delta means the variant is worse than the default recipe.
+# "A better on n/10" then counts the articles the variant wins, which is what we want.
+for v in marked noctx neg0 bce bertbase; do
+  f="results/retrieval/${SPLIT}_ce_${v}.jsonl"
+  [ -f "$f" ] || { echo "  ${v}: no rankings file, skipped"; continue; }
+  for m in Recall@20 AllGold@20 MRR; do
+    $PY scripts/compare_runs.py "$f" "results/retrieval/${SPLIT}_ce_pilot.jsonl" --metric $m \
+        | grep -E "delta" | sed "s/^/  ${v} - pilot  ${m}:  /"
   done
 done

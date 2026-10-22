@@ -36,16 +36,28 @@ def ids_in(path):
 
 
 def pooled(rows, k, metric):
-    """(numerator, denominator) for the paper's pooled recall, or MRR truncated at 20."""
+    """(numerator, denominator) for one metric, as a ratio of sums so the article bootstrap
+    can resample articles and recombine. Every supported name is handled explicitly: an
+    unrecognised one must raise, not fall through to recall — two different metrics printing
+    the same number is otherwise indistinguishable from a real tie."""
     if metric == 'MRR':
         s = 0.
         for r in rows:
-            pos = [i for i, x in enumerate(r['ranked'], 1) if x in set(r['gold'])]
-            s += 1 / pos[0] if pos and pos[0] <= 20 else 0
+            # The paper truncates the rank at 20, so only the top 20 can contribute and
+            # scanning deeper is wasted work. `gold` becomes a set once per row, not once
+            # per candidate.
+            gold = set(r['gold'])
+            s += next((1 / i for i, x in enumerate(r['ranked'][:20], 1) if x in gold), 0.)
         return s, len(rows)
-    gold = sum(len(r['gold']) for r in rows)
-    hit = sum(sum(1 for x in r['gold'] if x in r['ranked'][:k]) for r in rows)
-    return hit, gold
+    name = metric.split('@')[0]
+    if name == 'Recall':  # pooled over evidence sentences, the paper's definition
+        return (sum(sum(1 for x in r['gold'] if x in r['ranked'][:k]) for r in rows),
+                sum(len(r['gold']) for r in rows))
+    if name == 'Hit':  # per citance: at least one gold in the top k
+        return sum(any(x in r['ranked'][:k] for x in r['gold']) for r in rows), len(rows)
+    if name == 'AllGold':  # per citance: every gold in the top k
+        return sum(all(x in r['ranked'][:k] for x in r['gold']) for r in rows), len(rows)
+    raise SystemExit(f'unknown metric {metric!r}: use MRR, Recall@k, Hit@k or AllGold@k')
 
 
 def main():
@@ -54,7 +66,7 @@ def main():
     p.add_argument('a', type=Path)
     p.add_argument('b', type=Path)
     p.add_argument('--metric', default='Recall@20',
-                   help='Recall@k for any k, or MRR (truncated at 20, over the rows present)')
+                   help='Recall@k, Hit@k, AllGold@k, or MRR (truncated at 20, over the rows present)')
     p.add_argument('--bootstrap', type=int, default=5000)
     p.add_argument('--seed', type=int, default=0)
     a = p.parse_args()
@@ -73,28 +85,36 @@ def main():
         print(f'warning: comparing on {len(arts)} shared articles of '
               f'{len(set(A))}/{len(set(B))}')
 
-    def point(run, pick):
+    # Every metric here is a ratio of sums over articles, so one article's (numerator,
+    # denominator) does not depend on which other articles a resample drew. Computing it
+    # once per article and summing the cached pairs is exactly equivalent to recomputing
+    # it inside each of the 5000 resamples, and turns an MRR comparison from minutes into
+    # well under a second.
+    statA = {art: pooled(A[art], k, a.metric) for art in arts}
+    statB = {art: pooled(B[art], k, a.metric) for art in arts}
+
+    def point(stat, pick):
         num = den = 0
         for art in pick:
-            n, d = pooled(run[art], k, a.metric)
+            n, d = stat[art]
             num += n
             den += d
         return num / den
 
-    pt = point(A, arts) - point(B, arts)
+    pt = point(statA, arts) - point(statB, arts)
     rng = random.Random(a.seed)
-    deltas = sorted(point(A, pick) - point(B, pick)
+    deltas = sorted(point(statA, pick) - point(statB, pick)
                     for pick in (rng.choices(arts, k=len(arts)) for _ in range(a.bootstrap)))
     lo = deltas[int(.025 * a.bootstrap)]
     hi = deltas[min(int(.975 * a.bootstrap), a.bootstrap - 1)]
     share = sum(x > 0 for x in deltas) / a.bootstrap
-    per = [(art, point(A, [art]) - point(B, [art])) for art in arts]
+    per = [(art, point(statA, [art]) - point(statB, [art])) for art in arts]
     wins = sum(1 for _, d in per if d > 0)
 
     print(f'{a.metric} pooled over {len(arts)} articles '
-          f'({sum(len(v) for k2, v in A.items() if k2 in set(arts))} queries)')
-    print(f'  A {a.a.name}: {point(A, arts):.3f}')
-    print(f'  B {a.b.name}: {point(B, arts):.3f}')
+          f'({sum(len(A[art]) for art in arts)} queries)')
+    print(f'  A {a.a.name}: {point(statA, arts):.3f}')
+    print(f'  B {a.b.name}: {point(statB, arts):.3f}')
     print(f'  delta {pt:+.3f}   95% CI [{lo:+.3f},{hi:+.3f}]   '
           f'P(delta>0)={share:.3f}   A better on {wins}/{len(arts)} articles')
     print('  per article: ' + '  '.join(f'{d:+.2f}' for _, d in per))
