@@ -182,7 +182,7 @@ CiteAudit/
 
 ## Credits
 
-CiteAudit started as the course project of **CSCI 544 (Applied Natural Language Processing), Group 23, University of Southern California**. The original reproduction toolkit, the reranker and the findings report were built by [ruidaliu](https://github.com/liuruida200-liu) in [CSCI544_Group23_Weeks1_2_Reproduction_Toolkit](https://github.com/liuruida200-liu/CSCI544_Group23_Weeks1_2_Reproduction_Toolkit). That history is preserved here.
+CiteAudit started as the course project of **CSCI 544 (Applied Natural Language Processing), Group 23, University of Southern California**. The reproduction toolkit, the reranker and the findings report are the work of the whole team.
 
 It builds directly on:
 
