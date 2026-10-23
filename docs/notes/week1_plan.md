@@ -1,4 +1,4 @@
-# CSCI 544 Group 23 — Week 1 Baseline Reproduction
+# CiteAudit — Week 1 Baseline Reproduction
 
 This starter repo is for **Week 1 only**: reproduce the baseline from Sarol et al. (Bioinformatics, 2024) before changing the model.
 
@@ -142,4 +142,3 @@ Do **not** require exact floating-point equality. A successful reproduction mean
 5. You run the gold-evidence oracle or at least prepare it if checkpoint/runtime issues block completion.
 6. Every discrepancy is documented (package version, checkpoint, split, preprocessing, GPU, query type).
 
-See `team_tasks.md` for the six-person Week-1 split.

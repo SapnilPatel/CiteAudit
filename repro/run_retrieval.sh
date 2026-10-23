@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Re-runs the retrieval half of the teammate's results on this machine.
+# Re-runs the retrieval half of the original results on this machine.
 set -euo pipefail
 cd "$(dirname "$0")/.."
 source .venv/bin/activate

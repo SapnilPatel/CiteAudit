@@ -64,7 +64,7 @@ Every number below was measured in this repository. None are copied from the pap
 
 AllGold@20 is the share of citations whose complete gold evidence lands in the top 20.
 
-> **Reproduction status.** The first two rows were re-run independently on an Apple M4 and match the team's original measurements to floating-point precision. The reranker row marked ⏳ is the team's original measurement and is being re-run now. See [`repro/`](repro/) for the scripts and logs.
+> **Reproduction status.** The first two rows were re-run independently on an Apple M4 and match the original measurements to floating-point precision. The reranker row marked ⏳ is the original measurement and is being re-run now. See [`repro/`](repro/) for the scripts and logs.
 
 The reranker gain is **+0.109 Recall@20** over the paper's pipeline, with a 95% CI of +0.084 to +0.131. It wins on 17 of 20 test articles. Ablations trace it to three ingredients: neighbour-sentence context, fine-tuning on this task, and a biomedical encoder. Swapping the model architecture alone contributes nothing. The full analysis is in [`results/week2_retrieval_findings.md`](results/week2_retrieval_findings.md).
 
@@ -79,7 +79,7 @@ The reranker gain is **+0.109 Recall@20** over the paper's pipeline, with a 95% 
 
 **Key finding: better retrieval does not improve classification under the frozen released classifier.** Even perfect evidence doesn't help. Random evidence hurts a lot, so the classifier does read its evidence. The most likely explanation is that the classifier is fitted to the evidence distribution it was trained on. Retraining it on our reranker's output is the open experiment.
 
-> These dev-split figures are the team's original measurements and are being re-run now.
+> These dev-split figures are the original measurements and are being re-run now.
 
 ## Quick start
 
@@ -159,7 +159,7 @@ CiteAudit/
 │   └── retrieval/                    # per-run metrics JSON
 ├── data_train/target/        # classifier inputs for each evidence setting (dev)
 ├── tests/                    # offline tests
-├── docs/team/                # the original team plan and working notes
+├── docs/notes/               # the original plan and working notes
 └── slides/                   # progress presentation
 ```
 
@@ -182,7 +182,7 @@ CiteAudit/
 
 ## Credits
 
-CiteAudit started as the course project of **CSCI 544 (Applied Natural Language Processing), Group 23, University of Southern California**. The reproduction toolkit, the reranker and the findings report are the work of the whole team.
+CiteAudit started as a course project for **CSCI 544 (Applied Natural Language Processing) at the University of Southern California**.
 
 It builds directly on:
 

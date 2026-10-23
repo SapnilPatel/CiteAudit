@@ -1,7 +1,7 @@
 # Independent reproduction
 
 This folder re-runs every result in the repository from scratch on a second machine, using only the
-scripts in [`scripts/`](../scripts/) and the authors' public data. The goal is to confirm the team's
+scripts in [`scripts/`](../scripts/) and the authors' public data. The goal is to confirm the
 original numbers before changing anything.
 
 **Machine:** Apple M4, 16 GB, MPS backend. Python 3.11, PyTorch 2.14, Transformers 5.20.
