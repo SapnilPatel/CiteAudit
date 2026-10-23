@@ -17,3 +17,7 @@ results/cache/
 results/*.log
 annotations_extracted/
 .pytest_cache/
+
+# reproduction run outputs (rankings and predictions are regenerable; metrics are committed)
+repro/*.log
+results/classification/**/*.jsonl

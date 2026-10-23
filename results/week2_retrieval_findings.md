@@ -472,7 +472,7 @@ paper's**, and only the A/B between two retrieval arms through the same checkpoi
 **3. The 3-way gold label cannot be derived from `claims-*.jsonl`, and deriving it there mislabels
 12% of the split.** The claims files carry the nine fine-grained labels of section 6 while the
 model's head has three classes, and the collapse the paper uses is recorded in this repository's
-own `README.md`:
+own `docs/team/week1_plan.md`:
 
 - `ACCURATE`, `INDIRECT` → ACCURATE
 - `CONTRADICT`, `NOT_SUBSTANTIATE`, `OVERSIMPLIFY`, `MISQUOTE`, `ETIQUETTE` → NOT_ACCURATE
@@ -636,7 +636,7 @@ Forcing the gold evidence into the documents of claims that lacked it does not t
 
 ### What this does and does not license
 
-The paper's own reported figures (as recorded in this repository's `README.md`) settle the
+The paper's own reported figures (as recorded in this repository's `docs/team/week1_plan.md`) settle the
 interpretation, and they rule out the conclusion this section first drew:
 
 | the paper's classification settings | micro-F1 | macro-F1 |
