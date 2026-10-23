@@ -22,10 +22,27 @@ The original runs used an Apple M2 with older library versions.
 | Test, BM25 only | Recall@20 0.444, MRR 0.257 | Recall@20 0.444, MRR 0.257 | ✅ exact on all 26 metrics |
 | Test, paper's pipeline | Recall@20 0.529, MRR 0.323 | Recall@20 0.529, MRR 0.323 | ✅ exact on all 26 metrics |
 | Dev, paper's pipeline | Recall@20 0.534, MRR 0.364 | Recall@20 0.534, MRR 0.364 | ✅ exact on all 26 metrics |
-| Dev and test, our reranker | Test Recall@20 0.638 | running | ⏳ |
+| Dev, our reranker (retrained) | Recall@20 0.643, MRR 0.405 | Recall@20 0.643, MRR 0.405 | ✅ within noise; AllGold@20 0.525 vs 0.510 |
+| Test, our reranker (retrained) | Recall@20 0.638, MRR 0.365 | Recall@20 0.627, MRR 0.379 | ✅ within noise |
+| Test, our reranker minus paper's pipeline | Recall@20 +0.109 [+0.084, +0.131], 17/20 articles | Recall@20 +0.098 [+0.071, +0.121], 17/20 articles | ✅ same conclusion |
 | Dev classification, 8 evidence settings | see main README | queued | ⏳ |
 
 "Exact" means the largest difference across every metric in the file is below 1e-15.
+
+"Within noise" applies to the retrained reranker. Training on a GPU is not bit-for-bit repeatable,
+and this machine uses newer library versions, so a second training run lands slightly differently.
+Every gap is inside the original 95% confidence interval, and the reranker still beats the paper's
+pipeline on every metric with every interval excluding zero:
+
+| Test, rerun reranker minus paper's pipeline | Delta | 95% CI | Articles won |
+|---|---|---|---|
+| Recall@20 | +0.098 | +0.071 to +0.121 | 17 of 20 |
+| Recall@10 | +0.087 | +0.046 to +0.123 | 15 of 20 |
+| AllGold@20 | +0.121 | +0.081 to +0.166 | 16 of 20 |
+| MRR | +0.070 | +0.022 to +0.115 | 15 of 20 |
+
+The two training runs differ by about 0.01 Recall@20 on test. Ablation effects of that size or
+smaller, such as several in the findings report, are within run-to-run variance.
 
 ## Metrics files
 
