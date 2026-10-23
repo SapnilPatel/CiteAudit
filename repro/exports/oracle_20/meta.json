@@ -1,0 +1,17 @@
+{
+  "rankings": "results/retrieval/repro_dev_ce.jsonl",
+  "split": "dev",
+  "topk": 20,
+  "order": "doc",
+  "claims": 316,
+  "labels": {
+    "ACCURATE": 191,
+    "NOT_ACCURATE": 101,
+    "NOT ENOUGH INFO": 24
+  },
+  "mean_sentences_per_doc": 20.0,
+  "gold_sentences_total": 597,
+  "gold_sentences_retrieved": 597,
+  "claims_losing_all_evidence": 0,
+  "claims_losing_some_evidence": 0
+}
