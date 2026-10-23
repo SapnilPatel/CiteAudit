@@ -218,7 +218,7 @@ the classification stage.
 Across the annotations: `ACCURATE`, `ETIQUETTE`, `NOT_SUBSTANTIATE`, `IRRELEVANT`, `CONTRADICT`,
 `OVERSIMPLIFY`, `INDIRECT`, `MISQUOTE`, and `INDIRECT_NOT_REVIEW`. Train and test carry all nine;
 dev has eight (no `INDIRECT_NOT_REVIEW`, which has 25 train / 9 test instances and none in dev).
-The paper and `TEAM_TASKS.md` refer to 8 labels, so `INDIRECT_NOT_REVIEW` is presumably folded into
+The paper and the original Week 1 plan refer to 8 labels, so `INDIRECT_NOT_REVIEW` is presumably folded into
 `INDIRECT`. Whoever owns the 8→3 mapping must confirm this and record which collapse was used.
 
 ## 7. What actually produces the cross-encoder gain: two of six variables
@@ -472,7 +472,7 @@ paper's**, and only the A/B between two retrieval arms through the same checkpoi
 **3. The 3-way gold label cannot be derived from `claims-*.jsonl`, and deriving it there mislabels
 12% of the split.** The claims files carry the nine fine-grained labels of section 6 while the
 model's head has three classes, and the collapse the paper uses is recorded in this repository's
-own `docs/team/week1_plan.md`:
+own `docs/notes/week1_plan.md`:
 
 - `ACCURATE`, `INDIRECT` → ACCURATE
 - `CONTRADICT`, `NOT_SUBSTANTIATE`, `OVERSIMPLIFY`, `MISQUOTE`, `ETIQUETTE` → NOT_ACCURATE
@@ -636,7 +636,7 @@ Forcing the gold evidence into the documents of claims that lacked it does not t
 
 ### What this does and does not license
 
-The paper's own reported figures (as recorded in this repository's `docs/team/week1_plan.md`) settle the
+The paper's own reported figures (as recorded in this repository's `docs/notes/week1_plan.md`) settle the
 interpretation, and they rule out the conclusion this section first drew:
 
 | the paper's classification settings | micro-F1 | macro-F1 |

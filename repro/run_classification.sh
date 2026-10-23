@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Re-runs the classification half: rebuild the teammate's 8 dev exports from our own rankings,
+# Re-runs the classification half: rebuild the original 8 dev exports from our own rankings,
 # diff them against the committed ones, run the released MultiVerS checkpoint on each, and also on
 # the authors' own released classifier input (Drive folder scifact_10, dev and test).
 set -euo pipefail
@@ -14,7 +14,7 @@ for k in 10 20; do
   python scripts/export_for_multivers.py --rankings $R/repro_dev_ce.jsonl --split dev --topk $k --oracle --out $E/oracle_$k
   python scripts/export_for_multivers.py --rankings $R/repro_dev_ce.jsonl --split dev --topk $k --random --out $E/random_$k
 done
-echo "== export diff against the teammate's committed exports"
+echo "== export diff against the committed exports"
 for arm in paper_20 ours_20 oracle_20 random_20 paper_10 ours_10 oracle_10 random_10; do
   for f in claims_dev.jsonl corpus.jsonl; do
     if cmp -s $E/$arm/$f data_train/target/$arm/$f; then echo "$arm/$f identical"; else echo "$arm/$f DIFFERS"; fi

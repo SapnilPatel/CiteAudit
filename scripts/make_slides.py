@@ -196,7 +196,7 @@ def slide_problem(prs):
     s = prs.slides.add_slide(prs.slide_layouts[6])
     rect(s, 0, 0, CANVAS_W, CANVAS_H, fill=PAGE)
 
-    y = header(s, 'CSCI 544 GROUP 23 · SAROL ET AL., BIOINFORMATICS 40(7) 2024 · '
+    y = header(s, 'CITEAUDIT · SAROL ET AL., BIOINFORMATICS 40(7) 2024 · '
                   'REPRODUCTION AND EXTENSION',
                'Does this citation say what the source actually said?')
     y += 24

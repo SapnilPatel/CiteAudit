@@ -1,4 +1,4 @@
-# CSCI 544 Group 23 — Week 1–2 continuation
+# CiteAudit — Week 1–2 continuation
 
 ## Reproducibility status (important)
 

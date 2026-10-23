@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-echo "CSCI 544 Group 23 — Week 1 baseline helper"
+echo "CiteAudit — Week 1 baseline helper"
 echo ""
 echo "1) Install local helpers: pip install -r requirements-local.txt"
 echo "2) Clone official repos: bash bootstrap.sh"
