@@ -80,7 +80,7 @@ The reranker gain is **+0.109 Recall@20** over the paper's pipeline, with a 95% 
 
 **Key finding: better retrieval does not improve classification under the frozen released classifier.** Even perfect evidence doesn't help. Random evidence hurts a lot, so the classifier does read its evidence. The most likely explanation is that the classifier is fitted to the evidence distribution it was trained on. Retraining it on our reranker's output is the open experiment.
 
-> **Reproduced.** The paper's-retrieval row matches exactly when re-run, down to per-class F1. The other rows depend on the retrained reranker and land within about 0.02, with the same conclusions and significance. Full table in [`repro/`](repro/).
+> **Reproduced exactly.** Re-running the released checkpoint on these exact inputs gives every figure above, down to per-class F1 and the significance tests. Inputs rebuilt from an independently retrained reranker land within about 0.02, with the same conclusions. Full tables in [`repro/`](repro/).
 
 ## Quick start
 

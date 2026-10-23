@@ -26,7 +26,8 @@ The original runs used an Apple M2 with older library versions.
 | Test, our reranker (retrained) | Recall@20 0.638, MRR 0.365 | Recall@20 0.627, MRR 0.379 | ✅ within noise |
 | Test, our reranker minus paper's pipeline | Recall@20 +0.109 [+0.084, +0.131], 17/20 articles | Recall@20 +0.098 [+0.071, +0.121], 17/20 articles | ✅ same conclusion |
 | Dev classification, paper's retrieval, top 20 and top 10 | see below | see below | ✅ exact |
-| Dev classification, the other 6 settings | see below | see below | ✅ same conclusions |
+| Dev classification, the other 6 settings, original inputs | see below | see below | ✅ exact |
+| Dev classification, the other 6 settings, rebuilt from the retrained reranker | see below | see below | ✅ same conclusions |
 | Released classifier input from the authors | not run originally | see below | new |
 
 "Exact" means the largest difference across every metric in the file is below 1e-15.
@@ -74,6 +75,20 @@ Paired against the paper's retrieval, with McNemar's exact test:
 | Ours, top 10 | -0.022 | 24 | 30 | 0.497 |
 | Perfect, top 10 | -0.025 | 24 | 29 | 0.583 |
 | Random, top 10 | -0.272 | 23 | 109 | < 0.001 |
+
+**The classifier itself reproduces exactly.** Running the checkpoint on the six committed inputs,
+rather than the rebuilt ones, gives every original figure exactly: accuracy, macro-F1 and the
+McNemar counts. [`run_classification_committed.sh`](run_classification_committed.sh) runs it. So
+the only source of variation in this whole reproduction is retraining the reranker.
+
+| Committed input | Accuracy | Macro-F1 | Only this right / only paper's right | p |
+|---|---|---|---|---|
+| Ours, top 20 | 0.674 | 0.674 | 30 / 31 | 1.000 |
+| Perfect, top 20 | 0.655 | 0.656 | 24 / 31 | 0.419 |
+| Random, top 20 | 0.487 | 0.473 | 20 / 80 | < 0.001 |
+| Ours, top 10 | 0.620 | 0.593 | 32 / 36 | 0.716 |
+| Perfect, top 10 | 0.601 | 0.582 | 27 / 37 | 0.260 |
+| Random, top 10 | 0.386 | 0.369 | 25 / 103 | < 0.001 |
 
 **Both original conclusions hold.** Random evidence is much worse, so the classifier reads its
 evidence. Better or even perfect evidence does not beat the paper's retrieval under the frozen
