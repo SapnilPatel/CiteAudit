@@ -9,7 +9,7 @@ An open, fully reproducible pipeline for checking biomedical citations against t
 [![Python 3.11](https://img.shields.io/badge/python-3.11-3776AB?logo=python&logoColor=white)](https://www.python.org/)
 [![PyTorch](https://img.shields.io/badge/PyTorch-2.x-EE4C2C?logo=pytorch&logoColor=white)](https://pytorch.org/)
 [![Hugging Face Transformers](https://img.shields.io/badge/%F0%9F%A4%97%20Transformers-5.x-FFD21E)](https://huggingface.co/docs/transformers)
-[![Status: reproduction](https://img.shields.io/badge/status-reproduction%20in%20progress-orange)](#roadmap)
+[![Status: reproduced](https://img.shields.io/badge/status-reproduced-2ea44f)](repro/)
 [![USC CSCI 544](https://img.shields.io/badge/USC-CSCI%20544-990000)](https://www.usc.edu/)
 
 [The problem](#the-problem) · [Results](#results) · [Quick start](#quick-start) · [Repository layout](#repository-layout) · [Roadmap](#roadmap) · [Credits](#credits)
@@ -60,13 +60,14 @@ Every number below was measured in this repository. None are copied from the pap
 | *Paper, published* | *0.09* | *0.28* | *0.40* | *0.53* | *0.32* | — |
 | BM25 only | 0.080 | 0.220 | 0.319 | 0.444 | 0.257 | 0.290 |
 | BM25 + MonoT5, paper's pipeline | 0.100 | 0.298 | 0.422 | 0.529 | 0.323 | 0.372 |
-| **BM25 + PubMedBERT, ours** ⏳ | 0.119 | 0.385 | **0.523** | **0.638** | **0.365** | **0.493** |
+| **BM25 + PubMedBERT, ours** | 0.119 | 0.385 | **0.523** | **0.638** | **0.365** | **0.493** |
+| BM25 + PubMedBERT, independent retrain | 0.124 | 0.385 | 0.510 | 0.627 | 0.379 | 0.493 |
 
 AllGold@20 is the share of citations whose complete gold evidence lands in the top 20.
 
-> **Reproduction status.** The first two rows were re-run independently on an Apple M4 and match the original measurements to floating-point precision. The reranker row marked ⏳ is the original measurement and is being re-run now. See [`repro/`](repro/) for the scripts and logs.
+> **Reproduced.** Every row was re-run independently on an Apple M4. The BM25 and paper-pipeline rows match to floating-point precision. Retraining the reranker from scratch lands within about 0.01 of the original, because GPU training is not bit-for-bit repeatable. See [`repro/`](repro/) for scripts and details.
 
-The reranker gain is **+0.109 Recall@20** over the paper's pipeline, with a 95% CI of +0.084 to +0.131. It wins on 17 of 20 test articles. Ablations trace it to three ingredients: neighbour-sentence context, fine-tuning on this task, and a biomedical encoder. Swapping the model architecture alone contributes nothing. The full analysis is in [`results/week2_retrieval_findings.md`](results/week2_retrieval_findings.md).
+The reranker gain is **+0.109 Recall@20** over the paper's pipeline, with a 95% CI of +0.084 to +0.131. It wins on 17 of 20 test articles. The independent retrain gains +0.098, with a 95% CI of +0.071 to +0.121, on the same 17 of 20 articles. Ablations trace it to three ingredients: neighbour-sentence context, fine-tuning on this task, and a biomedical encoder. Swapping the model architecture alone contributes nothing. The full analysis is in [`results/week2_retrieval_findings.md`](results/week2_retrieval_findings.md).
 
 ### Classification, dev split (316 citations)
 
@@ -79,7 +80,7 @@ The reranker gain is **+0.109 Recall@20** over the paper's pipeline, with a 95% 
 
 **Key finding: better retrieval does not improve classification under the frozen released classifier.** Even perfect evidence doesn't help. Random evidence hurts a lot, so the classifier does read its evidence. The most likely explanation is that the classifier is fitted to the evidence distribution it was trained on. Retraining it on our reranker's output is the open experiment.
 
-> These dev-split figures are the original measurements and are being re-run now.
+> **Reproduced.** The paper's-retrieval row matches exactly when re-run, down to per-class F1. The other rows depend on the retrained reranker and land within about 0.02, with the same conclusions and significance. Full table in [`repro/`](repro/).
 
 ## Quick start
 
@@ -168,14 +169,15 @@ CiteAudit/
 - **The authors' prediction script does not run as shipped.** It needs a config file that isn't in their repository and hardcodes its data path. [`scripts/predict_multivers.py`](scripts/predict_multivers.py) reimplements the label path against the released checkpoint.
 - **The 3-way labels need the raw annotations.** About 14% of dev citations get the wrong label if you derive it from the claims files alone.
 - **The dataset has 9 fine-grained labels, not the 8 the paper lists.** The extra one, `INDIRECT_NOT_REVIEW`, is mapped to ACCURATE here.
-- **Classification numbers are dev-split.** They are not directly comparable to the paper's test-split figures.
+- **The paper's top-20 test classification figures remain unreproduced.** The authors' released classifier input turns out to be a top-5 setting, so it can't check them. On test it gives macro-F1 0.444 against the paper's top-20 figure of 0.52. Details in [`repro/`](repro/).
+- **Most classification numbers here are dev-split.** They are not directly comparable to the paper's test-split figures.
 
 ## Roadmap
 
 - [x] Reproduce the paper's retrieval stage
 - [x] Train a reranker that beats it on all metrics
 - [x] Run the released classifier on random, retrieved and perfect evidence
-- [ ] Independently re-run every result in this repository ⏳
+- [x] Independently re-run every result in this repository
 - [ ] Retrain MultiVerS on our reranker's output, which needs a CUDA GPU
 - [ ] Error analysis of classifier decisions before and after retraining
 - [ ] A one-command `citeaudit check` interface for researchers
