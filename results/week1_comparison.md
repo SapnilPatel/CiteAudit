@@ -50,12 +50,12 @@
 | retrieval | citance_ce_crossencoder | Recall@100 |  | 0.818 |  |  |
 | retrieval | citance_ce_crossencoder | MRR |  | 0.365 |  |  |
 | retrieval | citance_ce_crossencoder | AllGold@20 |  | 0.493 |  |  |
-| classification | top20 | Micro-F1 | 0.590 |  |  | paper's test-split figure; ours not filled because our MultiVerS numbers are dev-only and the checkpoint's training input is unreconstructable (findings S9, S10) |
-| classification | top20 | Macro-F1 | 0.520 |  |  | paper's test-split figure; ours not filled because our MultiVerS numbers are dev-only and the checkpoint's training input is unreconstructable (findings S9, S10) |
-| classification | top20 | ACCURATE-F1 | 0.690 |  |  | paper's test-split figure; ours not filled because our MultiVerS numbers are dev-only and the checkpoint's training input is unreconstructable (findings S9, S10) |
-| classification | top20 | NOT_ACCURATE-F1 | 0.430 |  |  | paper's test-split figure; ours not filled because our MultiVerS numbers are dev-only and the checkpoint's training input is unreconstructable (findings S9, S10) |
-| classification | top20 | IRRELEVANT-F1 | 0.420 |  |  | paper's test-split figure; ours not filled because our MultiVerS numbers are dev-only and the checkpoint's training input is unreconstructable (findings S9, S10) |
-| classification | gold_evidence | Micro-F1 | 0.730 |  |  | paper's test-split figure; ours not filled because our MultiVerS numbers are dev-only and the checkpoint's training input is unreconstructable (findings S9, S10) |
-| classification | gold_evidence | Macro-F1 | 0.750 |  |  | paper's test-split figure; ours not filled because our MultiVerS numbers are dev-only and the checkpoint's training input is unreconstructable (findings S9, S10) |
-| classification | gold_context_plus_evidence | Micro-F1 | 0.750 |  |  | paper's test-split figure; ours not filled because our MultiVerS numbers are dev-only and the checkpoint's training input is unreconstructable (findings S9, S10) |
-| classification | gold_context_plus_evidence | Macro-F1 | 0.780 |  |  | paper's test-split figure; ours not filled because our MultiVerS numbers are dev-only and the checkpoint's training input is unreconstructable (findings S9, S10) |
+| classification | top20 | Micro-F1 | 0.590 | 0.584 | -0.006 | test split; released checkpoint run frozen on top-20 evidence from the paper's BM25+MonoT5 pipeline |
+| classification | top20 | Macro-F1 | 0.520 | 0.524 | +0.004 | test split; released checkpoint run frozen on top-20 evidence from the paper's BM25+MonoT5 pipeline |
+| classification | top20 | ACCURATE-F1 | 0.690 | 0.692 | +0.002 | test split; released checkpoint run frozen on top-20 evidence from the paper's BM25+MonoT5 pipeline |
+| classification | top20 | NOT_ACCURATE-F1 | 0.430 | 0.426 | -0.004 | test split; released checkpoint run frozen on top-20 evidence from the paper's BM25+MonoT5 pipeline |
+| classification | top20 | IRRELEVANT-F1 | 0.420 | 0.455 | +0.035 | test split; released checkpoint run frozen on top-20 evidence from the paper's BM25+MonoT5 pipeline |
+| classification | gold_evidence | Micro-F1 | 0.730 |  |  | paper's test-split figure; not run here (needs gold-evidence and gold-context inputs on test) |
+| classification | gold_evidence | Macro-F1 | 0.750 |  |  | paper's test-split figure; not run here (needs gold-evidence and gold-context inputs on test) |
+| classification | gold_context_plus_evidence | Micro-F1 | 0.750 |  |  | paper's test-split figure; not run here (needs gold-evidence and gold-context inputs on test) |
+| classification | gold_context_plus_evidence | Macro-F1 | 0.780 |  |  | paper's test-split figure; not run here (needs gold-evidence and gold-context inputs on test) |

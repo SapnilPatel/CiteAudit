@@ -28,6 +28,7 @@ The original runs used an Apple M2 with older library versions.
 | Dev classification, paper's retrieval, top 20 and top 10 | see below | see below | ✅ exact |
 | Dev classification, the other 6 settings, original inputs | see below | see below | ✅ exact |
 | Dev classification, the other 6 settings, rebuilt from the retrained reranker | see below | see below | ✅ same conclusions |
+| Test classification, top 20, paper's retrieval | paper: accuracy 0.59, macro-F1 0.52 | accuracy 0.584, macro-F1 0.524 | ✅ reproduces the paper |
 | Released classifier input from the authors | not run originally | see below | new |
 
 "Exact" means the largest difference across every metric in the file is below 1e-15.
@@ -121,8 +122,32 @@ here:
 | NOT ENOUGH INFO F1 | 0.42 | 0.326 |
 
 On dev the same input gives accuracy 0.680 and macro-F1 0.641. Because this is a top-5 setting,
-it does not reproduce or refute the paper's top-20 test figures. No released file matches that
-setting, so those figures remain unreproduced.
+it does not reproduce or refute the paper's top-20 test figures.
+
+## Classification, test split (606 citations)
+
+The paper's top-20 test setting, rebuilt from our own BM25+MonoT5 test rankings (ranked with
+`--rank-all` so the no-gold citations get evidence too) and run through the frozen checkpoint:
+
+| Test, top 20 | Evidence recall | Accuracy | Macro-F1 | ACCURATE F1 | NOT ACCURATE F1 | NEI F1 |
+|---|---|---|---|---|---|---|
+| Paper, published | — | 0.59 | 0.52 | 0.69 | 0.43 | 0.42 |
+| Paper's retrieval | 0.529 | 0.584 | 0.524 | 0.692 | 0.426 | 0.455 |
+| Our retrieval (retrained reranker) | 0.627 | 0.574 | 0.505 | 0.691 | 0.408 | 0.414 |
+
+**The paper's top-20 test figures reproduce**, within 0.01 on every metric except NEI F1. Our
+retrieval against the paper's: only ours right 51, only the paper's right 57, McNemar p = 0.631,
+the same null result as on dev.
+
+```bash
+python scripts/retrieval_harness.py --split test --ranker bm25-monot5 --rank-all \
+  --rankings-out results/retrieval/repro_test_monot5_all.jsonl --metrics-out /tmp/m.json
+python scripts/export_for_multivers.py --rankings results/retrieval/repro_test_monot5_all.jsonl \
+  --split test --topk 20 --out data_train/target/paper_20_test
+python scripts/predict_multivers.py --checkpoint checkpoints/drive/bestModel.ckpt \
+  --data-dir data_train/target/paper_20_test --split test --out results/classification/test/paper_20.jsonl
+python scripts/score_multivers.py results/classification/test/paper_20.jsonl --split test
+```
 
 ## Metrics files
 

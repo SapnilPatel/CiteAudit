@@ -80,6 +80,18 @@ The reranker gain is **+0.109 Recall@20** over the paper's pipeline, with a 95% 
 
 **Key finding: better retrieval does not improve classification under the frozen released classifier.** Even perfect evidence doesn't help. Random evidence hurts a lot, so the classifier does read its evidence. The most likely explanation is that the classifier is fitted to the evidence distribution it was trained on. Retraining it on our reranker's output is the open experiment.
 
+### Classification, test split (606 citations): the paper's figures reproduce
+
+The released checkpoint, run frozen on top-20 evidence from the paper's own retrieval pipeline, matches the paper's top-20 test figures to within 0.01 on every metric except NOT ENOUGH INFO F1 (+0.035).
+
+| Test, top 20 | Evidence recall | Accuracy | Macro-F1 | ACCURATE F1 | NOT ACCURATE F1 | NOT ENOUGH INFO F1 |
+|---|---|---|---|---|---|---|
+| *Paper, published* | — | *0.59* | *0.52* | *0.69* | *0.43* | *0.42* |
+| Paper's retrieval | 0.529 | **0.584** | **0.524** | 0.692 | 0.426 | 0.455 |
+| Our retrieval | 0.627 | 0.574 | 0.505 | 0.691 | 0.408 | 0.414 |
+
+Our retrieval against the paper's on the same 606 citations: only ours right 51, only the paper's right 57, McNemar p = 0.631. The dev-split conclusion holds on test: better retrieval does not help the frozen classifier.
+
 > **Reproduced exactly.** Re-running the released checkpoint on these exact inputs gives every figure above, down to per-class F1 and the significance tests. Inputs rebuilt from an independently retrained reranker land within about 0.02, with the same conclusions. Full tables in [`repro/`](repro/).
 
 ## Quick start
@@ -169,12 +181,13 @@ CiteAudit/
 - **The authors' prediction script does not run as shipped.** It needs a config file that isn't in their repository and hardcodes its data path. [`scripts/predict_multivers.py`](scripts/predict_multivers.py) reimplements the label path against the released checkpoint.
 - **The 3-way labels need the raw annotations.** About 14% of dev citations get the wrong label if you derive it from the claims files alone.
 - **The dataset has 9 fine-grained labels, not the 8 the paper lists.** The extra one, `INDIRECT_NOT_REVIEW`, is mapped to ACCURATE here.
-- **The paper's top-20 test classification figures remain unreproduced.** The authors' released classifier input turns out to be a top-5 setting, so it can't check them. On test it gives macro-F1 0.444 against the paper's top-20 figure of 0.52. Details in [`repro/`](repro/).
-- **Most classification numbers here are dev-split.** They are not directly comparable to the paper's test-split figures.
+- **Most classification numbers here are dev-split.** They are not directly comparable to the paper's test-split figures. The one test-split run is the top-20 comparison below.
+- **The authors' released classifier input is a top-5 setting.** On test it gives macro-F1 0.444, which does not correspond to any figure in the paper. Details in [`repro/`](repro/).
 
 ## Roadmap
 
 - [x] Reproduce the paper's retrieval stage
+- [x] Reproduce the paper's top-20 test classification figures
 - [x] Train a reranker that beats it on all metrics
 - [x] Run the released classifier on random, retrieved and perfect evidence
 - [x] Independently re-run every result in this repository

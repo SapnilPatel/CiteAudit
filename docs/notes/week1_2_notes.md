@@ -7,10 +7,13 @@ MonoT5) scores R@20 **0.529** / MRR **0.323** against its published 0.53 / 0.32 
 cross-encoder reranker reaches R@20 **0.638** on the same split, +0.109 [+0.084,+0.131] over the
 paper's pipeline, winning 17 of 20 articles (§11).
 
-**Classification stage: the released checkpoint runs, but the published figures are not
-reproduced.** The authors' `predict.py` cannot run as shipped and their training-time input
-construction cannot be reconstructed from the released data (§9), so absolute F1 here is only
-loosely comparable. Swapping in the better retriever under the frozen checkpoint changes nothing at
+**Classification stage: reproduced on test.** The released checkpoint, run frozen on top-20
+evidence from the paper's pipeline on the test split, gives accuracy **0.584** / macro-F1
+**0.524** against the published 0.59 / 0.52 (per class: ACCURATE 0.692 vs 0.69, NOT_ACCURATE 0.426
+vs 0.43, NEI 0.455 vs 0.42). Earlier notes called the classification figures unreproduced because
+every top-20 run was on dev, which cannot be compared with the paper's test figures; the
+unexplained training-set size in the checkpoint (§9) does not matter, since the checkpoint is never
+retrained. Swapping in the better retriever under the frozen checkpoint changes nothing at
 any evidence-quality level up to perfect evidence (§10); whether the retrieval gain is worth
 anything to the task needs a retraining run that has not been done.
 
@@ -103,10 +106,9 @@ evidence because they cannot be scored: exporting from a 255-row file gives them
 in one arm and a full one in the other, making the label partly readable off the input length. Pass
 `--rank-all` (with `--resume`, only the missing rows are computed and no metric changes).
 
-The oracle and random arms are what make the result interpretable rather than just null — §10. Keep
-§9's caveat in view: the authors' training-time input construction cannot be reconstructed from the
-released data, so absolute F1 is only loosely comparable to the paper's and the A/B between arms is
-what carries weight.
+The oracle and random arms are what make the result interpretable rather than just null — §10. On
+test, the paper's arm reproduces the published top-20 figures (macro-F1 0.524 vs 0.52), so absolute
+F1 from this checkpoint is comparable to the paper's.
 
 For reference, the older gold-vs-retrieved comparison path:
 

@@ -1,0 +1,17 @@
+{
+  "rankings": "results/retrieval/repro_test_monot5_all.jsonl",
+  "split": "test",
+  "topk": 20,
+  "order": "doc",
+  "claims": 606,
+  "labels": {
+    "NOT_ACCURATE": 170,
+    "ACCURATE": 386,
+    "NOT ENOUGH INFO": 50
+  },
+  "mean_sentences_per_doc": 20.0,
+  "gold_sentences_total": 1215,
+  "gold_sentences_retrieved": 643,
+  "claims_losing_all_evidence": 78,
+  "claims_losing_some_evidence": 228
+}
