@@ -10,6 +10,7 @@ An open, fully reproducible pipeline for checking biomedical citations against t
 [![PyTorch](https://img.shields.io/badge/PyTorch-2.x-EE4C2C?logo=pytorch&logoColor=white)](https://pytorch.org/)
 [![Hugging Face Transformers](https://img.shields.io/badge/%F0%9F%A4%97%20Transformers-5.x-FFD21E)](https://huggingface.co/docs/transformers)
 [![Status: reproduced](https://img.shields.io/badge/status-reproduced-2ea44f)](repro/)
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue)](LICENSE)
 [![USC CSCI 544](https://img.shields.io/badge/USC-CSCI%20544-990000)](https://www.usc.edu/)
 
 [The problem](#the-problem) · [Results](#results) · [Quick start](#quick-start) · [Repository layout](#repository-layout) · [Roadmap](#roadmap) · [Credits](#credits)
@@ -222,4 +223,4 @@ If you use this work, please cite the original benchmark:
 
 ## License
 
-A license has not been chosen yet. Until one is added, all rights are reserved by the contributors. MIT is recommended to match both upstream projects.
+[MIT](LICENSE), matching both upstream projects. The dataset and the released MultiVerS checkpoint keep their authors' own terms.
