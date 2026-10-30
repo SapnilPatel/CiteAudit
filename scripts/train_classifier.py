@@ -99,7 +99,8 @@ def build(a, torch):
             self.head = torch.nn.Linear(2 * h, len(LABELS))
 
         def forward(self, ids, mask, owner, n):
-            cls = self.encoder(input_ids=ids, attention_mask=mask).last_hidden_state[:, 0]
+            # Pool in fp32 even under autocast: the -1e4 fill and the division are not fp16-safe.
+            cls = self.encoder(input_ids=ids, attention_mask=mask).last_hidden_state[:, 0].float()
             # Pool windows back to their citation: owner[i] is the citation of window i.
             idx = owner.unsqueeze(1).expand(-1, cls.size(1))
             mean = torch.zeros(n, cls.size(1), device=cls.device, dtype=cls.dtype)
@@ -128,7 +129,9 @@ def predict(model, data, a, torch, device, pad_id):
     with torch.no_grad():
         for i in range(0, len(data), a.eval_batch):
             batch = data[i:i + a.eval_batch]
-            probs = torch.softmax(model(*collate(batch, pad_id, torch, device)).float(), dim=1)
+            with amp(torch, device, a):
+                logits = model(*collate(batch, pad_id, torch, device))
+            probs = torch.softmax(logits.float(), dim=1)
             for (r, ws), p in zip(batch, probs.tolist()):
                 out.append({'id': r[0], 'doc_id': r[1], 'gold': r[4],
                             'prediction': LABELS[max(range(3), key=p.__getitem__)],
@@ -136,6 +139,14 @@ def predict(model, data, a, torch, device, pad_id):
                             'n_windows': len(ws)})
     model.train()
     return out
+
+
+def amp(torch, device, a):
+    """fp16 autocast on CUDA when --amp is set; a no-op context everywhere else."""
+    import contextlib
+    if a.amp and device.type == 'cuda':
+        return torch.autocast('cuda', dtype=torch.float16)
+    return contextlib.nullcontext()
 
 
 def macro_f1(rows):
@@ -182,6 +193,8 @@ def main():
     p.add_argument('--class-weight', default='sqrt', choices=['none', 'sqrt', 'inverse'])
     p.add_argument('--seed', type=int, default=0)
     p.add_argument('--device', default='auto')
+    p.add_argument('--amp', action='store_true',
+                   help='fp16 mixed precision on CUDA, about 2x faster on a T4; ignored elsewhere')
     p.add_argument('--limit', type=int, help='only the first N citations of each split, for a smoke test')
     a = p.parse_args()
 
@@ -212,6 +225,8 @@ def main():
     steps = a.epochs * math.ceil(len(train) / a.batch)
     sched = get_linear_schedule_with_warmup(opt, int(0.1 * steps), steps)
     y = {c: i for i, c in enumerate(LABELS)}
+    # A disabled scaler passes every call straight through, so one code path serves fp32 too.
+    scaler = torch.amp.GradScaler('cuda', enabled=a.amp and device.type == 'cuda')
 
     best, log = -1., []
     for ep in range(1, a.epochs + 1):
@@ -220,10 +235,14 @@ def main():
         for i in range(0, len(train), a.batch):
             batch = train[i:i + a.batch]
             gold = torch.tensor([y[r[4]] for r, _ in batch], device=device)
-            loss = loss_fn(model(*collate(batch, tok.pad_token_id, torch, device)), gold)
-            loss.backward()
+            with amp(torch, device, a):
+                logits = model(*collate(batch, tok.pad_token_id, torch, device))
+            loss = loss_fn(logits.float(), gold)
+            scaler.scale(loss).backward()
+            scaler.unscale_(opt)
             torch.nn.utils.clip_grad_norm_(model.parameters(), 1.0)
-            opt.step()
+            scaler.step(opt)
+            scaler.update()
             sched.step()
             opt.zero_grad()
             total += loss.item() * len(batch)
