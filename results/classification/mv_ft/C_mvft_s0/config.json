@@ -1,0 +1,44 @@
+{
+  "checkpoint": "/content/bestModel.ckpt",
+  "best_epoch": 0,
+  "best_dev_macro_f1": 0.6767364503430122,
+  "args": {
+    "checkpoint": "/content/bestModel.ckpt",
+    "train": "data_train/target/ours_20_train_cv",
+    "dev": "data_train/target/ours_20",
+    "predict": "['test=data_train/target/ours_20_test', 'test=data_train/target/paper_20_test']",
+    "pred_dir": "/content/drive/MyDrive/CiteAudit_runs/mv_ft/C_mvft_s0",
+    "save": "None",
+    "epochs": "2",
+    "lr": "1e-05",
+    "accum": "8",
+    "class_weight": "none",
+    "no_initial_eval": "False",
+    "grad_checkpointing": "True",
+    "amp": "True",
+    "seed": "0",
+    "device": "auto",
+    "limit": "None"
+  },
+  "log": [
+    {
+      "epoch": 0,
+      "dev_macro_f1": 0.6767364503430122,
+      "dev_accuracy": 0.6772151898734177
+    },
+    {
+      "epoch": 1,
+      "train_loss": 0.6519284603003644,
+      "dev_macro_f1": 0.637551133222775,
+      "dev_accuracy": 0.7056962025316456,
+      "minutes": 36.68703366518021
+    },
+    {
+      "epoch": 2,
+      "train_loss": 0.42721456137801866,
+      "dev_macro_f1": 0.6666265266122826,
+      "dev_accuracy": 0.7025316455696202,
+      "minutes": 36.58874092499415
+    }
+  ]
+}
