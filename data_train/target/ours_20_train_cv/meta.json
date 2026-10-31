@@ -1,0 +1,17 @@
+{
+  "rankings": "results/retrieval/train_cv_ce.jsonl",
+  "split": "train",
+  "topk": 20,
+  "order": "doc",
+  "claims": 2141,
+  "labels": {
+    "ACCURATE": 1368,
+    "NOT_ACCURATE": 630,
+    "NOT ENOUGH INFO": 143
+  },
+  "mean_sentences_per_doc": 20.0,
+  "gold_sentences_total": 4138,
+  "gold_sentences_retrieved": 2313,
+  "claims_losing_all_evidence": 287,
+  "claims_losing_some_evidence": 683
+}
