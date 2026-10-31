@@ -44,3 +44,26 @@ python scripts/ensemble_classifiers.py --mv-dev $R/repro_committed/ours_20.jsonl
   --other-dev $R/v2/B_ours_s{0,1,2}/dev.jsonl --other-test $R/v2/B_ours_s{0,1,2}/ours_20_test.jsonl \
   --base $R/test/paper_20.jsonl --out $R/ensemble/test.jsonl
 ```
+
+## Where the gain comes from
+
+Full tables in `error_analysis.md` (`scripts/error_analysis.py`).
+
+- **Almost all of it is correctly accepted ACCURATE citations.** On the 370 citations annotated
+  ACCURATE, accuracy rises from 0.635 to 0.719 (48 fixed, 17 broken), because the ensemble
+  wrongly flags far fewer of them as NOT ACCURATE (120 down to 90). For a tool that flags
+  suspect citations, that is fewer false alarms.
+- **Better retrieval is where it pays off.** Our reranker puts 228 citations in the "all gold
+  evidence retrieved" bucket against the paper pipeline's 175, and on those the ensemble is
+  right 0.702 of the time against 0.634. Where no gold evidence is retrieved, 0.525 against 0.418.
+- **The gain is spread across articles**: more accurate on 13 of the 20 test articles, less on
+  4, so it is not carried by one or two.
+- **Subtle misrepresentation got worse.** CONTRADICT falls from 0.583 to 0.250 (n = 12) and
+  OVERSIMPLIFY from 0.340 to 0.255 (n = 47); the ensemble's four most confident errors are all
+  OVERSIMPLIFY citations it calls ACCURATE at 0.98 or above. These are citations whose source
+  does say something close to the claim, which is what makes them hard, and the ACCURATE-leaning
+  BiomedBERT half pushes them the wrong way. IRRELEVANT is about unchanged (0.500 to 0.460).
+
+The next improvement target is therefore not retrieval or NOT ENOUGH INFO but the partial
+misrepresentations, OVERSIMPLIFY and CONTRADICT, which together are 59 of the 170 NOT ACCURATE
+test citations.
