@@ -39,6 +39,15 @@ from pathlib import Path
 
 LABELS = ['NOT_ACCURATE', 'NOT ENOUGH INFO', 'ACCURATE']
 NEI = 'NOT ENOUGH INFO'
+# The nine annotation labels and the paper's collapse to three (INDIRECT_NOT_REVIEW, which the
+# paper does not list, as a variant of INDIRECT). With --labels 9 the model is trained on these
+# and its probabilities are summed per group, so it is still scored as a 3-way classifier.
+FINE = ['ACCURATE', 'INDIRECT', 'INDIRECT_NOT_REVIEW', 'CONTRADICT', 'NOT_SUBSTANTIATE',
+        'OVERSIMPLIFY', 'MISQUOTE', 'ETIQUETTE', 'IRRELEVANT']
+COLLAPSE = {'ACCURATE': 'ACCURATE', 'INDIRECT': 'ACCURATE', 'INDIRECT_NOT_REVIEW': 'ACCURATE',
+            'CONTRADICT': 'NOT_ACCURATE', 'NOT_SUBSTANTIATE': 'NOT_ACCURATE',
+            'OVERSIMPLIFY': 'NOT_ACCURATE', 'MISQUOTE': 'NOT_ACCURATE',
+            'ETIQUETTE': 'NOT_ACCURATE', 'IRRELEVANT': NEI, 'NOT_ACCURATE': 'NOT_ACCURATE', NEI: NEI}
 DEFAULT_MODEL = 'microsoft/BiomedNLP-BiomedBERT-base-uncased-abstract-fulltext'
 
 
@@ -53,8 +62,12 @@ def gold_of(claim):
     return next(iter(ev.values()))[0]['label'] if ev else NEI
 
 
-def load_export(d, split):
-    """(id, doc_id, claim text, evidence sentences, gold label) for every citation in an export."""
+def load_export(d, split, fine=None):
+    """(id, doc_id, claim text, evidence sentences, 3-way gold, training target) per citation.
+
+    The target is the 3-way gold, or with `fine` (claim id -> annotation label) the fine label,
+    which must collapse to the 3-way gold: a mismatch means the two files disagree on the data.
+    """
     claims = read_jsonl(Path(d) / f'claims_{split}.jsonl')
     corpus = {x['doc_id']: x['abstract'] for x in read_jsonl(Path(d) / 'corpus.jsonl')}
     rows = []
@@ -63,7 +76,11 @@ def load_export(d, split):
             raise SystemExit(f'{d}: claim {c["id"]} has {len(c["cited_doc_ids"])} documents; '
                              f'expected the one-document-per-claim export')
         doc = c['cited_doc_ids'][0]
-        rows.append((c['id'], doc, c['claim'], corpus[doc], gold_of(c)))
+        target = fine[str(c['id'])] if fine else gold_of(c)
+        if COLLAPSE[target] != gold_of(c):
+            raise SystemExit(f'{d}: claim {c["id"]} is {gold_of(c)} in the export but {target} '
+                             f'in the fine labels')
+        rows.append((c['id'], doc, c['claim'], corpus[doc], gold_of(c), target))
     return rows
 
 
@@ -96,7 +113,7 @@ def build(a, torch):
             self.encoder = AutoModel.from_pretrained(a.model)
             h = self.encoder.config.hidden_size
             self.dropout = torch.nn.Dropout(0.1)
-            self.head = torch.nn.Linear(2 * h, len(LABELS))
+            self.head = torch.nn.Linear(2 * h, len(a.targets))
 
         def forward(self, ids, mask, owner, n):
             # Pool in fp32 even under autocast: the -1e4 fill and the division are not fp16-safe.
@@ -133,10 +150,13 @@ def predict(model, data, a, torch, device, pad_id):
                 logits = model(*collate(batch, pad_id, torch, device))
             probs = torch.softmax(logits.float(), dim=1)
             for (r, ws), p in zip(batch, probs.tolist()):
-                out.append({'id': r[0], 'doc_id': r[1], 'gold': r[4],
-                            'prediction': LABELS[max(range(3), key=p.__getitem__)],
-                            'probs': {LABELS[k]: round(p[k], 5) for k in range(3)},
-                            'n_windows': len(ws)})
+                p3 = {c: sum(x for t, x in zip(a.targets, p) if COLLAPSE[t] == c) for c in LABELS}
+                row = {'id': r[0], 'doc_id': r[1], 'gold': r[4],
+                       'prediction': max(LABELS, key=p3.get),
+                       'probs': {c: round(x, 5) for c, x in p3.items()}, 'n_windows': len(ws)}
+                if a.targets != LABELS:
+                    row['fine_probs'] = {t: round(x, 5) for t, x in zip(a.targets, p)}
+                out.append(row)
     model.train()
     return out
 
@@ -191,12 +211,22 @@ def main():
     p.add_argument('--max-len', type=int, default=512)
     p.add_argument('--max-claim', type=int, default=128)
     p.add_argument('--class-weight', default='sqrt', choices=['none', 'sqrt', 'inverse'])
+    p.add_argument('--labels', type=int, default=3, choices=[3, 9],
+                   help='train on the 3 collapsed labels, or on the 9 annotation labels')
+    p.add_argument('--fine-labels', type=Path, default=Path('data_train/fine_labels'),
+                   help='directory of <split>.json files mapping claim id to annotation label')
     p.add_argument('--seed', type=int, default=0)
     p.add_argument('--device', default='auto')
     p.add_argument('--amp', action='store_true',
                    help='fp16 mixed precision on CUDA, about 2x faster on a T4; ignored elsewhere')
     p.add_argument('--limit', type=int, help='only the first N citations of each split, for a smoke test')
     a = p.parse_args()
+    a.targets = FINE if a.labels == 9 else LABELS
+
+    def fine(split):
+        if a.labels == 3:
+            return None
+        return json.loads((a.fine_labels / f'{split}.json').read_text(encoding='utf8'))
 
     import torch
     from transformers import AutoTokenizer, get_linear_schedule_with_warmup
@@ -205,9 +235,9 @@ def main():
     device = pick_device(torch, a.device)
     tok = AutoTokenizer.from_pretrained(a.model)
 
-    train = encode_rows(tok, load_export(a.train, 'train')[:a.limit], a)
-    dev = encode_rows(tok, load_export(a.dev, 'dev')[:a.limit], a)
-    counts = Counter(r[4] for r, _ in train)
+    train = encode_rows(tok, load_export(a.train, 'train', fine('train'))[:a.limit], a)
+    dev = encode_rows(tok, load_export(a.dev, 'dev', fine('dev'))[:a.limit], a)
+    counts = Counter(r[5] for r, _ in train)
     n_win = [len(w) for _, w in train]
     print(f'train {len(train)} citations {dict(counts)}, windows per citation mean '
           f'{sum(n_win) / len(n_win):.2f} max {max(n_win)}; dev {len(dev)}; {device}', flush=True)
@@ -216,15 +246,15 @@ def main():
         w = [1.] * 3
     else:
         power = 0.5 if a.class_weight == 'sqrt' else 1.
-        w = [(len(train) / (3 * max(counts[c], 1))) ** power for c in LABELS]
+        w = [(len(train) / (len(a.targets) * max(counts[c], 1))) ** power for c in a.targets]
     loss_fn = torch.nn.CrossEntropyLoss(weight=torch.tensor(w, device=device))
-    print('class weights ' + ', '.join(f'{c} {x:.2f}' for c, x in zip(LABELS, w)), flush=True)
+    print('class weights ' + ', '.join(f'{c} {x:.2f}' for c, x in zip(a.targets, w)), flush=True)
 
     model = build(a, torch).to(device)
     opt = torch.optim.AdamW(model.parameters(), lr=a.lr, weight_decay=0.01)
     steps = a.epochs * math.ceil(len(train) / a.batch)
     sched = get_linear_schedule_with_warmup(opt, int(0.1 * steps), steps)
-    y = {c: i for i, c in enumerate(LABELS)}
+    y = {c: i for i, c in enumerate(a.targets)}
     # A disabled scaler passes every call straight through, so one code path serves fp32 too.
     scaler = torch.amp.GradScaler('cuda', enabled=a.amp and device.type == 'cuda')
 
@@ -234,7 +264,7 @@ def main():
         t0, total = time.time(), 0.
         for i in range(0, len(train), a.batch):
             batch = train[i:i + a.batch]
-            gold = torch.tensor([y[r[4]] for r, _ in batch], device=device)
+            gold = torch.tensor([y[r[5]] for r, _ in batch], device=device)
             with amp(torch, device, a):
                 logits = model(*collate(batch, tok.pad_token_id, torch, device))
             loss = loss_fn(logits.float(), gold)
@@ -260,7 +290,7 @@ def main():
             write(a.pred_dir / 'dev.jsonl', preds)
 
     (a.out / 'config.json').write_text(json.dumps(
-        {'model': a.model, 'labels': LABELS, 'max_len': a.max_len, 'max_claim': a.max_claim,
+        {'model': a.model, 'labels': a.targets, 'max_len': a.max_len, 'max_claim': a.max_claim,
          'best_dev_macro_f1': best, 'args': {k: str(v) for k, v in vars(a).items()},
          'log': log}, indent=2))
 
@@ -268,7 +298,7 @@ def main():
         model.load_state_dict(torch.load(a.out / 'model.pt', map_location=device))
         for spec in a.predict:
             split, d = spec.split('=', 1)
-            rows = encode_rows(tok, load_export(d, split)[:a.limit], a)
+            rows = encode_rows(tok, load_export(d, split, fine(split))[:a.limit], a)
             preds = predict(model, rows, a, torch, device, tok.pad_token_id)
             dest = a.pred_dir / f'{Path(d).name}.jsonl'
             write(dest, preds)
