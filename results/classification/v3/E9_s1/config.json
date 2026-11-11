@@ -1,0 +1,69 @@
+{
+  "model": "microsoft/BiomedNLP-BiomedBERT-base-uncased-abstract-fulltext",
+  "labels": [
+    "ACCURATE",
+    "INDIRECT",
+    "INDIRECT_NOT_REVIEW",
+    "CONTRADICT",
+    "NOT_SUBSTANTIATE",
+    "OVERSIMPLIFY",
+    "MISQUOTE",
+    "ETIQUETTE",
+    "IRRELEVANT"
+  ],
+  "max_len": 512,
+  "max_claim": 128,
+  "best_dev_macro_f1": 0.4361218737297416,
+  "args": {
+    "train": "data_train/target/ours_20_train_cv",
+    "dev": "data_train/target/ours_20",
+    "out": "checkpoints/E9_s1",
+    "predict": "['test=data_train/target/ours_20_test']",
+    "pred_dir": "/content/drive/MyDrive/CiteAudit_runs/v3/E9_s1.part",
+    "model": "microsoft/BiomedNLP-BiomedBERT-base-uncased-abstract-fulltext",
+    "epochs": "4",
+    "lr": "2e-05",
+    "batch": "4",
+    "eval_batch": "16",
+    "max_len": "512",
+    "max_claim": "128",
+    "class_weight": "sqrt",
+    "labels": "9",
+    "fine_labels": "data_train/fine_labels",
+    "seed": "1",
+    "device": "auto",
+    "amp": "True",
+    "limit": "None",
+    "targets": "['ACCURATE', 'INDIRECT', 'INDIRECT_NOT_REVIEW', 'CONTRADICT', 'NOT_SUBSTANTIATE', 'OVERSIMPLIFY', 'MISQUOTE', 'ETIQUETTE', 'IRRELEVANT']"
+  },
+  "log": [
+    {
+      "epoch": 1,
+      "train_loss": 1.8265563579487611,
+      "dev_macro_f1": 0.2641432641432641,
+      "dev_accuracy": 0.6075949367088608,
+      "minutes": 2.2589921673138935
+    },
+    {
+      "epoch": 2,
+      "train_loss": 1.6167347241316594,
+      "dev_macro_f1": 0.3913671647148562,
+      "dev_accuracy": 0.6329113924050633,
+      "minutes": 2.403928049405416
+    },
+    {
+      "epoch": 3,
+      "train_loss": 1.3686167795362454,
+      "dev_macro_f1": 0.4132194894014698,
+      "dev_accuracy": 0.6392405063291139,
+      "minutes": 2.400873827934265
+    },
+    {
+      "epoch": 4,
+      "train_loss": 1.1299465897204664,
+      "dev_macro_f1": 0.4361218737297416,
+      "dev_accuracy": 0.6392405063291139,
+      "minutes": 2.4022170941034955
+    }
+  ]
+}
