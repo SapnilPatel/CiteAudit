@@ -9,3 +9,4 @@ sentencepiece>=0.2      # T5/MonoT5 tokenizer
 protobuf>=4             # needed to convert the MonoT5 sentencepiece model
 numpy>=1.23
 pytest>=7
+peft>=0.13             # LoRA fine-tuning of the LLM classifier (finetune_llm.py)
