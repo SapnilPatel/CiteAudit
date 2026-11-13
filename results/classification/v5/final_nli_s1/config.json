@@ -1,0 +1,55 @@
+{
+  "model": "MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli",
+  "best_epoch": 3,
+  "best_dev_macro_f1": 0.6039947706614374,
+  "args": {
+    "train": "data_train/target/ours_20r_train_cv",
+    "dev": "data_train/target/ours_20r",
+    "out": "checkpoints/final_nli_s1",
+    "pred_dir": "/content/drive/MyDrive/CiteAudit_runs/v5/final_nli_s1.part",
+    "predict": "['test=data_train/target/ours_20r_test']",
+    "model": "MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli",
+    "epochs": "3",
+    "lr": "1e-05",
+    "batch": "2",
+    "accum": "4",
+    "eval_batch": "16",
+    "max_len": "512",
+    "class_weight": "sqrt",
+    "folds": "0",
+    "fold": "0",
+    "context_dir": "data_train/context",
+    "amp": "True",
+    "seed": "1",
+    "device": "auto",
+    "limit": "None"
+  },
+  "log": [
+    {
+      "epoch": 0,
+      "dev_macro_f1": 0.3610215453899374,
+      "dev_accuracy": 0.5727848101265823
+    },
+    {
+      "epoch": 1,
+      "dev_macro_f1": 0.5337910611877815,
+      "dev_accuracy": 0.6835443037974683,
+      "train_loss": 0.878053903422679,
+      "minutes": 7.768026232719421
+    },
+    {
+      "epoch": 2,
+      "dev_macro_f1": 0.5872987836195773,
+      "dev_accuracy": 0.6962025316455697,
+      "train_loss": 0.5754945218255973,
+      "minutes": 7.764594217141469
+    },
+    {
+      "epoch": 3,
+      "dev_macro_f1": 0.6039947706614374,
+      "dev_accuracy": 0.6962025316455697,
+      "train_loss": 0.30183140748902104,
+      "minutes": 7.753122659524282
+    }
+  ]
+}
