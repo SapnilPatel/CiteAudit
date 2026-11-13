@@ -62,11 +62,13 @@ def gold_of(claim):
     return next(iter(ev.values()))[0]['label'] if ev else NEI
 
 
-def load_export(d, split, fine=None):
+def load_export(d, split, fine=None, context=None):
     """(id, doc_id, claim text, evidence sentences, 3-way gold, training target) per citation.
 
     The target is the 3-way gold, or with `fine` (claim id -> annotation label) the fine label,
     which must collapse to the 3-way gold: a mismatch means the two files disagree on the data.
+    With `context` (claim id -> text), that text replaces the citing sentence as the model's
+    first segment; it contains the citing sentence, with its citation marker, and its neighbours.
     """
     claims = read_jsonl(Path(d) / f'claims_{split}.jsonl')
     corpus = {x['doc_id']: x['abstract'] for x in read_jsonl(Path(d) / 'corpus.jsonl')}
@@ -80,8 +82,20 @@ def load_export(d, split, fine=None):
         if COLLAPSE[target] != gold_of(c):
             raise SystemExit(f'{d}: claim {c["id"]} is {gold_of(c)} in the export but {target} '
                              f'in the fine labels')
-        rows.append((c['id'], doc, c['claim'], corpus[doc], gold_of(c), target))
+        text = context[str(c['id'])] if context else c['claim']
+        rows.append((c['id'], doc, text, corpus[doc], gold_of(c), target))
     return rows
+
+
+def fold_articles(articles, folds, seed=12345):
+    """Partition reference articles into `folds` groups, as train_reranker.py does.
+
+    Folds are cut by article, never by citation: citations of one article share its text, so a
+    split within an article would let the held-out fold see what it is tested on.
+    """
+    arts = sorted(set(articles))
+    random.Random(seed).shuffle(arts)
+    return [set(arts[i::folds]) for i in range(folds)]
 
 
 def windows(tok, claim, sents, max_len, max_claim):
@@ -215,6 +229,15 @@ def main():
                    help='train on the 3 collapsed labels, or on the 9 annotation labels')
     p.add_argument('--fine-labels', type=Path, default=Path('data_train/fine_labels'),
                    help='directory of <split>.json files mapping claim id to annotation label')
+    p.add_argument('--context', default='none', choices=['none', 'window', 'paragraph'],
+                   help='what the model reads in place of the citing sentence: the sentence alone, '
+                        'with its neighbours, or with its paragraph (build_context.py)')
+    p.add_argument('--context-dir', type=Path, default=Path('data_train/context'))
+    p.add_argument('--folds', type=int, default=0,
+                   help='k-fold cross-validation over the training articles (0 = off): train on '
+                        'the other folds, choose the epoch on --dev, and write predictions for '
+                        'the held-out fold to <pred-dir>/oof.jsonl')
+    p.add_argument('--fold', type=int, default=0, help='which fold to hold out, 0-based')
     p.add_argument('--seed', type=int, default=0)
     p.add_argument('--device', default='auto')
     p.add_argument('--amp', action='store_true',
@@ -228,6 +251,12 @@ def main():
             return None
         return json.loads((a.fine_labels / f'{split}.json').read_text(encoding='utf8'))
 
+    def meta(split):
+        return json.loads((a.context_dir / f'{split}.json').read_text(encoding='utf8'))
+
+    def context(split):
+        return None if a.context == 'none' else {k: v[a.context] for k, v in meta(split).items()}
+
     import torch
     from transformers import AutoTokenizer, get_linear_schedule_with_warmup
     random.seed(a.seed)
@@ -235,8 +264,16 @@ def main():
     device = pick_device(torch, a.device)
     tok = AutoTokenizer.from_pretrained(a.model)
 
-    train = encode_rows(tok, load_export(a.train, 'train', fine('train'))[:a.limit], a)
-    dev = encode_rows(tok, load_export(a.dev, 'dev', fine('dev'))[:a.limit], a)
+    train = encode_rows(tok, load_export(a.train, 'train', fine('train'), context('train'))[:a.limit], a)
+    dev = encode_rows(tok, load_export(a.dev, 'dev', fine('dev'), context('dev'))[:a.limit], a)
+    heldout = []
+    if a.folds:
+        article = {int(k): v['article'] for k, v in meta('train').items()}
+        held = fold_articles(article.values(), a.folds)[a.fold]
+        heldout = [x for x in train if article[x[0][0]] in held]
+        train = [x for x in train if article[x[0][0]] not in held]
+        print(f'fold {a.fold}/{a.folds}: training on {len(train)} citations, holding out '
+              f'{len(heldout)} from {len(held)} articles', flush=True)
     counts = Counter(r[5] for r, _ in train)
     n_win = [len(w) for _, w in train]
     print(f'train {len(train)} citations {dict(counts)}, windows per citation mean '
@@ -294,11 +331,17 @@ def main():
          'best_dev_macro_f1': best, 'args': {k: str(v) for k, v in vars(a).items()},
          'log': log}, indent=2))
 
-    if a.predict:
+    if a.predict or heldout:
         model.load_state_dict(torch.load(a.out / 'model.pt', map_location=device))
+    if heldout:
+        preds = predict(model, heldout, a, torch, device, tok.pad_token_id)
+        write(a.pred_dir / 'oof.jsonl', preds)
+        f1, acc = macro_f1(preds)
+        print(f'held-out fold {a.fold}: macro-F1 {f1:.3f}  accuracy {acc:.3f}', flush=True)
+    if a.predict:
         for spec in a.predict:
             split, d = spec.split('=', 1)
-            rows = encode_rows(tok, load_export(d, split, fine(split))[:a.limit], a)
+            rows = encode_rows(tok, load_export(d, split, fine(split), context(split))[:a.limit], a)
             preds = predict(model, rows, a, torch, device, tok.pad_token_id)
             dest = a.pred_dir / f'{Path(d).name}.jsonl'
             write(dest, preds)
