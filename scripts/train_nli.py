@@ -145,7 +145,10 @@ def main():
     device = torch.device(a.device if a.device != 'auto' else 'cuda' if torch.cuda.is_available()
                           else 'mps' if torch.backends.mps.is_available() else 'cpu')
     tok = AutoTokenizer.from_pretrained(a.model)
-    model = AutoModelForSequenceClassification.from_pretrained(a.model).to(device)
+    # Weights in fp32 whatever the checkpoint was saved in: recent transformers load the saved
+    # dtype, and this model is published in fp16, which GradScaler cannot unscale. --amp still
+    # runs the forward pass in fp16.
+    model = AutoModelForSequenceClassification.from_pretrained(a.model).float().to(device)
     by_name = {v.lower(): int(k) for k, v in model.config.id2label.items()}
     head = [by_name[NLI_NAME[c]] for c in LABELS]  # logit index of each of our labels
 
