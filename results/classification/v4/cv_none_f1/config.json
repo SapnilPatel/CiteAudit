@@ -1,0 +1,67 @@
+{
+  "model": "microsoft/BiomedNLP-BiomedBERT-base-uncased-abstract-fulltext",
+  "labels": [
+    "NOT_ACCURATE",
+    "NOT ENOUGH INFO",
+    "ACCURATE"
+  ],
+  "max_len": 512,
+  "max_claim": 128,
+  "best_dev_macro_f1": 0.39888879693081963,
+  "args": {
+    "train": "data_train/target/ours_20_train_cv",
+    "dev": "data_train/target/ours_20",
+    "out": "checkpoints/cv_none_f1",
+    "predict": "[]",
+    "pred_dir": "/content/drive/MyDrive/CiteAudit_runs/v4/cv_none_f1.part",
+    "model": "microsoft/BiomedNLP-BiomedBERT-base-uncased-abstract-fulltext",
+    "epochs": "4",
+    "lr": "2e-05",
+    "batch": "4",
+    "eval_batch": "16",
+    "max_len": "512",
+    "max_claim": "128",
+    "class_weight": "sqrt",
+    "labels": "3",
+    "fine_labels": "data_train/fine_labels",
+    "context": "none",
+    "context_dir": "data_train/context",
+    "folds": "3",
+    "fold": "1",
+    "seed": "0",
+    "device": "auto",
+    "amp": "True",
+    "limit": "None",
+    "targets": "['NOT_ACCURATE', 'NOT ENOUGH INFO', 'ACCURATE']"
+  },
+  "log": [
+    {
+      "epoch": 1,
+      "train_loss": 0.9924755817465855,
+      "dev_macro_f1": 0.29506355837039033,
+      "dev_accuracy": 0.439873417721519,
+      "minutes": 1.8093621850013732
+    },
+    {
+      "epoch": 2,
+      "train_loss": 0.920996648512222,
+      "dev_macro_f1": 0.3036554993171045,
+      "dev_accuracy": 0.5727848101265823,
+      "minutes": 1.8878332416216532
+    },
+    {
+      "epoch": 3,
+      "train_loss": 0.750185525550321,
+      "dev_macro_f1": 0.3816249663707291,
+      "dev_accuracy": 0.6044303797468354,
+      "minutes": 1.8829596281051635
+    },
+    {
+      "epoch": 4,
+      "train_loss": 0.5583249606444255,
+      "dev_macro_f1": 0.39888879693081963,
+      "dev_accuracy": 0.5981012658227848,
+      "minutes": 1.8848593473434447
+    }
+  ]
+}
