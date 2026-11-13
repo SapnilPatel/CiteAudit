@@ -24,6 +24,11 @@ epoch choice on --dev (including epoch 0), and the output format are `train_clas
 the two models are compared under one protocol and score_multivers.py / ensemble_classifiers.py
 read this one unchanged.
 
+`--synthetic` adds rewritten accurate citations (`generate_misrep.py`) as extra NOT ACCURATE
+training rows, each with its source citation's premise. In cross-validation a synthetic row is
+used only if its source citation is in the training folds, so nothing about a held-out citation
+reaches training. Synthetic rows are never evaluated on.
+
     python scripts/train_nli.py --train data_train/target/ours_20r_train_cv \\
         --dev data_train/target/ours_20r --out checkpoints/nli --pred-dir results/classification/nli \\
         --predict test=data_train/target/ours_20r_test --amp
@@ -131,6 +136,10 @@ def main():
     p.add_argument('--fold', type=int, default=0)
     p.add_argument('--context-dir', type=Path, default=Path('data_train/context'),
                    help='only for the citation -> article map used to cut folds')
+    p.add_argument('--synthetic', type=Path,
+                   help='jsonl from generate_misrep.py: extra NOT ACCURATE rows for training only')
+    p.add_argument('--synth-frac', type=float, default=1.0,
+                   help='share of the usable synthetic rows to add (sampled with --seed)')
     p.add_argument('--amp', action='store_true', help='fp16 mixed precision on CUDA')
     p.add_argument('--seed', type=int, default=0)
     p.add_argument('--device', default='auto')
@@ -162,6 +171,16 @@ def main():
         heldout = [r for r in train if article[r['id']] in held]
         train = [r for r in train if article[r['id']] not in held]
         print(f'fold {a.fold}/{a.folds}: training on {len(train)}, holding out {len(heldout)}', flush=True)
+    if a.synthetic:
+        # Only rows whose source citation is a training row here: in CV that excludes the
+        # held-out fold, with --limit it excludes citations not loaded.
+        by_id = {r['id']: r for r in train}
+        syn = [s for s in read_jsonl(a.synthetic) if s['source_id'] in by_id]
+        syn = random.Random(a.seed).sample(syn, round(a.synth_frac * len(syn)))
+        train += encode(tok, [{'id': f'syn-{s["source_id"]}', 'doc_id': by_id[s['source_id']]['doc_id'],
+                               'premise': by_id[s['source_id']]['premise'],
+                               'hypothesis': s['statement'], 'gold': 'NOT_ACCURATE'} for s in syn], a)
+        print(f'added {len(syn)} synthetic NOT ACCURATE rows from {a.synthetic}', flush=True)
     counts = Counter(r['gold'] for r in train)
     trunc = sum(len(r['enc']['input_ids']) >= a.max_len for r in train) / len(train)
     print(f'{a.model} on {device}; head {dict(zip(LABELS, head))}; train {len(train)} {dict(counts)}; '
