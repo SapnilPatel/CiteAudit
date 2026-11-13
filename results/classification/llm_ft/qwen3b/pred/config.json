@@ -1,0 +1,135 @@
+{
+  "model": "Qwen/Qwen2.5-3B-Instruct",
+  "best_epoch": 1,
+  "best_dev_macro_f1": 0.3836560388577374,
+  "args": {
+    "train": "data_train/target/ours_20_train_cv",
+    "dev": "data_train/target/ours_20",
+    "predict": "['test=data_train/target/ours_20_test']",
+    "pred_dir": "/content/drive/MyDrive/CiteAudit_runs/llm_ft/qwen2.5-3b-instruct/pred",
+    "state_dir": "/content/drive/MyDrive/CiteAudit_runs/llm_ft/qwen2.5-3b-instruct/state",
+    "model": "Qwen/Qwen2.5-3B-Instruct",
+    "prompt": "v1",
+    "load_4bit": "True",
+    "lora_r": "16",
+    "lora_alpha": "32",
+    "lr": "0.0001",
+    "epochs": "1",
+    "accum": "8",
+    "class_weight": "sqrt",
+    "save_every": "25",
+    "seed": "0",
+    "limit": "None"
+  },
+  "log": [
+    {
+      "step": 10,
+      "loss": 1.7841849457472563
+    },
+    {
+      "step": 20,
+      "loss": 2.6164044812321663
+    },
+    {
+      "step": 30,
+      "loss": 0.8356415890157223
+    },
+    {
+      "step": 40,
+      "loss": 1.288710042834282
+    },
+    {
+      "step": 50,
+      "loss": 1.051750048995018
+    },
+    {
+      "step": 60,
+      "loss": 1.016592837870121
+    },
+    {
+      "step": 70,
+      "loss": 0.7524619363248348
+    },
+    {
+      "step": 80,
+      "loss": 1.3648825772106647
+    },
+    {
+      "step": 90,
+      "loss": 0.9664683863520622
+    },
+    {
+      "step": 100,
+      "loss": 0.8800699934363365
+    },
+    {
+      "step": 110,
+      "loss": 0.9915846642106771
+    },
+    {
+      "step": 120,
+      "loss": 1.3119334243237972
+    },
+    {
+      "step": 130,
+      "loss": 0.7516133189201355
+    },
+    {
+      "step": 140,
+      "loss": 0.6422488652169704
+    },
+    {
+      "step": 150,
+      "loss": 0.9177549295127392
+    },
+    {
+      "step": 160,
+      "loss": 1.1865707412362099
+    },
+    {
+      "step": 170,
+      "loss": 0.7071988470852375
+    },
+    {
+      "step": 180,
+      "loss": 0.784406472928822
+    },
+    {
+      "step": 190,
+      "loss": 0.48295071814209223
+    },
+    {
+      "step": 200,
+      "loss": 0.9540116460993886
+    },
+    {
+      "step": 210,
+      "loss": 0.7104395120404661
+    },
+    {
+      "step": 220,
+      "loss": 0.45808680821210146
+    },
+    {
+      "step": 230,
+      "loss": 0.48164626955986023
+    },
+    {
+      "step": 240,
+      "loss": 1.132449087454006
+    },
+    {
+      "step": 250,
+      "loss": 0.5490666003897786
+    },
+    {
+      "step": 260,
+      "loss": 0.25772340036928654
+    },
+    {
+      "epoch": 1,
+      "dev_macro_f1": 0.3836560388577374,
+      "dev_accuracy": 0.6234177215189873
+    }
+  ]
+}
