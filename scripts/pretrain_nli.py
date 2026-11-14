@@ -33,8 +33,10 @@ def main():
     p.add_argument('--model', default=DEFAULT_MODEL)
     p.add_argument('--epochs', type=int, default=1)
     p.add_argument('--lr', type=float, default=1e-5)
-    p.add_argument('--batch', type=int, default=8)
-    p.add_argument('--accum', type=int, default=1)
+    p.add_argument('--tokens', type=int, default=1024,
+                   help='padded tokens per batch: 2 pairs of 512 or 8 of 128 (2 x 512 fits a T4)')
+    p.add_argument('--max-batch', type=int, default=16)
+    p.add_argument('--accum', type=int, default=2, help='batches per optimizer step')
     p.add_argument('--max-len', type=int, default=512)
     p.add_argument('--heldout', type=float, default=0.03)
     p.add_argument('--amp', action='store_true')
@@ -61,21 +63,32 @@ def main():
     for r in rows:
         r['enc'] = tok(r['premise'], r['hypothesis'], truncation='longest_first', max_length=a.max_len)
 
-    def batches(rs, size):
-        # Length-bucketed: sort within chunks of 50 batches, so padding stays small but order random.
-        order = []
-        for i in range(0, len(rs), size * 50):
-            chunk = sorted(rs[i:i + size * 50], key=lambda r: len(r['enc']['input_ids']))
-            order += [chunk[j:j + size] for j in range(0, len(chunk), size)]
-        random.shuffle(order)
-        for b in order:
+    def make_batches(rs, budget):
+        # Sort by length within chunks of 400, then fill each batch up to `budget` padded tokens:
+        # short HealthVer pairs travel many to a batch, long SciFact abstracts two at a time.
+        out = []
+        for i in range(0, len(rs), 400):
+            b = []
+            for r in sorted(rs[i:i + 400], key=lambda r: len(r['enc']['input_ids'])):
+                n = len(r['enc']['input_ids'])
+                if b and ((len(b) + 1) * n > budget or len(b) >= a.max_batch):
+                    out.append(b)
+                    b = []
+                b.append(r)
+            if b:
+                out.append(b)
+        random.shuffle(out)
+        return out
+
+    def batches(rs, budget):
+        for b in make_batches(rs, budget):
             yield b, tok.pad([r['enc'] for r in b], return_tensors='pt').to(device)
 
     def accuracy():
         model.eval()
         ok = 0
         with torch.no_grad():
-            for b, enc in batches(held, 32):
+            for b, enc in batches(held, 4 * a.tokens):
                 with torch.autocast('cuda', dtype=torch.float16, enabled=use_amp):
                     pred = model(**enc).logits.float()[:, head].argmax(1).tolist()
                 ok += sum(LABELS[q] == r['label'] for q, r in zip(pred, b))
@@ -85,7 +98,7 @@ def main():
     print(f'{a.model} on {device}: {len(train)} training pairs, {len(held)} held out; '
           f'held-out accuracy before: {accuracy():.3f}', flush=True)
     opt = torch.optim.AdamW(model.parameters(), lr=a.lr, weight_decay=0.01)
-    steps = max(1, a.epochs * math.ceil(len(train) / (a.batch * a.accum)))
+    steps = max(1, a.epochs * math.ceil(len(make_batches(train, a.tokens)) / a.accum))
     sched = get_linear_schedule_with_warmup(opt, int(0.06 * steps), steps)
     scaler = torch.amp.GradScaler('cuda', enabled=use_amp)
     loss_fn = torch.nn.CrossEntropyLoss()
@@ -93,7 +106,7 @@ def main():
     for ep in range(1, a.epochs + 1):
         random.shuffle(train)
         total, n = 0., 0
-        for i, (b, enc) in enumerate(batches(train, a.batch), 1):
+        for i, (b, enc) in enumerate(batches(train, a.tokens), 1):
             with torch.autocast('cuda', dtype=torch.float16, enabled=use_amp):
                 logits = model(**enc).logits.float()[:, head]
             loss = loss_fn(logits, torch.tensor([y[r['label']] for r in b], device=device))
