@@ -8,7 +8,7 @@ An open tool that checks citations in biomedical papers against the full text of
 
 [![tests](https://github.com/SapnilPatel/CiteAudit/actions/workflows/tests.yml/badge.svg)](https://github.com/SapnilPatel/CiteAudit/actions/workflows/tests.yml)
 [![Python 3.9+](https://img.shields.io/badge/python-3.9%2B-3776AB?logo=python&logoColor=white)](https://www.python.org/)
-[![Hugging Face models](https://img.shields.io/badge/%F0%9F%A4%97%20models-CiteAudit-FFD21E)](https://huggingface.co/SapnilPatel)
+[![Hugging Face models](https://img.shields.io/badge/%F0%9F%A4%97%20models-CiteAudit-FFD21E)](https://huggingface.co/Sapnil)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue)](LICENSE)
 [![USC CSCI 544](https://img.shields.io/badge/USC-CSCI%20544-990000)](https://www.usc.edu/)
 
@@ -88,7 +88,7 @@ flowchart LR
 
 Why an NLI model: 76% of the remaining errors of our best earlier system were faithfulness judgements on evidence that had been retrieved ([`results/diagnosis_v1.md`](results/diagnosis_v1.md)). Judging whether a statement follows from a text is exactly what NLI models are trained on, using about a million examples, while this task has 2141.
 
-Both models are on the Hugging Face Hub: [`citeaudit-reranker`](https://huggingface.co/SapnilPatel/citeaudit-reranker) and [`citeaudit-nli`](https://huggingface.co/SapnilPatel/citeaudit-nli).
+Both models are on the Hugging Face Hub: [`citeaudit-reranker`](https://huggingface.co/Sapnil/citeaudit-reranker) and [`citeaudit-nli`](https://huggingface.co/Sapnil/citeaudit-nli).
 
 ## Results
 

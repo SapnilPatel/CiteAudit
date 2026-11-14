@@ -6,8 +6,8 @@ from .classify import Classifier
 from .retrieval import Reranker, retrieve
 from .text import clean_citing, split_sentences
 
-DEFAULT_RERANKER = os.environ.get('CITEAUDIT_RERANKER', 'SapnilPatel/citeaudit-reranker')
-DEFAULT_CLASSIFIER = os.environ.get('CITEAUDIT_CLASSIFIER', 'SapnilPatel/citeaudit-nli')
+DEFAULT_RERANKER = os.environ.get('CITEAUDIT_RERANKER', 'Sapnil/citeaudit-reranker')
+DEFAULT_CLASSIFIER = os.environ.get('CITEAUDIT_CLASSIFIER', 'Sapnil/citeaudit-nli')
 TOP_K = 20  # evidence sentences given to the classifier, as in training
 
 EXPLANATIONS = {
