@@ -25,7 +25,7 @@ classes. NEI goes from almost never predicted (0.07) to 0.42: the NLI "neutral" 
 over directly to "cited paper is irrelevant". Zero-shot (epoch 0) scores 0.361 / 0.573 on dev, and
 fine-tuning is what makes the model work.
 
-## Phase 2: all of train, 3 seeds, test (1037 citations)
+## Phase 2: all of train, 3 seeds, test (606 citations)
 
 | Test | Accuracy | Macro-F1 | ACCURATE F1 | NOT ACCURATE F1 | NEI F1 |
 |---|---|---|---|---|---|

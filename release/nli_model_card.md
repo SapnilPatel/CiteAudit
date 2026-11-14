@@ -29,7 +29,7 @@ entailment, contradiction and neutral are relabelled ACCURATE, NOT_ACCURATE and 
 The training settings were 3 epochs, lr 1e-5, effective batch 8 and sqrt class weights, with the
 epoch chosen on dev.
 
-## Results (Citation-Integrity test set, 1037 citations, evidence from the CiteAudit reranker)
+## Results (Citation-Integrity test set, 606 citations, evidence from the CiteAudit reranker)
 
 | System | Accuracy | Macro-F1 |
 |---|---|---|
