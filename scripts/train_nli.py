@@ -140,6 +140,9 @@ def main():
                    help='jsonl from generate_misrep.py: extra NOT ACCURATE rows for training only')
     p.add_argument('--synth-frac', type=float, default=1.0,
                    help='share of the usable synthetic rows to add (sampled with --seed)')
+    p.add_argument('--save-model', type=Path,
+                   help='also save the chosen model in Hugging Face format (fp16, labels renamed '
+                        'to ours), loadable with from_pretrained and by the citeaudit package')
     p.add_argument('--amp', action='store_true', help='fp16 mixed precision on CUDA')
     p.add_argument('--seed', type=int, default=0)
     p.add_argument('--device', default='auto')
@@ -258,6 +261,14 @@ def main():
         write(dest, preds)
         f1, acc = macro_f1(preds)
         print(f'{d} ({split}): macro-F1 {f1:.3f}  accuracy {acc:.3f}  -> {dest}', flush=True)
+    if a.save_model:
+        # The NLI head is kept as is; only its label names change, so the saved model says
+        # what each logit means for this task and needs no mapping table to be used.
+        model.config.id2label = {h: c for c, h in zip(LABELS, head)}
+        model.config.label2id = {c: h for c, h in zip(LABELS, head)}
+        model.half().save_pretrained(a.save_model, safe_serialization=True)
+        tok.save_pretrained(a.save_model)
+        print(f'saved the model to {a.save_model}', flush=True)
 
 
 if __name__ == '__main__':
