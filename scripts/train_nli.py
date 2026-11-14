@@ -52,6 +52,12 @@ NLI_NAME = {'ACCURATE': 'entailment', 'NOT_ACCURATE': 'contradiction', 'NOT ENOU
 DEFAULT_MODEL = 'MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli'
 
 
+def label_head(model):
+    """Logit index of each of LABELS: from an NLI model's names, or from a model saved with ours."""
+    by_name = {v.lower(): int(k) for k, v in model.config.id2label.items()}
+    return [by_name[c.lower()] if c.lower() in by_name else by_name[NLI_NAME[c]] for c in LABELS]
+
+
 def statement(claim):
     """The citing sentence as an NLI hypothesis: citation markers removed, whitespace tidied."""
     s = MARKER_RE.sub(' ', claim)
@@ -143,6 +149,8 @@ def main():
     p.add_argument('--save-model', type=Path,
                    help='also save the chosen model in Hugging Face format (fp16, labels renamed '
                         'to ours), loadable with from_pretrained and by the citeaudit package')
+    p.add_argument('--grad-ckpt', action='store_true',
+                   help='gradient checkpointing: less memory, about 30%% slower (for --max-len 1024)')
     p.add_argument('--amp', action='store_true', help='fp16 mixed precision on CUDA')
     p.add_argument('--seed', type=int, default=0)
     p.add_argument('--device', default='auto')
@@ -161,8 +169,9 @@ def main():
     # dtype, and this model is published in fp16, which GradScaler cannot unscale. --amp still
     # runs the forward pass in fp16.
     model = AutoModelForSequenceClassification.from_pretrained(a.model).float().to(device)
-    by_name = {v.lower(): int(k) for k, v in model.config.id2label.items()}
-    head = [by_name[NLI_NAME[c]] for c in LABELS]  # logit index of each of our labels
+    head = label_head(model)  # logit index of each of our labels
+    if a.grad_ckpt:
+        model.gradient_checkpointing_enable()
 
     train = encode(tok, load_export(a.train, 'train', a.limit), a)
     dev = encode(tok, load_export(a.dev, 'dev', a.limit), a)

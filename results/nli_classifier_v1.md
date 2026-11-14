@@ -54,3 +54,20 @@ still the open problem, and it is what step 2 of the plan targets: synthetic con
 misrepresentations (overstated, causal, wrong population or number) generated from the ~1300
 accurate training citations, to give this model far more than the ~330 real NOT ACCURATE examples
 it has now.
+
+## Decision thresholds tuned on cross-validation
+
+`scripts/tune_bias.py` adds a constant to the NOT ACCURATE and NOT ENOUGH INFO log-probabilities.
+The constants are chosen on the 2141 out-of-fold predictions only, on a 0.1 grid, with ties going
+to the smallest change. It chose −0.3 for both, which moves the boundary towards ACCURATE. That was
+then applied once to test (`classification/v5/bias.json`):
+
+| | CV accuracy | CV macro-F1 | Test accuracy | Test macro-F1 |
+|---|---|---|---|---|
+| NLI, 3 seeds averaged | 0.676 | 0.570 | 0.680 | 0.575 |
+| + CV-tuned biases | 0.687 | 0.574 | 0.693 | 0.580 |
+
+Per seed on test, macro-F1 moves +0.007, −0.001 and −0.002, and accuracy +0.018, +0.005 and
++0.005. The thresholds buy accuracy consistently and macro-F1 hardly at all. The released
+classifier carries its biases in its config (`citeaudit_bias`), and the citeaudit package applies
+them.
