@@ -1,0 +1,57 @@
+{
+  "model": "MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli",
+  "best_epoch": 1,
+  "best_dev_macro_f1": 0.5922542204568023,
+  "args": {
+    "train": "data_train/target/ours_20r_train_cv",
+    "dev": "data_train/target/ours_20r",
+    "out": "checkpoints/cv_syn_f2",
+    "pred_dir": "/content/drive/MyDrive/CiteAudit_runs/v6/cv_syn_f2.part",
+    "predict": "[]",
+    "model": "MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli",
+    "epochs": "3",
+    "lr": "1e-05",
+    "batch": "2",
+    "accum": "4",
+    "eval_batch": "16",
+    "max_len": "512",
+    "class_weight": "sqrt",
+    "folds": "3",
+    "fold": "2",
+    "context_dir": "data_train/context",
+    "synthetic": "/content/drive/MyDrive/CiteAudit_runs/v6/misrep.jsonl",
+    "synth_frac": "1.0",
+    "amp": "True",
+    "seed": "0",
+    "device": "auto",
+    "limit": "None"
+  },
+  "log": [
+    {
+      "epoch": 0,
+      "dev_macro_f1": 0.3610215453899374,
+      "dev_accuracy": 0.5727848101265823
+    },
+    {
+      "epoch": 1,
+      "dev_macro_f1": 0.5922542204568023,
+      "dev_accuracy": 0.6613924050632911,
+      "train_loss": 0.8842356589700553,
+      "minutes": 8.188326887289683
+    },
+    {
+      "epoch": 2,
+      "dev_macro_f1": 0.5356723597687453,
+      "dev_accuracy": 0.6930379746835443,
+      "train_loss": 0.5705867408245954,
+      "minutes": 8.175209112962087
+    },
+    {
+      "epoch": 3,
+      "dev_macro_f1": 0.5383549624978197,
+      "dev_accuracy": 0.6392405063291139,
+      "train_loss": 0.3332162068695523,
+      "minutes": 8.13568028608958
+    }
+  ]
+}

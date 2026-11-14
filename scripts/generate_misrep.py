@@ -170,6 +170,8 @@ def main():
                  else 'mps' if torch.backends.mps.is_available() else 'cpu')
     model.eval()
     device = next(model.parameters()).device
+    stop = model.generation_config.eos_token_id
+    stop = sorted({*(stop if isinstance(stop, list) else [stop]), tok.eos_token_id, tok.pad_token_id})
 
     def prompt(cid):
         claim, ev, t = jobs[cid]
@@ -194,11 +196,15 @@ def main():
             with torch.no_grad():
                 gen = model.generate(**enc, max_new_tokens=a.max_new_tokens, do_sample=True,
                                      temperature=a.temperature, top_p=0.95, pad_token_id=tok.pad_token_id)
-            texts = tok.batch_decode(gen[:, enc['input_ids'].shape[1]:], skip_special_tokens=True)
-            for cid, text in zip(ids, texts):
+            new = gen[:, enc['input_ids'].shape[1]:]
+            texts = tok.batch_decode(new, skip_special_tokens=True)
+            # An output that never reached an end token was cut at --max-new-tokens: a truncated
+            # sentence, not a misrepresentation.
+            finished = torch.isin(new, torch.tensor(stop, device=new.device)).any(1).tolist()
+            for cid, text, fin in zip(ids, texts, finished):
                 tried[cid] = tried.get(cid, 0) + 1
                 claim, _, t = jobs[cid]
-                s = clean(text, claim)
+                s = clean(text, claim) if fin else None
                 if s is None:
                     rejected += 1
                     continue
