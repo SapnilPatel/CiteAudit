@@ -1,0 +1,41 @@
+[build-system]
+requires = ["setuptools>=64"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "citeaudit"
+dynamic = ["version"]
+description = "Check whether citations in biomedical papers say what the cited paper says"
+readme = "README.md"
+license = {text = "MIT"}
+requires-python = ">=3.9"
+keywords = ["citation", "biomedical", "nlp", "scientific integrity", "fact verification", "nli"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Intended Audience :: Science/Research",
+    "Topic :: Scientific/Engineering :: Bio-Informatics",
+    "Topic :: Text Processing :: Linguistic",
+]
+dependencies = [
+    "torch>=2.1",
+    "transformers>=4.44",
+    "sentencepiece>=0.2",
+    "protobuf>=4",
+]
+
+[project.optional-dependencies]
+pdf = ["pypdf>=4"]
+test = ["pytest>=7"]
+
+[project.scripts]
+citeaudit = "citeaudit.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/SapnilPatel/CiteAudit"
+
+[tool.setuptools]
+packages = ["citeaudit"]
+
+[tool.setuptools.dynamic]
+version = {attr = "citeaudit.__version__"}
