@@ -16,7 +16,7 @@ are running them in. The numbers here were measured in this repository.
 | 6 | NLI mismatch: overgeneralised claims are "neutral" to NLI but NOT_ACCURATE here | ChatGPT | Valid. Fine-tuning relearns the head, but it argues for #4's separate faithfulness head |
 | 7 | Report single vs grouped citations, ETIQUETTE vs substantive-error recall, not just totals | ChatGPT | **Built into the v9 notebook** |
 | 8 | Do not let INDIRECT (counted ACCURATE) become NOT_ACCURATE in an attribution head | ChatGPT | Adopted for #4 |
-| 9 | Audit confident disagreements for label noise before claiming a win | ChatGPT | Planned after v9 |
+| 9 | Audit confident disagreements for label noise before claiming a win | ChatGPT | **Done** ([`label_audit_v1.md`](../results/label_audit_v1.md)): of 30 confident errors, 13 model errors, 13 debatable, 4 likely mislabelled |
 | 10 | Stop: bigger encoders, LLM judges, same-model ensembles, unfiltered synthetic data | both | Agreed; already the plan |
 | 11 | Targets: accuracy > 0.71, macro-F1 > 0.60, NOT ACCURATE F1 > 0.48 | ChatGPT | Adopted |
 

@@ -150,6 +150,7 @@ Improving on the paper took many experiments, and most of them did not help. All
 | Intermediate training on 15.6k human-labelled biomedical claims (HealthVer, SciFact), and reading all 20 sentences (1024 tokens) | Same as the NLI model, within noise (CV macro-F1 0.570, test 0.580 against 0.575) | [`nli_biomed_v1.md`](results/nli_biomed_v1.md) |
 | Keep citation markers in the citing sentence (`[CITED]`, `[CITED, with others]`) | Accuracy up (CV 0.676 → 0.695, p = 0.015) but macro-F1 unchanged (0.569); after recalibration the same as without | [`markers_v1.md`](results/markers_v1.md) |
 | Give the classifier perfect (gold) evidence | No change: 20 test citations fixed, 20 broken | [`EXTERNAL_REVIEWS.md`](docs/EXTERNAL_REVIEWS.md) |
+| Audit the model's confident errors by hand | About half are not clear model errors (13 of 30 debatable, 4 likely mislabelled); the rest are numbers, swapped entities and negation | [`label_audit_v1.md`](results/label_audit_v1.md) |
 | Train on ~1000 LLM-written misrepresentations of accurate citations | Better at misrepresentations, worse at accurate citations; no net gain | [`synthetic_v1.md`](results/synthetic_v1.md), [`synthetic_v2.md`](results/synthetic_v2.md) |
 
 The error analysis that led to the NLI model is in [`results/error_analysis.md`](results/error_analysis.md) and [`results/diagnosis_v1.md`](results/diagnosis_v1.md).
