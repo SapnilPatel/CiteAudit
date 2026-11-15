@@ -1,0 +1,59 @@
+{
+  "model": "/content/drive/MyDrive/CiteAudit_runs/v8/nli_biomed",
+  "best_epoch": 2,
+  "best_dev_macro_f1": 0.5601307189542484,
+  "args": {
+    "train": "data_train/target/ours_20r_train_cv",
+    "dev": "data_train/target/ours_20r",
+    "out": "checkpoints/cv_bio1024_f2",
+    "pred_dir": "/content/drive/MyDrive/CiteAudit_runs/v8/cv_bio1024_f2.part",
+    "predict": "[]",
+    "model": "/content/drive/MyDrive/CiteAudit_runs/v8/nli_biomed",
+    "epochs": "3",
+    "lr": "1e-05",
+    "batch": "1",
+    "accum": "8",
+    "eval_batch": "4",
+    "max_len": "1024",
+    "class_weight": "sqrt",
+    "folds": "3",
+    "fold": "2",
+    "context_dir": "data_train/context",
+    "synthetic": "None",
+    "synth_frac": "1.0",
+    "save_model": "None",
+    "grad_ckpt": "True",
+    "amp": "True",
+    "seed": "0",
+    "device": "auto",
+    "limit": "None"
+  },
+  "log": [
+    {
+      "epoch": 0,
+      "dev_macro_f1": 0.40842105263157896,
+      "dev_accuracy": 0.6107594936708861
+    },
+    {
+      "epoch": 1,
+      "dev_macro_f1": 0.4651986831146729,
+      "dev_accuracy": 0.6677215189873418,
+      "train_loss": 0.8279620870812183,
+      "minutes": 16.73586492141088
+    },
+    {
+      "epoch": 2,
+      "dev_macro_f1": 0.5601307189542484,
+      "dev_accuracy": 0.6835443037974683,
+      "train_loss": 0.473215400938829,
+      "minutes": 16.747941573460896
+    },
+    {
+      "epoch": 3,
+      "dev_macro_f1": 0.5541865814289711,
+      "dev_accuracy": 0.6772151898734177,
+      "train_loss": 0.2060596547254602,
+      "minutes": 16.712051498889924
+    }
+  ]
+}

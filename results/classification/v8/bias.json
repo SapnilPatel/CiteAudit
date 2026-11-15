@@ -1,0 +1,55 @@
+{
+  "bias": {
+    "ACCURATE": 0.0,
+    "NOT_ACCURATE": 0.3,
+    "NOT ENOUGH INFO": 1.2
+  },
+  "cv_before": [
+    0.6889304063521718,
+    0.5700684713461578
+  ],
+  "cv_after": [
+    0.6847267631947688,
+    0.585631047811335
+  ],
+  "/content/drive/MyDrive/CiteAudit_runs/v8/final_bio1024_s0/ours_20r_test.jsonl": {
+    "before": [
+      0.6914191419141914,
+      0.59977257912885
+    ],
+    "after": [
+      0.6831683168316832,
+      0.5976711797187684
+    ]
+  },
+  "/content/drive/MyDrive/CiteAudit_runs/v8/final_bio1024_s1/ours_20r_test.jsonl": {
+    "before": [
+      0.6534653465346535,
+      0.5641951308961618
+    ],
+    "after": [
+      0.636963696369637,
+      0.5409119203236851
+    ]
+  },
+  "/content/drive/MyDrive/CiteAudit_runs/v8/final_bio1024_s2/ours_20r_test.jsonl": {
+    "before": [
+      0.6666666666666666,
+      0.5841486543136424
+    ],
+    "after": [
+      0.6600660066006601,
+      0.573142613663642
+    ]
+  },
+  "average of the above": {
+    "before": [
+      0.6732673267326733,
+      0.5800046958045465
+    ],
+    "after": [
+      0.6600660066006601,
+      0.5696443952257906
+    ]
+  }
+}

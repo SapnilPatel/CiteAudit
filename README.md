@@ -134,6 +134,7 @@ Improving on the paper took many experiments, and most of them did not help. All
 | Give the classifier the citing paragraph, not just the sentence | Worse: CV macro-F1 0.428 → 0.378 / 0.358 | [`classifier_v4.md`](results/classifier_v4.md) |
 | **NLI-pretrained classifier (DeBERTa-v3-large)** | **CV macro-F1 0.428 → 0.570; best on test** | [`nli_classifier_v1.md`](results/nli_classifier_v1.md) |
 | Ensemble the NLI model with MultiVerS | Worse on test (0.552) | [`nli_classifier_v1.md`](results/nli_classifier_v1.md) |
+| Intermediate training on 15.6k human-labelled biomedical claims (HealthVer, SciFact), and reading all 20 sentences (1024 tokens) | Same as the NLI model, within noise (CV macro-F1 0.570, test 0.580 against 0.575) | [`nli_biomed_v1.md`](results/nli_biomed_v1.md) |
 | Train on ~1000 LLM-written misrepresentations of accurate citations | Better at misrepresentations, worse at accurate citations; no net gain | [`synthetic_v1.md`](results/synthetic_v1.md), [`synthetic_v2.md`](results/synthetic_v2.md) |
 
 The error analysis that led to the NLI model is in [`results/error_analysis.md`](results/error_analysis.md) and [`results/diagnosis_v1.md`](results/diagnosis_v1.md).
@@ -236,7 +237,6 @@ CiteAudit/
 - [x] A classifier that beats the paper on test (accuracy +9.6 points, p < 0.001)
 - [x] A one-command `citeaudit check` tool, with models on the Hugging Face Hub
 - [ ] Better detection of misrepresenting citations (NOT ACCURATE F1 is still 0.44)
-- [ ] Read more evidence than the classifier's 512-token window (about 12 of the 20 sentences)
 
 ## Credits
 

@@ -68,6 +68,7 @@ then applied once to test (`classification/v5/bias.json`):
 | + CV-tuned biases | 0.687 | 0.574 | 0.693 | 0.580 |
 
 Per seed on test, macro-F1 moves +0.007, −0.001 and −0.002, and accuracy +0.018, +0.005 and
-+0.005. The thresholds buy accuracy consistently and macro-F1 hardly at all. The released
-classifier carries its biases in its config (`citeaudit_bias`), and the citeaudit package applies
-them.
++0.005. The thresholds buy accuracy consistently and macro-F1 hardly at all. On the next model
+(`nli_biomed_v1.md`) the same procedure lowered test macro-F1, so it is not reliable and the
+released classifier does not use it. The citeaudit package still applies `citeaudit_bias` if a
+model's config has one.
