@@ -44,7 +44,7 @@ from collections import Counter
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from llm_classify import MARKER_RE, read_jsonl  # noqa: E402
+from llm_classify import MARKER_RE, read_jsonl, readable  # noqa: E402
 from train_classifier import fold_articles  # noqa: E402
 
 LABELS = ['ACCURATE', 'NOT_ACCURATE', 'NOT ENOUGH INFO']
@@ -64,7 +64,7 @@ def statement(claim):
     return re.sub(r'\s+([.,;:])', r'\1', re.sub(r'\s+', ' ', s)).strip()
 
 
-def load_export(d, split, limit=None):
+def load_export(d, split, limit=None, keep_markers=False):
     claims = read_jsonl(Path(d) / f'claims_{split}.jsonl')[:limit]
     corpus = {x['doc_id']: x['abstract'] for x in read_jsonl(Path(d) / 'corpus.jsonl')}
     rows = []
@@ -72,7 +72,8 @@ def load_export(d, split, limit=None):
         doc = c['cited_doc_ids'][0]
         gold = next(iter(c['evidence'].values()))[0]['label'] if c.get('evidence') else 'NOT ENOUGH INFO'
         rows.append({'id': c['id'], 'doc_id': doc, 'premise': ' '.join(corpus[doc]),
-                     'hypothesis': statement(c['claim']), 'gold': gold})
+                     'hypothesis': readable(c['claim']) if keep_markers else statement(c['claim']),
+                     'gold': gold})
     return rows
 
 
@@ -151,6 +152,8 @@ def main():
                         'to ours), loadable with from_pretrained and by the citeaudit package')
     p.add_argument('--grad-ckpt', action='store_true',
                    help='gradient checkpointing: less memory, about 30%% slower (for --max-len 1024)')
+    p.add_argument('--keep-markers', action='store_true',
+                   help='hypothesis keeps citation markers as [CITED] / [CITED, with others] / [other]')
     p.add_argument('--amp', action='store_true', help='fp16 mixed precision on CUDA')
     p.add_argument('--seed', type=int, default=0)
     p.add_argument('--device', default='auto')
@@ -173,8 +176,8 @@ def main():
     if a.grad_ckpt:
         model.gradient_checkpointing_enable()
 
-    train = encode(tok, load_export(a.train, 'train', a.limit), a)
-    dev = encode(tok, load_export(a.dev, 'dev', a.limit), a)
+    train = encode(tok, load_export(a.train, 'train', a.limit, a.keep_markers), a)
+    dev = encode(tok, load_export(a.dev, 'dev', a.limit, a.keep_markers), a)
     heldout = []
     if a.folds:
         meta = json.loads((a.context_dir / 'train.json').read_text(encoding='utf8'))
@@ -265,7 +268,7 @@ def main():
         print(f'held-out fold {a.fold}: macro-F1 {f1:.3f}  accuracy {acc:.3f}', flush=True)
     for spec in a.predict:
         split, d = spec.split('=', 1)
-        preds = predict(model, encode(tok, load_export(d, split, a.limit), a), a, tok, torch, device, head)
+        preds = predict(model, encode(tok, load_export(d, split, a.limit, a.keep_markers), a), a, tok, torch, device, head)
         dest = a.pred_dir / f'{Path(d).name}.jsonl'
         write(dest, preds)
         f1, acc = macro_f1(preds)
