@@ -1,0 +1,606 @@
+{"id": 0, "doc_id": 1000000, "gold": "NOT_ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.965, "NOT_ACCURATE": 0.03156, "NOT ENOUGH INFO": 0.00344}, "n_tokens": 512}
+{"id": 1, "doc_id": 1000001, "gold": "NOT_ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.99624, "NOT_ACCURATE": 0.00306, "NOT ENOUGH INFO": 0.0007}, "n_tokens": 512}
+{"id": 2, "doc_id": 1000002, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.98042, "NOT_ACCURATE": 0.01877, "NOT ENOUGH INFO": 0.0008}, "n_tokens": 512}
+{"id": 3, "doc_id": 1000003, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.99899, "NOT_ACCURATE": 0.0008, "NOT ENOUGH INFO": 0.00021}, "n_tokens": 512}
+{"id": 4, "doc_id": 1000004, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.99843, "NOT_ACCURATE": 0.00107, "NOT ENOUGH INFO": 0.0005}, "n_tokens": 512}
+{"id": 5, "doc_id": 1000005, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.99727, "NOT_ACCURATE": 0.00167, "NOT ENOUGH INFO": 0.00105}, "n_tokens": 512}
+{"id": 6, "doc_id": 1000006, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.96398, "NOT_ACCURATE": 0.03367, "NOT ENOUGH INFO": 0.00235}, "n_tokens": 512}
+{"id": 7, "doc_id": 1000007, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.94788, "NOT_ACCURATE": 0.05158, "NOT ENOUGH INFO": 0.00054}, "n_tokens": 512}
+{"id": 8, "doc_id": 1000008, "gold": "NOT_ACCURATE", "prediction": "NOT_ACCURATE", "probs": {"ACCURATE": 0.00989, "NOT_ACCURATE": 0.98175, "NOT ENOUGH INFO": 0.00836}, "n_tokens": 512}
+{"id": 9, "doc_id": 1000009, "gold": "ACCURATE", "prediction": "NOT_ACCURATE", "probs": {"ACCURATE": 0.03, "NOT_ACCURATE": 0.68672, "NOT ENOUGH INFO": 0.28328}, "n_tokens": 512}
+{"id": 10, "doc_id": 1000010, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.83441, "NOT_ACCURATE": 0.16311, "NOT ENOUGH INFO": 0.00248}, "n_tokens": 512}
+{"id": 11, "doc_id": 1000011, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.99674, "NOT_ACCURATE": 0.00285, "NOT ENOUGH INFO": 0.00041}, "n_tokens": 512}
+{"id": 12, "doc_id": 1000012, "gold": "NOT_ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.99748, "NOT_ACCURATE": 0.00226, "NOT ENOUGH INFO": 0.00026}, "n_tokens": 512}
+{"id": 13, "doc_id": 1000013, "gold": "NOT_ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.99855, "NOT_ACCURATE": 0.00123, "NOT ENOUGH INFO": 0.00022}, "n_tokens": 512}
+{"id": 14, "doc_id": 1000014, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.99854, "NOT_ACCURATE": 0.00117, "NOT ENOUGH INFO": 0.00028}, "n_tokens": 512}
+{"id": 15, "doc_id": 1000015, "gold": "NOT_ACCURATE", "prediction": "NOT_ACCURATE", "probs": {"ACCURATE": 0.02729, "NOT_ACCURATE": 0.9721, "NOT ENOUGH INFO": 0.00061}, "n_tokens": 512}
+{"id": 16, "doc_id": 1000016, "gold": "NOT ENOUGH INFO", "prediction": "NOT ENOUGH INFO", "probs": {"ACCURATE": 0.22386, "NOT_ACCURATE": 0.21377, "NOT ENOUGH INFO": 0.56237}, "n_tokens": 512}
+{"id": 17, "doc_id": 1000017, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.9983, "NOT_ACCURATE": 0.00145, "NOT ENOUGH INFO": 0.00025}, "n_tokens": 512}
+{"id": 18, "doc_id": 1000018, "gold": "NOT_ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.9985, "NOT_ACCURATE": 0.00118, "NOT ENOUGH INFO": 0.00032}, "n_tokens": 512}
+{"id": 19, "doc_id": 1000019, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.9562, "NOT_ACCURATE": 0.04289, "NOT ENOUGH INFO": 0.0009}, "n_tokens": 512}
+{"id": 20, "doc_id": 1000020, "gold": "NOT_ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.97009, "NOT_ACCURATE": 0.02957, "NOT ENOUGH INFO": 0.00033}, "n_tokens": 512}
+{"id": 21, "doc_id": 1000021, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.97819, "NOT_ACCURATE": 0.0204, "NOT ENOUGH INFO": 0.00141}, "n_tokens": 512}
+{"id": 22, "doc_id": 1000022, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.99934, "NOT_ACCURATE": 0.00051, "NOT ENOUGH INFO": 0.00016}, "n_tokens": 512}
+{"id": 23, "doc_id": 1000023, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.99702, "NOT_ACCURATE": 0.00228, "NOT ENOUGH INFO": 0.0007}, "n_tokens": 512}
+{"id": 24, "doc_id": 1000024, "gold": "NOT_ACCURATE", "prediction": "NOT_ACCURATE", "probs": {"ACCURATE": 0.01125, "NOT_ACCURATE": 0.98806, "NOT ENOUGH INFO": 0.00069}, "n_tokens": 512}
+{"id": 25, "doc_id": 1000025, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.99886, "NOT_ACCURATE": 0.00072, "NOT ENOUGH INFO": 0.00042}, "n_tokens": 512}
+{"id": 26, "doc_id": 1000026, "gold": "NOT_ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.91507, "NOT_ACCURATE": 0.08421, "NOT ENOUGH INFO": 0.00072}, "n_tokens": 512}
+{"id": 27, "doc_id": 1000027, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.99818, "NOT_ACCURATE": 0.00148, "NOT ENOUGH INFO": 0.00033}, "n_tokens": 512}
+{"id": 28, "doc_id": 1000028, "gold": "NOT_ACCURATE", "prediction": "NOT_ACCURATE", "probs": {"ACCURATE": 0.37821, "NOT_ACCURATE": 0.61932, "NOT ENOUGH INFO": 0.00247}, "n_tokens": 512}
+{"id": 29, "doc_id": 1000029, "gold": "NOT_ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.99642, "NOT_ACCURATE": 0.00307, "NOT ENOUGH INFO": 0.00051}, "n_tokens": 512}
+{"id": 30, "doc_id": 1000030, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.97695, "NOT_ACCURATE": 0.02175, "NOT ENOUGH INFO": 0.0013}, "n_tokens": 512}
+{"id": 31, "doc_id": 1000031, "gold": "NOT ENOUGH INFO", "prediction": "NOT_ACCURATE", "probs": {"ACCURATE": 0.30927, "NOT_ACCURATE": 0.68817, "NOT ENOUGH INFO": 0.00256}, "n_tokens": 512}
+{"id": 32, "doc_id": 1000032, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.97168, "NOT_ACCURATE": 0.02719, "NOT ENOUGH INFO": 0.00113}, "n_tokens": 512}
+{"id": 33, "doc_id": 1000033, "gold": "ACCURATE", "prediction": "NOT ENOUGH INFO", "probs": {"ACCURATE": 0.25474, "NOT_ACCURATE": 0.26981, "NOT ENOUGH INFO": 0.47545}, "n_tokens": 512}
+{"id": 34, "doc_id": 1000034, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.97633, "NOT_ACCURATE": 0.02169, "NOT ENOUGH INFO": 0.00198}, "n_tokens": 512}
+{"id": 35, "doc_id": 1000035, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.9184, "NOT_ACCURATE": 0.08017, "NOT ENOUGH INFO": 0.00143}, "n_tokens": 512}
+{"id": 36, "doc_id": 1000036, "gold": "NOT_ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.96652, "NOT_ACCURATE": 0.03262, "NOT ENOUGH INFO": 0.00086}, "n_tokens": 512}
+{"id": 37, "doc_id": 1000037, "gold": "NOT_ACCURATE", "prediction": "NOT_ACCURATE", "probs": {"ACCURATE": 0.10232, "NOT_ACCURATE": 0.44971, "NOT ENOUGH INFO": 0.44796}, "n_tokens": 512}
+{"id": 38, "doc_id": 1000038, "gold": "NOT ENOUGH INFO", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.75542, "NOT_ACCURATE": 0.22049, "NOT ENOUGH INFO": 0.02409}, "n_tokens": 512}
+{"id": 39, "doc_id": 1000039, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.99182, "NOT_ACCURATE": 0.00752, "NOT ENOUGH INFO": 0.00066}, "n_tokens": 512}
+{"id": 40, "doc_id": 1000040, "gold": "ACCURATE", "prediction": "NOT_ACCURATE", "probs": {"ACCURATE": 0.35988, "NOT_ACCURATE": 0.63594, "NOT ENOUGH INFO": 0.00418}, "n_tokens": 512}
+{"id": 41, "doc_id": 1000041, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.99872, "NOT_ACCURATE": 0.00093, "NOT ENOUGH INFO": 0.00035}, "n_tokens": 512}
+{"id": 42, "doc_id": 1000042, "gold": "NOT_ACCURATE", "prediction": "NOT ENOUGH INFO", "probs": {"ACCURATE": 0.00039, "NOT_ACCURATE": 0.0007, "NOT ENOUGH INFO": 0.99891}, "n_tokens": 512}
+{"id": 43, "doc_id": 1000043, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.99789, "NOT_ACCURATE": 0.00178, "NOT ENOUGH INFO": 0.00033}, "n_tokens": 512}
+{"id": 44, "doc_id": 1000044, "gold": "NOT_ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.99617, "NOT_ACCURATE": 0.00327, "NOT ENOUGH INFO": 0.00056}, "n_tokens": 512}
+{"id": 45, "doc_id": 1000045, "gold": "NOT ENOUGH INFO", "prediction": "NOT_ACCURATE", "probs": {"ACCURATE": 0.18763, "NOT_ACCURATE": 0.80395, "NOT ENOUGH INFO": 0.00842}, "n_tokens": 512}
+{"id": 46, "doc_id": 1000046, "gold": "NOT_ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.97147, "NOT_ACCURATE": 0.02735, "NOT ENOUGH INFO": 0.00117}, "n_tokens": 512}
+{"id": 47, "doc_id": 1000047, "gold": "NOT ENOUGH INFO", "prediction": "NOT ENOUGH INFO", "probs": {"ACCURATE": 0.00616, "NOT_ACCURATE": 0.23175, "NOT ENOUGH INFO": 0.7621}, "n_tokens": 512}
+{"id": 48, "doc_id": 1000048, "gold": "NOT_ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.9901, "NOT_ACCURATE": 0.00869, "NOT ENOUGH INFO": 0.00121}, "n_tokens": 512}
+{"id": 49, "doc_id": 1000049, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.99866, "NOT_ACCURATE": 0.00115, "NOT ENOUGH INFO": 0.00019}, "n_tokens": 512}
+{"id": 50, "doc_id": 1000050, "gold": "NOT_ACCURATE", "prediction": "NOT_ACCURATE", "probs": {"ACCURATE": 0.00749, "NOT_ACCURATE": 0.99123, "NOT ENOUGH INFO": 0.00127}, "n_tokens": 512}
+{"id": 51, "doc_id": 1000051, "gold": "NOT_ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.99201, "NOT_ACCURATE": 0.00691, "NOT ENOUGH INFO": 0.00108}, "n_tokens": 512}
+{"id": 52, "doc_id": 1000052, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.99933, "NOT_ACCURATE": 0.00056, "NOT ENOUGH INFO": 0.00011}, "n_tokens": 512}
+{"id": 53, "doc_id": 1000053, "gold": "ACCURATE", "prediction": "NOT_ACCURATE", "probs": {"ACCURATE": 0.06231, "NOT_ACCURATE": 0.93232, "NOT ENOUGH INFO": 0.00537}, "n_tokens": 512}
+{"id": 54, "doc_id": 1000054, "gold": "ACCURATE", "prediction": "NOT_ACCURATE", "probs": {"ACCURATE": 0.39169, "NOT_ACCURATE": 0.60608, "NOT ENOUGH INFO": 0.00223}, "n_tokens": 512}
+{"id": 55, "doc_id": 1000055, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.99489, "NOT_ACCURATE": 0.00492, "NOT ENOUGH INFO": 0.00019}, "n_tokens": 512}
+{"id": 56, "doc_id": 1000056, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.99797, "NOT_ACCURATE": 0.00138, "NOT ENOUGH INFO": 0.00065}, "n_tokens": 512}
+{"id": 57, "doc_id": 1000057, "gold": "NOT_ACCURATE", "prediction": "NOT ENOUGH INFO", "probs": {"ACCURATE": 0.0534, "NOT_ACCURATE": 0.45286, "NOT ENOUGH INFO": 0.49374}, "n_tokens": 512}
+{"id": 58, "doc_id": 1000058, "gold": "ACCURATE", "prediction": "NOT_ACCURATE", "probs": {"ACCURATE": 0.00374, "NOT_ACCURATE": 0.99473, "NOT ENOUGH INFO": 0.00153}, "n_tokens": 512}
+{"id": 59, "doc_id": 1000059, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.8892, "NOT_ACCURATE": 0.10909, "NOT ENOUGH INFO": 0.00171}, "n_tokens": 512}
+{"id": 60, "doc_id": 1000060, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.99272, "NOT_ACCURATE": 0.00699, "NOT ENOUGH INFO": 0.00029}, "n_tokens": 512}
+{"id": 61, "doc_id": 1000061, "gold": "NOT_ACCURATE", "prediction": "NOT ENOUGH INFO", "probs": {"ACCURATE": 0.00601, "NOT_ACCURATE": 0.01673, "NOT ENOUGH INFO": 0.97726}, "n_tokens": 512}
+{"id": 62, "doc_id": 1000062, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.9104, "NOT_ACCURATE": 0.0884, "NOT ENOUGH INFO": 0.0012}, "n_tokens": 512}
+{"id": 63, "doc_id": 1000063, "gold": "NOT_ACCURATE", "prediction": "NOT_ACCURATE", "probs": {"ACCURATE": 0.41451, "NOT_ACCURATE": 0.50318, "NOT ENOUGH INFO": 0.0823}, "n_tokens": 512}
+{"id": 64, "doc_id": 1000064, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.99072, "NOT_ACCURATE": 0.0089, "NOT ENOUGH INFO": 0.00039}, "n_tokens": 512}
+{"id": 65, "doc_id": 1000065, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.97629, "NOT_ACCURATE": 0.02263, "NOT ENOUGH INFO": 0.00108}, "n_tokens": 512}
+{"id": 66, "doc_id": 1000066, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.93312, "NOT_ACCURATE": 0.06576, "NOT ENOUGH INFO": 0.00112}, "n_tokens": 512}
+{"id": 67, "doc_id": 1000067, "gold": "NOT_ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.99576, "NOT_ACCURATE": 0.00363, "NOT ENOUGH INFO": 0.00061}, "n_tokens": 512}
+{"id": 68, "doc_id": 1000068, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.99431, "NOT_ACCURATE": 0.0049, "NOT ENOUGH INFO": 0.00079}, "n_tokens": 512}
+{"id": 69, "doc_id": 1000069, "gold": "NOT_ACCURATE", "prediction": "NOT_ACCURATE", "probs": {"ACCURATE": 0.00029, "NOT_ACCURATE": 0.99868, "NOT ENOUGH INFO": 0.00103}, "n_tokens": 512}
+{"id": 70, "doc_id": 1000070, "gold": "NOT ENOUGH INFO", "prediction": "NOT_ACCURATE", "probs": {"ACCURATE": 0.00301, "NOT_ACCURATE": 0.98104, "NOT ENOUGH INFO": 0.01595}, "n_tokens": 512}
+{"id": 71, "doc_id": 1000071, "gold": "NOT ENOUGH INFO", "prediction": "NOT ENOUGH INFO", "probs": {"ACCURATE": 0.00025, "NOT_ACCURATE": 0.00171, "NOT ENOUGH INFO": 0.99804}, "n_tokens": 512}
+{"id": 72, "doc_id": 1000072, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.99721, "NOT_ACCURATE": 0.00215, "NOT ENOUGH INFO": 0.00063}, "n_tokens": 512}
+{"id": 73, "doc_id": 1000073, "gold": "ACCURATE", "prediction": "NOT_ACCURATE", "probs": {"ACCURATE": 0.01304, "NOT_ACCURATE": 0.91244, "NOT ENOUGH INFO": 0.07452}, "n_tokens": 512}
+{"id": 74, "doc_id": 1000074, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.99474, "NOT_ACCURATE": 0.00444, "NOT ENOUGH INFO": 0.00082}, "n_tokens": 512}
+{"id": 75, "doc_id": 1000075, "gold": "ACCURATE", "prediction": "NOT_ACCURATE", "probs": {"ACCURATE": 0.0097, "NOT_ACCURATE": 0.97936, "NOT ENOUGH INFO": 0.01094}, "n_tokens": 512}
+{"id": 76, "doc_id": 1000076, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.99911, "NOT_ACCURATE": 0.00073, "NOT ENOUGH INFO": 0.00016}, "n_tokens": 512}
+{"id": 77, "doc_id": 1000077, "gold": "NOT_ACCURATE", "prediction": "NOT_ACCURATE", "probs": {"ACCURATE": 0.30635, "NOT_ACCURATE": 0.69171, "NOT ENOUGH INFO": 0.00194}, "n_tokens": 512}
+{"id": 78, "doc_id": 1000078, "gold": "ACCURATE", "prediction": "NOT_ACCURATE", "probs": {"ACCURATE": 0.00259, "NOT_ACCURATE": 0.99388, "NOT ENOUGH INFO": 0.00353}, "n_tokens": 512}
+{"id": 79, "doc_id": 1000079, "gold": "NOT_ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.99832, "NOT_ACCURATE": 0.00128, "NOT ENOUGH INFO": 0.0004}, "n_tokens": 512}
+{"id": 80, "doc_id": 1000080, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.97988, "NOT_ACCURATE": 0.01948, "NOT ENOUGH INFO": 0.00064}, "n_tokens": 512}
+{"id": 81, "doc_id": 1000081, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.99825, "NOT_ACCURATE": 0.00159, "NOT ENOUGH INFO": 0.00015}, "n_tokens": 512}
+{"id": 82, "doc_id": 1000082, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.99659, "NOT_ACCURATE": 0.00295, "NOT ENOUGH INFO": 0.00046}, "n_tokens": 512}
+{"id": 83, "doc_id": 1000083, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.99878, "NOT_ACCURATE": 0.00098, "NOT ENOUGH INFO": 0.00025}, "n_tokens": 512}
+{"id": 84, "doc_id": 1000084, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.99871, "NOT_ACCURATE": 0.00103, "NOT ENOUGH INFO": 0.00026}, "n_tokens": 512}
+{"id": 85, "doc_id": 1000085, "gold": "ACCURATE", "prediction": "NOT_ACCURATE", "probs": {"ACCURATE": 0.00222, "NOT_ACCURATE": 0.99531, "NOT ENOUGH INFO": 0.00247}, "n_tokens": 512}
+{"id": 86, "doc_id": 1000086, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.9678, "NOT_ACCURATE": 0.03149, "NOT ENOUGH INFO": 0.00071}, "n_tokens": 512}
+{"id": 87, "doc_id": 1000087, "gold": "NOT_ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.91853, "NOT_ACCURATE": 0.07802, "NOT ENOUGH INFO": 0.00345}, "n_tokens": 512}
+{"id": 88, "doc_id": 1000088, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.69079, "NOT_ACCURATE": 0.30804, "NOT ENOUGH INFO": 0.00117}, "n_tokens": 512}
+{"id": 89, "doc_id": 1000089, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.97991, "NOT_ACCURATE": 0.01933, "NOT ENOUGH INFO": 0.00077}, "n_tokens": 512}
+{"id": 90, "doc_id": 1000090, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.99889, "NOT_ACCURATE": 0.00068, "NOT ENOUGH INFO": 0.00043}, "n_tokens": 512}
+{"id": 91, "doc_id": 1000091, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.69733, "NOT_ACCURATE": 0.28271, "NOT ENOUGH INFO": 0.01996}, "n_tokens": 512}
+{"id": 92, "doc_id": 1000092, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.99719, "NOT_ACCURATE": 0.00227, "NOT ENOUGH INFO": 0.00054}, "n_tokens": 512}
+{"id": 93, "doc_id": 1000093, "gold": "NOT_ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.97768, "NOT_ACCURATE": 0.02175, "NOT ENOUGH INFO": 0.00058}, "n_tokens": 512}
+{"id": 94, "doc_id": 1000094, "gold": "NOT_ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.98529, "NOT_ACCURATE": 0.01386, "NOT ENOUGH INFO": 0.00085}, "n_tokens": 512}
+{"id": 95, "doc_id": 1000095, "gold": "NOT_ACCURATE", "prediction": "NOT_ACCURATE", "probs": {"ACCURATE": 0.05242, "NOT_ACCURATE": 0.94654, "NOT ENOUGH INFO": 0.00104}, "n_tokens": 512}
+{"id": 96, "doc_id": 1000096, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.98416, "NOT_ACCURATE": 0.01512, "NOT ENOUGH INFO": 0.00072}, "n_tokens": 512}
+{"id": 97, "doc_id": 1000097, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.99755, "NOT_ACCURATE": 0.00167, "NOT ENOUGH INFO": 0.00078}, "n_tokens": 512}
+{"id": 98, "doc_id": 1000098, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.7145, "NOT_ACCURATE": 0.25186, "NOT ENOUGH INFO": 0.03365}, "n_tokens": 512}
+{"id": 99, "doc_id": 1000099, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.9524, "NOT_ACCURATE": 0.04614, "NOT ENOUGH INFO": 0.00147}, "n_tokens": 512}
+{"id": 100, "doc_id": 1000100, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.86534, "NOT_ACCURATE": 0.13206, "NOT ENOUGH INFO": 0.0026}, "n_tokens": 512}
+{"id": 101, "doc_id": 1000101, "gold": "ACCURATE", "prediction": "NOT_ACCURATE", "probs": {"ACCURATE": 0.10382, "NOT_ACCURATE": 0.89384, "NOT ENOUGH INFO": 0.00234}, "n_tokens": 512}
+{"id": 102, "doc_id": 1000102, "gold": "NOT_ACCURATE", "prediction": "NOT_ACCURATE", "probs": {"ACCURATE": 0.37927, "NOT_ACCURATE": 0.61622, "NOT ENOUGH INFO": 0.00451}, "n_tokens": 512}
+{"id": 103, "doc_id": 1000103, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.99349, "NOT_ACCURATE": 0.00604, "NOT ENOUGH INFO": 0.00047}, "n_tokens": 512}
+{"id": 104, "doc_id": 1000104, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.94147, "NOT_ACCURATE": 0.05639, "NOT ENOUGH INFO": 0.00214}, "n_tokens": 512}
+{"id": 105, "doc_id": 1000105, "gold": "NOT_ACCURATE", "prediction": "NOT_ACCURATE", "probs": {"ACCURATE": 0.19748, "NOT_ACCURATE": 0.80115, "NOT ENOUGH INFO": 0.00136}, "n_tokens": 512}
+{"id": 106, "doc_id": 1000106, "gold": "NOT_ACCURATE", "prediction": "NOT_ACCURATE", "probs": {"ACCURATE": 0.02016, "NOT_ACCURATE": 0.97747, "NOT ENOUGH INFO": 0.00237}, "n_tokens": 512}
+{"id": 107, "doc_id": 1000107, "gold": "ACCURATE", "prediction": "NOT ENOUGH INFO", "probs": {"ACCURATE": 0.10492, "NOT_ACCURATE": 0.20794, "NOT ENOUGH INFO": 0.68715}, "n_tokens": 512}
+{"id": 108, "doc_id": 1000108, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.94914, "NOT_ACCURATE": 0.04963, "NOT ENOUGH INFO": 0.00123}, "n_tokens": 512}
+{"id": 109, "doc_id": 1000109, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.99854, "NOT_ACCURATE": 0.00122, "NOT ENOUGH INFO": 0.00024}, "n_tokens": 512}
+{"id": 110, "doc_id": 1000110, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.99425, "NOT_ACCURATE": 0.00515, "NOT ENOUGH INFO": 0.00061}, "n_tokens": 512}
+{"id": 111, "doc_id": 1000111, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.9984, "NOT_ACCURATE": 0.00109, "NOT ENOUGH INFO": 0.00051}, "n_tokens": 512}
+{"id": 112, "doc_id": 1000112, "gold": "NOT_ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.97352, "NOT_ACCURATE": 0.02356, "NOT ENOUGH INFO": 0.00291}, "n_tokens": 512}
+{"id": 113, "doc_id": 1000113, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.99908, "NOT_ACCURATE": 0.00073, "NOT ENOUGH INFO": 0.00019}, "n_tokens": 512}
+{"id": 114, "doc_id": 1000114, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.99758, "NOT_ACCURATE": 0.00211, "NOT ENOUGH INFO": 0.00031}, "n_tokens": 512}
+{"id": 115, "doc_id": 1000115, "gold": "NOT ENOUGH INFO", "prediction": "NOT_ACCURATE", "probs": {"ACCURATE": 0.2207, "NOT_ACCURATE": 0.71316, "NOT ENOUGH INFO": 0.06614}, "n_tokens": 512}
+{"id": 116, "doc_id": 1000116, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.99535, "NOT_ACCURATE": 0.00438, "NOT ENOUGH INFO": 0.00027}, "n_tokens": 512}
+{"id": 117, "doc_id": 1000117, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.99799, "NOT_ACCURATE": 0.0017, "NOT ENOUGH INFO": 0.00031}, "n_tokens": 512}
+{"id": 118, "doc_id": 1000118, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.99919, "NOT_ACCURATE": 0.00065, "NOT ENOUGH INFO": 0.00016}, "n_tokens": 512}
+{"id": 119, "doc_id": 1000119, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.99297, "NOT_ACCURATE": 0.00661, "NOT ENOUGH INFO": 0.00042}, "n_tokens": 512}
+{"id": 120, "doc_id": 1000120, "gold": "NOT_ACCURATE", "prediction": "NOT_ACCURATE", "probs": {"ACCURATE": 0.04649, "NOT_ACCURATE": 0.88494, "NOT ENOUGH INFO": 0.06857}, "n_tokens": 512}
+{"id": 121, "doc_id": 1000121, "gold": "NOT_ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.98969, "NOT_ACCURATE": 0.00821, "NOT ENOUGH INFO": 0.0021}, "n_tokens": 512}
+{"id": 122, "doc_id": 1000122, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.99848, "NOT_ACCURATE": 0.00115, "NOT ENOUGH INFO": 0.00037}, "n_tokens": 512}
+{"id": 123, "doc_id": 1000123, "gold": "NOT_ACCURATE", "prediction": "NOT_ACCURATE", "probs": {"ACCURATE": 0.0279, "NOT_ACCURATE": 0.96966, "NOT ENOUGH INFO": 0.00244}, "n_tokens": 512}
+{"id": 124, "doc_id": 1000124, "gold": "NOT ENOUGH INFO", "prediction": "NOT_ACCURATE", "probs": {"ACCURATE": 0.14096, "NOT_ACCURATE": 0.8079, "NOT ENOUGH INFO": 0.05115}, "n_tokens": 512}
+{"id": 125, "doc_id": 1000125, "gold": "NOT_ACCURATE", "prediction": "NOT_ACCURATE", "probs": {"ACCURATE": 0.0364, "NOT_ACCURATE": 0.96218, "NOT ENOUGH INFO": 0.00142}, "n_tokens": 512}
+{"id": 126, "doc_id": 1000126, "gold": "NOT_ACCURATE", "prediction": "NOT_ACCURATE", "probs": {"ACCURATE": 0.05719, "NOT_ACCURATE": 0.49601, "NOT ENOUGH INFO": 0.4468}, "n_tokens": 512}
+{"id": 127, "doc_id": 1000127, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.98237, "NOT_ACCURATE": 0.01698, "NOT ENOUGH INFO": 0.00065}, "n_tokens": 512}
+{"id": 128, "doc_id": 1000128, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.95973, "NOT_ACCURATE": 0.03755, "NOT ENOUGH INFO": 0.00272}, "n_tokens": 512}
+{"id": 129, "doc_id": 1000129, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.99116, "NOT_ACCURATE": 0.00835, "NOT ENOUGH INFO": 0.00049}, "n_tokens": 512}
+{"id": 130, "doc_id": 1000130, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.92698, "NOT_ACCURATE": 0.06921, "NOT ENOUGH INFO": 0.00381}, "n_tokens": 512}
+{"id": 131, "doc_id": 1000131, "gold": "ACCURATE", "prediction": "NOT_ACCURATE", "probs": {"ACCURATE": 0.01522, "NOT_ACCURATE": 0.98084, "NOT ENOUGH INFO": 0.00393}, "n_tokens": 512}
+{"id": 132, "doc_id": 1000132, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.95973, "NOT_ACCURATE": 0.03967, "NOT ENOUGH INFO": 0.0006}, "n_tokens": 512}
+{"id": 133, "doc_id": 1000133, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.99757, "NOT_ACCURATE": 0.00186, "NOT ENOUGH INFO": 0.00056}, "n_tokens": 512}
+{"id": 134, "doc_id": 1000134, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.94291, "NOT_ACCURATE": 0.05595, "NOT ENOUGH INFO": 0.00114}, "n_tokens": 512}
+{"id": 135, "doc_id": 1000135, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.83132, "NOT_ACCURATE": 0.16394, "NOT ENOUGH INFO": 0.00474}, "n_tokens": 512}
+{"id": 136, "doc_id": 1000136, "gold": "NOT_ACCURATE", "prediction": "NOT_ACCURATE", "probs": {"ACCURATE": 0.26298, "NOT_ACCURATE": 0.73468, "NOT ENOUGH INFO": 0.00234}, "n_tokens": 512}
+{"id": 137, "doc_id": 1000137, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.84985, "NOT_ACCURATE": 0.14564, "NOT ENOUGH INFO": 0.00451}, "n_tokens": 512}
+{"id": 138, "doc_id": 1000138, "gold": "NOT_ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.98326, "NOT_ACCURATE": 0.01401, "NOT ENOUGH INFO": 0.00273}, "n_tokens": 512}
+{"id": 139, "doc_id": 1000139, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.9973, "NOT_ACCURATE": 0.00223, "NOT ENOUGH INFO": 0.00047}, "n_tokens": 512}
+{"id": 140, "doc_id": 1000140, "gold": "NOT ENOUGH INFO", "prediction": "NOT_ACCURATE", "probs": {"ACCURATE": 0.03172, "NOT_ACCURATE": 0.96521, "NOT ENOUGH INFO": 0.00307}, "n_tokens": 512}
+{"id": 141, "doc_id": 1000141, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.99256, "NOT_ACCURATE": 0.00676, "NOT ENOUGH INFO": 0.00068}, "n_tokens": 512}
+{"id": 142, "doc_id": 1000142, "gold": "NOT_ACCURATE", "prediction": "NOT_ACCURATE", "probs": {"ACCURATE": 0.02149, "NOT_ACCURATE": 0.97528, "NOT ENOUGH INFO": 0.00323}, "n_tokens": 512}
+{"id": 143, "doc_id": 1000143, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.99698, "NOT_ACCURATE": 0.00224, "NOT ENOUGH INFO": 0.00078}, "n_tokens": 512}
+{"id": 144, "doc_id": 1000144, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.99648, "NOT_ACCURATE": 0.00302, "NOT ENOUGH INFO": 0.0005}, "n_tokens": 512}
+{"id": 145, "doc_id": 1000145, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.99939, "NOT_ACCURATE": 0.00044, "NOT ENOUGH INFO": 0.00017}, "n_tokens": 512}
+{"id": 146, "doc_id": 1000146, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.99858, "NOT_ACCURATE": 0.00106, "NOT ENOUGH INFO": 0.00036}, "n_tokens": 512}
+{"id": 147, "doc_id": 1000147, "gold": "NOT_ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.9986, "NOT_ACCURATE": 0.00117, "NOT ENOUGH INFO": 0.00023}, "n_tokens": 512}
+{"id": 148, "doc_id": 1000148, "gold": "NOT ENOUGH INFO", "prediction": "NOT ENOUGH INFO", "probs": {"ACCURATE": 0.0055, "NOT_ACCURATE": 0.00774, "NOT ENOUGH INFO": 0.98676}, "n_tokens": 512}
+{"id": 149, "doc_id": 1000149, "gold": "NOT_ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.96492, "NOT_ACCURATE": 0.03395, "NOT ENOUGH INFO": 0.00113}, "n_tokens": 512}
+{"id": 150, "doc_id": 1000150, "gold": "NOT_ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.98454, "NOT_ACCURATE": 0.00857, "NOT ENOUGH INFO": 0.00689}, "n_tokens": 512}
+{"id": 151, "doc_id": 1000151, "gold": "NOT_ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.99603, "NOT_ACCURATE": 0.00307, "NOT ENOUGH INFO": 0.0009}, "n_tokens": 512}
+{"id": 152, "doc_id": 1000152, "gold": "NOT_ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.94172, "NOT_ACCURATE": 0.05736, "NOT ENOUGH INFO": 0.00092}, "n_tokens": 512}
+{"id": 153, "doc_id": 1000153, "gold": "NOT_ACCURATE", "prediction": "NOT_ACCURATE", "probs": {"ACCURATE": 0.03899, "NOT_ACCURATE": 0.78855, "NOT ENOUGH INFO": 0.17246}, "n_tokens": 512}
+{"id": 154, "doc_id": 1000154, "gold": "ACCURATE", "prediction": "NOT_ACCURATE", "probs": {"ACCURATE": 0.35128, "NOT_ACCURATE": 0.57437, "NOT ENOUGH INFO": 0.07435}, "n_tokens": 512}
+{"id": 155, "doc_id": 1000155, "gold": "NOT_ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.9937, "NOT_ACCURATE": 0.00358, "NOT ENOUGH INFO": 0.00272}, "n_tokens": 512}
+{"id": 156, "doc_id": 1000156, "gold": "NOT_ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.9865, "NOT_ACCURATE": 0.00457, "NOT ENOUGH INFO": 0.00894}, "n_tokens": 512}
+{"id": 157, "doc_id": 1000157, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.99928, "NOT_ACCURATE": 0.00057, "NOT ENOUGH INFO": 0.00015}, "n_tokens": 512}
+{"id": 158, "doc_id": 1000158, "gold": "ACCURATE", "prediction": "NOT ENOUGH INFO", "probs": {"ACCURATE": 0.04872, "NOT_ACCURATE": 0.11999, "NOT ENOUGH INFO": 0.83129}, "n_tokens": 512}
+{"id": 159, "doc_id": 1000159, "gold": "NOT_ACCURATE", "prediction": "NOT_ACCURATE", "probs": {"ACCURATE": 0.00288, "NOT_ACCURATE": 0.98132, "NOT ENOUGH INFO": 0.01579}, "n_tokens": 512}
+{"id": 160, "doc_id": 1000160, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.99352, "NOT_ACCURATE": 0.00613, "NOT ENOUGH INFO": 0.00035}, "n_tokens": 512}
+{"id": 161, "doc_id": 1000161, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.9968, "NOT_ACCURATE": 0.00217, "NOT ENOUGH INFO": 0.00103}, "n_tokens": 512}
+{"id": 162, "doc_id": 1000162, "gold": "ACCURATE", "prediction": "NOT_ACCURATE", "probs": {"ACCURATE": 0.26921, "NOT_ACCURATE": 0.72966, "NOT ENOUGH INFO": 0.00113}, "n_tokens": 512}
+{"id": 163, "doc_id": 1000163, "gold": "NOT_ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.88659, "NOT_ACCURATE": 0.1113, "NOT ENOUGH INFO": 0.00212}, "n_tokens": 512}
+{"id": 164, "doc_id": 1000164, "gold": "NOT_ACCURATE", "prediction": "NOT_ACCURATE", "probs": {"ACCURATE": 0.45917, "NOT_ACCURATE": 0.52747, "NOT ENOUGH INFO": 0.01336}, "n_tokens": 512}
+{"id": 165, "doc_id": 1000165, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.99355, "NOT_ACCURATE": 0.00573, "NOT ENOUGH INFO": 0.00072}, "n_tokens": 512}
+{"id": 166, "doc_id": 1000166, "gold": "NOT ENOUGH INFO", "prediction": "NOT ENOUGH INFO", "probs": {"ACCURATE": 0.00297, "NOT_ACCURATE": 0.02163, "NOT ENOUGH INFO": 0.97539}, "n_tokens": 512}
+{"id": 167, "doc_id": 1000167, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.99653, "NOT_ACCURATE": 0.00288, "NOT ENOUGH INFO": 0.00059}, "n_tokens": 512}
+{"id": 168, "doc_id": 1000168, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.99918, "NOT_ACCURATE": 0.0006, "NOT ENOUGH INFO": 0.00023}, "n_tokens": 512}
+{"id": 169, "doc_id": 1000169, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.46451, "NOT_ACCURATE": 0.44978, "NOT ENOUGH INFO": 0.08572}, "n_tokens": 512}
+{"id": 170, "doc_id": 1000170, "gold": "ACCURATE", "prediction": "NOT_ACCURATE", "probs": {"ACCURATE": 0.07702, "NOT_ACCURATE": 0.92038, "NOT ENOUGH INFO": 0.0026}, "n_tokens": 512}
+{"id": 171, "doc_id": 1000171, "gold": "NOT_ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.96487, "NOT_ACCURATE": 0.03429, "NOT ENOUGH INFO": 0.00084}, "n_tokens": 512}
+{"id": 172, "doc_id": 1000172, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.99107, "NOT_ACCURATE": 0.00774, "NOT ENOUGH INFO": 0.00119}, "n_tokens": 512}
+{"id": 173, "doc_id": 1000173, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.60875, "NOT_ACCURATE": 0.3802, "NOT ENOUGH INFO": 0.01104}, "n_tokens": 512}
+{"id": 174, "doc_id": 1000174, "gold": "NOT ENOUGH INFO", "prediction": "NOT ENOUGH INFO", "probs": {"ACCURATE": 0.02338, "NOT_ACCURATE": 0.03621, "NOT ENOUGH INFO": 0.9404}, "n_tokens": 512}
+{"id": 175, "doc_id": 1000175, "gold": "NOT_ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.85523, "NOT_ACCURATE": 0.10948, "NOT ENOUGH INFO": 0.0353}, "n_tokens": 512}
+{"id": 176, "doc_id": 1000176, "gold": "NOT_ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.85989, "NOT_ACCURATE": 0.1384, "NOT ENOUGH INFO": 0.00171}, "n_tokens": 512}
+{"id": 177, "doc_id": 1000177, "gold": "NOT_ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.99921, "NOT_ACCURATE": 0.00059, "NOT ENOUGH INFO": 0.00021}, "n_tokens": 512}
+{"id": 178, "doc_id": 1000178, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.99867, "NOT_ACCURATE": 0.00091, "NOT ENOUGH INFO": 0.00042}, "n_tokens": 512}
+{"id": 179, "doc_id": 1000179, "gold": "NOT_ACCURATE", "prediction": "NOT_ACCURATE", "probs": {"ACCURATE": 0.00098, "NOT_ACCURATE": 0.99827, "NOT ENOUGH INFO": 0.00075}, "n_tokens": 512}
+{"id": 180, "doc_id": 1000180, "gold": "ACCURATE", "prediction": "NOT_ACCURATE", "probs": {"ACCURATE": 0.01955, "NOT_ACCURATE": 0.96721, "NOT ENOUGH INFO": 0.01324}, "n_tokens": 512}
+{"id": 181, "doc_id": 1000181, "gold": "NOT_ACCURATE", "prediction": "NOT_ACCURATE", "probs": {"ACCURATE": 0.14356, "NOT_ACCURATE": 0.8528, "NOT ENOUGH INFO": 0.00364}, "n_tokens": 512}
+{"id": 182, "doc_id": 1000182, "gold": "NOT ENOUGH INFO", "prediction": "NOT_ACCURATE", "probs": {"ACCURATE": 0.01376, "NOT_ACCURATE": 0.52773, "NOT ENOUGH INFO": 0.4585}, "n_tokens": 512}
+{"id": 183, "doc_id": 1000183, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.98257, "NOT_ACCURATE": 0.01639, "NOT ENOUGH INFO": 0.00104}, "n_tokens": 512}
+{"id": 184, "doc_id": 1000184, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.97635, "NOT_ACCURATE": 0.02026, "NOT ENOUGH INFO": 0.00339}, "n_tokens": 512}
+{"id": 185, "doc_id": 1000185, "gold": "NOT ENOUGH INFO", "prediction": "NOT ENOUGH INFO", "probs": {"ACCURATE": 0.00734, "NOT_ACCURATE": 0.28298, "NOT ENOUGH INFO": 0.70968}, "n_tokens": 512}
+{"id": 186, "doc_id": 1000186, "gold": "NOT_ACCURATE", "prediction": "NOT_ACCURATE", "probs": {"ACCURATE": 0.04134, "NOT_ACCURATE": 0.94413, "NOT ENOUGH INFO": 0.01453}, "n_tokens": 512}
+{"id": 187, "doc_id": 1000187, "gold": "ACCURATE", "prediction": "NOT_ACCURATE", "probs": {"ACCURATE": 0.0051, "NOT_ACCURATE": 0.51687, "NOT ENOUGH INFO": 0.47803}, "n_tokens": 512}
+{"id": 188, "doc_id": 1000188, "gold": "NOT ENOUGH INFO", "prediction": "NOT_ACCURATE", "probs": {"ACCURATE": 0.00666, "NOT_ACCURATE": 0.77918, "NOT ENOUGH INFO": 0.21416}, "n_tokens": 512}
+{"id": 189, "doc_id": 1000189, "gold": "NOT ENOUGH INFO", "prediction": "NOT ENOUGH INFO", "probs": {"ACCURATE": 0.00043, "NOT_ACCURATE": 0.00566, "NOT ENOUGH INFO": 0.99391}, "n_tokens": 512}
+{"id": 190, "doc_id": 1000190, "gold": "NOT_ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.79595, "NOT_ACCURATE": 0.17736, "NOT ENOUGH INFO": 0.02668}, "n_tokens": 512}
+{"id": 191, "doc_id": 1000191, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.99892, "NOT_ACCURATE": 0.0007, "NOT ENOUGH INFO": 0.00038}, "n_tokens": 512}
+{"id": 192, "doc_id": 1000192, "gold": "NOT_ACCURATE", "prediction": "NOT_ACCURATE", "probs": {"ACCURATE": 0.00788, "NOT_ACCURATE": 0.98033, "NOT ENOUGH INFO": 0.01179}, "n_tokens": 512}
+{"id": 193, "doc_id": 1000193, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.99406, "NOT_ACCURATE": 0.00498, "NOT ENOUGH INFO": 0.00096}, "n_tokens": 512}
+{"id": 194, "doc_id": 1000194, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.99913, "NOT_ACCURATE": 0.00057, "NOT ENOUGH INFO": 0.0003}, "n_tokens": 512}
+{"id": 195, "doc_id": 1000195, "gold": "NOT ENOUGH INFO", "prediction": "NOT ENOUGH INFO", "probs": {"ACCURATE": 0.02024, "NOT_ACCURATE": 0.06971, "NOT ENOUGH INFO": 0.91004}, "n_tokens": 512}
+{"id": 196, "doc_id": 1000196, "gold": "NOT_ACCURATE", "prediction": "NOT_ACCURATE", "probs": {"ACCURATE": 0.06831, "NOT_ACCURATE": 0.88074, "NOT ENOUGH INFO": 0.05094}, "n_tokens": 512}
+{"id": 197, "doc_id": 1000197, "gold": "NOT_ACCURATE", "prediction": "NOT_ACCURATE", "probs": {"ACCURATE": 0.0961, "NOT_ACCURATE": 0.83951, "NOT ENOUGH INFO": 0.06439}, "n_tokens": 512}
+{"id": 198, "doc_id": 1000198, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.77278, "NOT_ACCURATE": 0.22489, "NOT ENOUGH INFO": 0.00232}, "n_tokens": 512}
+{"id": 199, "doc_id": 1000199, "gold": "NOT_ACCURATE", "prediction": "NOT_ACCURATE", "probs": {"ACCURATE": 0.00417, "NOT_ACCURATE": 0.94059, "NOT ENOUGH INFO": 0.05524}, "n_tokens": 512}
+{"id": 200, "doc_id": 1000200, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.99934, "NOT_ACCURATE": 0.0005, "NOT ENOUGH INFO": 0.00016}, "n_tokens": 512}
+{"id": 201, "doc_id": 1000201, "gold": "NOT ENOUGH INFO", "prediction": "NOT ENOUGH INFO", "probs": {"ACCURATE": 0.00035, "NOT_ACCURATE": 0.00944, "NOT ENOUGH INFO": 0.9902}, "n_tokens": 512}
+{"id": 202, "doc_id": 1000202, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.999, "NOT_ACCURATE": 0.00075, "NOT ENOUGH INFO": 0.00026}, "n_tokens": 512}
+{"id": 203, "doc_id": 1000203, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.5116, "NOT_ACCURATE": 0.23315, "NOT ENOUGH INFO": 0.25525}, "n_tokens": 512}
+{"id": 204, "doc_id": 1000204, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.99908, "NOT_ACCURATE": 0.00066, "NOT ENOUGH INFO": 0.00026}, "n_tokens": 512}
+{"id": 205, "doc_id": 1000205, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.99899, "NOT_ACCURATE": 0.0008, "NOT ENOUGH INFO": 0.00021}, "n_tokens": 512}
+{"id": 206, "doc_id": 1000206, "gold": "ACCURATE", "prediction": "NOT_ACCURATE", "probs": {"ACCURATE": 0.32316, "NOT_ACCURATE": 0.35371, "NOT ENOUGH INFO": 0.32314}, "n_tokens": 512}
+{"id": 207, "doc_id": 1000207, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.99643, "NOT_ACCURATE": 0.00265, "NOT ENOUGH INFO": 0.00092}, "n_tokens": 512}
+{"id": 208, "doc_id": 1000208, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.99825, "NOT_ACCURATE": 0.0014, "NOT ENOUGH INFO": 0.00034}, "n_tokens": 512}
+{"id": 209, "doc_id": 1000209, "gold": "NOT ENOUGH INFO", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.99549, "NOT_ACCURATE": 0.00401, "NOT ENOUGH INFO": 0.0005}, "n_tokens": 512}
+{"id": 210, "doc_id": 1000210, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.99186, "NOT_ACCURATE": 0.00769, "NOT ENOUGH INFO": 0.00045}, "n_tokens": 512}
+{"id": 211, "doc_id": 1000211, "gold": "ACCURATE", "prediction": "NOT_ACCURATE", "probs": {"ACCURATE": 0.46459, "NOT_ACCURATE": 0.53266, "NOT ENOUGH INFO": 0.00275}, "n_tokens": 512}
+{"id": 212, "doc_id": 1000212, "gold": "ACCURATE", "prediction": "NOT ENOUGH INFO", "probs": {"ACCURATE": 0.00553, "NOT_ACCURATE": 0.02062, "NOT ENOUGH INFO": 0.97385}, "n_tokens": 512}
+{"id": 213, "doc_id": 1000213, "gold": "NOT ENOUGH INFO", "prediction": "NOT ENOUGH INFO", "probs": {"ACCURATE": 0.00034, "NOT_ACCURATE": 0.00351, "NOT ENOUGH INFO": 0.99615}, "n_tokens": 512}
+{"id": 214, "doc_id": 1000214, "gold": "ACCURATE", "prediction": "NOT_ACCURATE", "probs": {"ACCURATE": 0.00303, "NOT_ACCURATE": 0.99509, "NOT ENOUGH INFO": 0.00188}, "n_tokens": 512}
+{"id": 215, "doc_id": 1000215, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.99901, "NOT_ACCURATE": 0.00068, "NOT ENOUGH INFO": 0.00032}, "n_tokens": 512}
+{"id": 216, "doc_id": 1000216, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.95455, "NOT_ACCURATE": 0.03983, "NOT ENOUGH INFO": 0.00562}, "n_tokens": 512}
+{"id": 217, "doc_id": 1000217, "gold": "NOT_ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.99781, "NOT_ACCURATE": 0.00183, "NOT ENOUGH INFO": 0.00036}, "n_tokens": 512}
+{"id": 218, "doc_id": 1000218, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.9925, "NOT_ACCURATE": 0.00668, "NOT ENOUGH INFO": 0.00082}, "n_tokens": 512}
+{"id": 219, "doc_id": 1000219, "gold": "NOT_ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.99364, "NOT_ACCURATE": 0.00601, "NOT ENOUGH INFO": 0.00035}, "n_tokens": 512}
+{"id": 220, "doc_id": 1000220, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.99896, "NOT_ACCURATE": 0.00088, "NOT ENOUGH INFO": 0.00015}, "n_tokens": 512}
+{"id": 221, "doc_id": 1000221, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.99776, "NOT_ACCURATE": 0.00194, "NOT ENOUGH INFO": 0.0003}, "n_tokens": 512}
+{"id": 222, "doc_id": 1000222, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.90686, "NOT_ACCURATE": 0.0917, "NOT ENOUGH INFO": 0.00144}, "n_tokens": 512}
+{"id": 223, "doc_id": 1000223, "gold": "NOT_ACCURATE", "prediction": "NOT_ACCURATE", "probs": {"ACCURATE": 0.02965, "NOT_ACCURATE": 0.86824, "NOT ENOUGH INFO": 0.10211}, "n_tokens": 512}
+{"id": 224, "doc_id": 1000224, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.76818, "NOT_ACCURATE": 0.22498, "NOT ENOUGH INFO": 0.00684}, "n_tokens": 512}
+{"id": 225, "doc_id": 1000225, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.9987, "NOT_ACCURATE": 0.00081, "NOT ENOUGH INFO": 0.00049}, "n_tokens": 512}
+{"id": 226, "doc_id": 1000226, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.9925, "NOT_ACCURATE": 0.00696, "NOT ENOUGH INFO": 0.00053}, "n_tokens": 512}
+{"id": 227, "doc_id": 1000227, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.99899, "NOT_ACCURATE": 0.00085, "NOT ENOUGH INFO": 0.00015}, "n_tokens": 512}
+{"id": 228, "doc_id": 1000228, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.99734, "NOT_ACCURATE": 0.00192, "NOT ENOUGH INFO": 0.00074}, "n_tokens": 512}
+{"id": 229, "doc_id": 1000229, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.99134, "NOT_ACCURATE": 0.00813, "NOT ENOUGH INFO": 0.00053}, "n_tokens": 512}
+{"id": 230, "doc_id": 1000230, "gold": "ACCURATE", "prediction": "NOT_ACCURATE", "probs": {"ACCURATE": 0.00902, "NOT_ACCURATE": 0.99009, "NOT ENOUGH INFO": 0.00089}, "n_tokens": 512}
+{"id": 231, "doc_id": 1000231, "gold": "ACCURATE", "prediction": "NOT ENOUGH INFO", "probs": {"ACCURATE": 0.00187, "NOT_ACCURATE": 0.32964, "NOT ENOUGH INFO": 0.66849}, "n_tokens": 512}
+{"id": 232, "doc_id": 1000232, "gold": "NOT_ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.89719, "NOT_ACCURATE": 0.09737, "NOT ENOUGH INFO": 0.00544}, "n_tokens": 512}
+{"id": 233, "doc_id": 1000233, "gold": "NOT_ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.99242, "NOT_ACCURATE": 0.00706, "NOT ENOUGH INFO": 0.00052}, "n_tokens": 512}
+{"id": 234, "doc_id": 1000234, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.90024, "NOT_ACCURATE": 0.09325, "NOT ENOUGH INFO": 0.00651}, "n_tokens": 512}
+{"id": 235, "doc_id": 1000235, "gold": "NOT_ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.94334, "NOT_ACCURATE": 0.05519, "NOT ENOUGH INFO": 0.00147}, "n_tokens": 512}
+{"id": 236, "doc_id": 1000236, "gold": "NOT_ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.99727, "NOT_ACCURATE": 0.00188, "NOT ENOUGH INFO": 0.00086}, "n_tokens": 512}
+{"id": 237, "doc_id": 1000237, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.98809, "NOT_ACCURATE": 0.01102, "NOT ENOUGH INFO": 0.00089}, "n_tokens": 512}
+{"id": 238, "doc_id": 1000238, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.83064, "NOT_ACCURATE": 0.15592, "NOT ENOUGH INFO": 0.01344}, "n_tokens": 512}
+{"id": 239, "doc_id": 1000239, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.99629, "NOT_ACCURATE": 0.00312, "NOT ENOUGH INFO": 0.00059}, "n_tokens": 512}
+{"id": 240, "doc_id": 1000240, "gold": "NOT_ACCURATE", "prediction": "NOT_ACCURATE", "probs": {"ACCURATE": 0.32866, "NOT_ACCURATE": 0.65457, "NOT ENOUGH INFO": 0.01678}, "n_tokens": 512}
+{"id": 241, "doc_id": 1000241, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.99935, "NOT_ACCURATE": 0.00049, "NOT ENOUGH INFO": 0.00016}, "n_tokens": 512}
+{"id": 242, "doc_id": 1000242, "gold": "NOT_ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.9983, "NOT_ACCURATE": 0.00138, "NOT ENOUGH INFO": 0.00032}, "n_tokens": 512}
+{"id": 243, "doc_id": 1000243, "gold": "NOT_ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.99441, "NOT_ACCURATE": 0.0046, "NOT ENOUGH INFO": 0.00099}, "n_tokens": 512}
+{"id": 244, "doc_id": 1000244, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.99878, "NOT_ACCURATE": 0.00098, "NOT ENOUGH INFO": 0.00024}, "n_tokens": 512}
+{"id": 245, "doc_id": 1000245, "gold": "NOT_ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.95489, "NOT_ACCURATE": 0.04236, "NOT ENOUGH INFO": 0.00275}, "n_tokens": 512}
+{"id": 246, "doc_id": 1000246, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.95056, "NOT_ACCURATE": 0.04777, "NOT ENOUGH INFO": 0.00167}, "n_tokens": 512}
+{"id": 247, "doc_id": 1000247, "gold": "NOT_ACCURATE", "prediction": "NOT_ACCURATE", "probs": {"ACCURATE": 0.00253, "NOT_ACCURATE": 0.9933, "NOT ENOUGH INFO": 0.00418}, "n_tokens": 512}
+{"id": 248, "doc_id": 1000248, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.98728, "NOT_ACCURATE": 0.01207, "NOT ENOUGH INFO": 0.00064}, "n_tokens": 512}
+{"id": 249, "doc_id": 1000249, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.9765, "NOT_ACCURATE": 0.02228, "NOT ENOUGH INFO": 0.00122}, "n_tokens": 512}
+{"id": 250, "doc_id": 1000250, "gold": "NOT_ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.99925, "NOT_ACCURATE": 0.00057, "NOT ENOUGH INFO": 0.00018}, "n_tokens": 512}
+{"id": 251, "doc_id": 1000251, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.99922, "NOT_ACCURATE": 0.00063, "NOT ENOUGH INFO": 0.00015}, "n_tokens": 512}
+{"id": 252, "doc_id": 1000252, "gold": "NOT_ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.99603, "NOT_ACCURATE": 0.00328, "NOT ENOUGH INFO": 0.00069}, "n_tokens": 512}
+{"id": 253, "doc_id": 1000253, "gold": "NOT_ACCURATE", "prediction": "NOT ENOUGH INFO", "probs": {"ACCURATE": 0.00064, "NOT_ACCURATE": 0.01051, "NOT ENOUGH INFO": 0.98885}, "n_tokens": 512}
+{"id": 254, "doc_id": 1000254, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.98014, "NOT_ACCURATE": 0.01893, "NOT ENOUGH INFO": 0.00093}, "n_tokens": 512}
+{"id": 255, "doc_id": 1000255, "gold": "NOT_ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.99595, "NOT_ACCURATE": 0.00373, "NOT ENOUGH INFO": 0.00032}, "n_tokens": 512}
+{"id": 256, "doc_id": 1000256, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.96498, "NOT_ACCURATE": 0.03235, "NOT ENOUGH INFO": 0.00267}, "n_tokens": 512}
+{"id": 257, "doc_id": 1000257, "gold": "NOT_ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.9943, "NOT_ACCURATE": 0.0051, "NOT ENOUGH INFO": 0.00061}, "n_tokens": 512}
+{"id": 258, "doc_id": 1000258, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.94109, "NOT_ACCURATE": 0.05638, "NOT ENOUGH INFO": 0.00253}, "n_tokens": 512}
+{"id": 259, "doc_id": 1000259, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.99651, "NOT_ACCURATE": 0.00286, "NOT ENOUGH INFO": 0.00062}, "n_tokens": 512}
+{"id": 260, "doc_id": 1000260, "gold": "NOT_ACCURATE", "prediction": "NOT ENOUGH INFO", "probs": {"ACCURATE": 0.00189, "NOT_ACCURATE": 0.04161, "NOT ENOUGH INFO": 0.9565}, "n_tokens": 512}
+{"id": 261, "doc_id": 1000261, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.99847, "NOT_ACCURATE": 0.00093, "NOT ENOUGH INFO": 0.0006}, "n_tokens": 512}
+{"id": 262, "doc_id": 1000262, "gold": "ACCURATE", "prediction": "NOT_ACCURATE", "probs": {"ACCURATE": 0.09509, "NOT_ACCURATE": 0.83974, "NOT ENOUGH INFO": 0.06517}, "n_tokens": 512}
+{"id": 263, "doc_id": 1000263, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.99926, "NOT_ACCURATE": 0.00062, "NOT ENOUGH INFO": 0.00012}, "n_tokens": 512}
+{"id": 264, "doc_id": 1000264, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.99892, "NOT_ACCURATE": 0.00077, "NOT ENOUGH INFO": 0.00031}, "n_tokens": 512}
+{"id": 265, "doc_id": 1000265, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.99863, "NOT_ACCURATE": 0.00113, "NOT ENOUGH INFO": 0.00024}, "n_tokens": 471}
+{"id": 266, "doc_id": 1000266, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.9984, "NOT_ACCURATE": 0.00124, "NOT ENOUGH INFO": 0.00036}, "n_tokens": 512}
+{"id": 267, "doc_id": 1000267, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.99881, "NOT_ACCURATE": 0.00093, "NOT ENOUGH INFO": 0.00025}, "n_tokens": 512}
+{"id": 268, "doc_id": 1000268, "gold": "ACCURATE", "prediction": "NOT ENOUGH INFO", "probs": {"ACCURATE": 0.03668, "NOT_ACCURATE": 0.05001, "NOT ENOUGH INFO": 0.91331}, "n_tokens": 512}
+{"id": 269, "doc_id": 1000269, "gold": "NOT_ACCURATE", "prediction": "NOT_ACCURATE", "probs": {"ACCURATE": 0.01628, "NOT_ACCURATE": 0.92983, "NOT ENOUGH INFO": 0.05389}, "n_tokens": 512}
+{"id": 270, "doc_id": 1000270, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.99853, "NOT_ACCURATE": 0.00121, "NOT ENOUGH INFO": 0.00026}, "n_tokens": 512}
+{"id": 271, "doc_id": 1000271, "gold": "ACCURATE", "prediction": "NOT_ACCURATE", "probs": {"ACCURATE": 0.19554, "NOT_ACCURATE": 0.7867, "NOT ENOUGH INFO": 0.01776}, "n_tokens": 512}
+{"id": 272, "doc_id": 1000272, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.99146, "NOT_ACCURATE": 0.00761, "NOT ENOUGH INFO": 0.00093}, "n_tokens": 512}
+{"id": 273, "doc_id": 1000273, "gold": "ACCURATE", "prediction": "NOT_ACCURATE", "probs": {"ACCURATE": 0.01213, "NOT_ACCURATE": 0.98227, "NOT ENOUGH INFO": 0.00561}, "n_tokens": 512}
+{"id": 274, "doc_id": 1000274, "gold": "ACCURATE", "prediction": "NOT_ACCURATE", "probs": {"ACCURATE": 0.11232, "NOT_ACCURATE": 0.86035, "NOT ENOUGH INFO": 0.02733}, "n_tokens": 512}
+{"id": 275, "doc_id": 1000275, "gold": "NOT_ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.86025, "NOT_ACCURATE": 0.12903, "NOT ENOUGH INFO": 0.01072}, "n_tokens": 512}
+{"id": 276, "doc_id": 1000276, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.99881, "NOT_ACCURATE": 0.0009, "NOT ENOUGH INFO": 0.00029}, "n_tokens": 512}
+{"id": 277, "doc_id": 1000277, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.99913, "NOT_ACCURATE": 0.00066, "NOT ENOUGH INFO": 0.00021}, "n_tokens": 512}
+{"id": 278, "doc_id": 1000278, "gold": "NOT_ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.99807, "NOT_ACCURATE": 0.00153, "NOT ENOUGH INFO": 0.0004}, "n_tokens": 512}
+{"id": 279, "doc_id": 1000279, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.99913, "NOT_ACCURATE": 0.0007, "NOT ENOUGH INFO": 0.00017}, "n_tokens": 512}
+{"id": 280, "doc_id": 1000280, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.99446, "NOT_ACCURATE": 0.00394, "NOT ENOUGH INFO": 0.00159}, "n_tokens": 512}
+{"id": 281, "doc_id": 1000281, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.9992, "NOT_ACCURATE": 0.00063, "NOT ENOUGH INFO": 0.00017}, "n_tokens": 512}
+{"id": 282, "doc_id": 1000282, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.99756, "NOT_ACCURATE": 0.00195, "NOT ENOUGH INFO": 0.00049}, "n_tokens": 512}
+{"id": 283, "doc_id": 1000283, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.99849, "NOT_ACCURATE": 0.00114, "NOT ENOUGH INFO": 0.00038}, "n_tokens": 512}
+{"id": 284, "doc_id": 1000284, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.99927, "NOT_ACCURATE": 0.00056, "NOT ENOUGH INFO": 0.00017}, "n_tokens": 512}
+{"id": 285, "doc_id": 1000285, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.86239, "NOT_ACCURATE": 0.1139, "NOT ENOUGH INFO": 0.02371}, "n_tokens": 512}
+{"id": 286, "doc_id": 1000286, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.99864, "NOT_ACCURATE": 0.00101, "NOT ENOUGH INFO": 0.00035}, "n_tokens": 512}
+{"id": 287, "doc_id": 1000287, "gold": "ACCURATE", "prediction": "NOT_ACCURATE", "probs": {"ACCURATE": 0.07917, "NOT_ACCURATE": 0.63193, "NOT ENOUGH INFO": 0.2889}, "n_tokens": 512}
+{"id": 288, "doc_id": 1000288, "gold": "NOT_ACCURATE", "prediction": "NOT ENOUGH INFO", "probs": {"ACCURATE": 0.01545, "NOT_ACCURATE": 0.41668, "NOT ENOUGH INFO": 0.56787}, "n_tokens": 512}
+{"id": 289, "doc_id": 1000289, "gold": "NOT_ACCURATE", "prediction": "NOT ENOUGH INFO", "probs": {"ACCURATE": 0.0066, "NOT_ACCURATE": 0.03253, "NOT ENOUGH INFO": 0.96087}, "n_tokens": 512}
+{"id": 290, "doc_id": 1000290, "gold": "NOT_ACCURATE", "prediction": "NOT_ACCURATE", "probs": {"ACCURATE": 0.00083, "NOT_ACCURATE": 0.99866, "NOT ENOUGH INFO": 0.0005}, "n_tokens": 512}
+{"id": 291, "doc_id": 1000291, "gold": "NOT_ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.9925, "NOT_ACCURATE": 0.00562, "NOT ENOUGH INFO": 0.00188}, "n_tokens": 512}
+{"id": 292, "doc_id": 1000292, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.99106, "NOT_ACCURATE": 0.00711, "NOT ENOUGH INFO": 0.00183}, "n_tokens": 512}
+{"id": 293, "doc_id": 1000293, "gold": "NOT_ACCURATE", "prediction": "NOT_ACCURATE", "probs": {"ACCURATE": 0.0536, "NOT_ACCURATE": 0.94336, "NOT ENOUGH INFO": 0.00304}, "n_tokens": 512}
+{"id": 294, "doc_id": 1000294, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.99678, "NOT_ACCURATE": 0.00248, "NOT ENOUGH INFO": 0.00075}, "n_tokens": 512}
+{"id": 295, "doc_id": 1000295, "gold": "NOT_ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.99864, "NOT_ACCURATE": 0.00108, "NOT ENOUGH INFO": 0.00028}, "n_tokens": 512}
+{"id": 296, "doc_id": 1000296, "gold": "NOT ENOUGH INFO", "prediction": "NOT ENOUGH INFO", "probs": {"ACCURATE": 0.00232, "NOT_ACCURATE": 0.14538, "NOT ENOUGH INFO": 0.8523}, "n_tokens": 512}
+{"id": 297, "doc_id": 1000297, "gold": "NOT_ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.98837, "NOT_ACCURATE": 0.0098, "NOT ENOUGH INFO": 0.00183}, "n_tokens": 512}
+{"id": 298, "doc_id": 1000298, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.99793, "NOT_ACCURATE": 0.00126, "NOT ENOUGH INFO": 0.00081}, "n_tokens": 512}
+{"id": 299, "doc_id": 1000299, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.99631, "NOT_ACCURATE": 0.00324, "NOT ENOUGH INFO": 0.00045}, "n_tokens": 512}
+{"id": 300, "doc_id": 1000300, "gold": "ACCURATE", "prediction": "NOT ENOUGH INFO", "probs": {"ACCURATE": 0.00294, "NOT_ACCURATE": 0.00227, "NOT ENOUGH INFO": 0.99479}, "n_tokens": 512}
+{"id": 301, "doc_id": 1000301, "gold": "NOT_ACCURATE", "prediction": "NOT_ACCURATE", "probs": {"ACCURATE": 0.00817, "NOT_ACCURATE": 0.94916, "NOT ENOUGH INFO": 0.04267}, "n_tokens": 512}
+{"id": 302, "doc_id": 1000302, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.97968, "NOT_ACCURATE": 0.01768, "NOT ENOUGH INFO": 0.00264}, "n_tokens": 512}
+{"id": 303, "doc_id": 1000303, "gold": "NOT ENOUGH INFO", "prediction": "NOT ENOUGH INFO", "probs": {"ACCURATE": 0.04206, "NOT_ACCURATE": 0.22115, "NOT ENOUGH INFO": 0.7368}, "n_tokens": 512}
+{"id": 304, "doc_id": 1000304, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.98054, "NOT_ACCURATE": 0.01813, "NOT ENOUGH INFO": 0.00134}, "n_tokens": 512}
+{"id": 305, "doc_id": 1000305, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.99071, "NOT_ACCURATE": 0.00843, "NOT ENOUGH INFO": 0.00086}, "n_tokens": 512}
+{"id": 306, "doc_id": 1000306, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.99883, "NOT_ACCURATE": 0.00093, "NOT ENOUGH INFO": 0.00024}, "n_tokens": 512}
+{"id": 307, "doc_id": 1000307, "gold": "NOT_ACCURATE", "prediction": "NOT ENOUGH INFO", "probs": {"ACCURATE": 0.04331, "NOT_ACCURATE": 0.34995, "NOT ENOUGH INFO": 0.60673}, "n_tokens": 512}
+{"id": 308, "doc_id": 1000308, "gold": "ACCURATE", "prediction": "NOT ENOUGH INFO", "probs": {"ACCURATE": 0.00023, "NOT_ACCURATE": 0.00473, "NOT ENOUGH INFO": 0.99503}, "n_tokens": 512}
+{"id": 309, "doc_id": 1000309, "gold": "NOT_ACCURATE", "prediction": "NOT ENOUGH INFO", "probs": {"ACCURATE": 0.03702, "NOT_ACCURATE": 0.43369, "NOT ENOUGH INFO": 0.52929}, "n_tokens": 512}
+{"id": 310, "doc_id": 1000310, "gold": "NOT ENOUGH INFO", "prediction": "NOT ENOUGH INFO", "probs": {"ACCURATE": 0.00019, "NOT_ACCURATE": 0.00462, "NOT ENOUGH INFO": 0.99519}, "n_tokens": 512}
+{"id": 311, "doc_id": 1000311, "gold": "NOT_ACCURATE", "prediction": "NOT ENOUGH INFO", "probs": {"ACCURATE": 0.02326, "NOT_ACCURATE": 0.09517, "NOT ENOUGH INFO": 0.88157}, "n_tokens": 512}
+{"id": 312, "doc_id": 1000312, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.99793, "NOT_ACCURATE": 0.00145, "NOT ENOUGH INFO": 0.00062}, "n_tokens": 512}
+{"id": 313, "doc_id": 1000313, "gold": "NOT_ACCURATE", "prediction": "NOT_ACCURATE", "probs": {"ACCURATE": 0.08296, "NOT_ACCURATE": 0.86409, "NOT ENOUGH INFO": 0.05294}, "n_tokens": 512}
+{"id": 314, "doc_id": 1000314, "gold": "NOT ENOUGH INFO", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.99162, "NOT_ACCURATE": 0.00668, "NOT ENOUGH INFO": 0.0017}, "n_tokens": 512}
+{"id": 315, "doc_id": 1000315, "gold": "ACCURATE", "prediction": "NOT ENOUGH INFO", "probs": {"ACCURATE": 0.08388, "NOT_ACCURATE": 0.12181, "NOT ENOUGH INFO": 0.79431}, "n_tokens": 512}
+{"id": 316, "doc_id": 1000316, "gold": "NOT ENOUGH INFO", "prediction": "NOT ENOUGH INFO", "probs": {"ACCURATE": 0.00026, "NOT_ACCURATE": 0.0041, "NOT ENOUGH INFO": 0.99565}, "n_tokens": 512}
+{"id": 317, "doc_id": 1000317, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.99512, "NOT_ACCURATE": 0.00405, "NOT ENOUGH INFO": 0.00083}, "n_tokens": 512}
+{"id": 318, "doc_id": 1000318, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.9962, "NOT_ACCURATE": 0.00308, "NOT ENOUGH INFO": 0.00072}, "n_tokens": 512}
+{"id": 319, "doc_id": 1000319, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.99325, "NOT_ACCURATE": 0.00621, "NOT ENOUGH INFO": 0.00053}, "n_tokens": 512}
+{"id": 320, "doc_id": 1000320, "gold": "NOT_ACCURATE", "prediction": "NOT_ACCURATE", "probs": {"ACCURATE": 0.05849, "NOT_ACCURATE": 0.93661, "NOT ENOUGH INFO": 0.00491}, "n_tokens": 512}
+{"id": 321, "doc_id": 1000321, "gold": "ACCURATE", "prediction": "NOT ENOUGH INFO", "probs": {"ACCURATE": 0.091, "NOT_ACCURATE": 0.39117, "NOT ENOUGH INFO": 0.51783}, "n_tokens": 512}
+{"id": 322, "doc_id": 1000322, "gold": "NOT_ACCURATE", "prediction": "NOT ENOUGH INFO", "probs": {"ACCURATE": 0.00611, "NOT_ACCURATE": 0.32609, "NOT ENOUGH INFO": 0.66779}, "n_tokens": 512}
+{"id": 323, "doc_id": 1000323, "gold": "ACCURATE", "prediction": "NOT ENOUGH INFO", "probs": {"ACCURATE": 0.00456, "NOT_ACCURATE": 0.00312, "NOT ENOUGH INFO": 0.99232}, "n_tokens": 512}
+{"id": 324, "doc_id": 1000324, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.99874, "NOT_ACCURATE": 0.00094, "NOT ENOUGH INFO": 0.00032}, "n_tokens": 512}
+{"id": 325, "doc_id": 1000325, "gold": "ACCURATE", "prediction": "NOT ENOUGH INFO", "probs": {"ACCURATE": 0.00588, "NOT_ACCURATE": 0.00284, "NOT ENOUGH INFO": 0.99128}, "n_tokens": 512}
+{"id": 326, "doc_id": 1000326, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.99673, "NOT_ACCURATE": 0.00233, "NOT ENOUGH INFO": 0.00094}, "n_tokens": 512}
+{"id": 327, "doc_id": 1000327, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.99652, "NOT_ACCURATE": 0.00262, "NOT ENOUGH INFO": 0.00087}, "n_tokens": 512}
+{"id": 328, "doc_id": 1000328, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.85231, "NOT_ACCURATE": 0.14475, "NOT ENOUGH INFO": 0.00294}, "n_tokens": 512}
+{"id": 329, "doc_id": 1000329, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.92486, "NOT_ACCURATE": 0.035, "NOT ENOUGH INFO": 0.04014}, "n_tokens": 512}
+{"id": 330, "doc_id": 1000330, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.99846, "NOT_ACCURATE": 0.00111, "NOT ENOUGH INFO": 0.00043}, "n_tokens": 512}
+{"id": 331, "doc_id": 1000331, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.36522, "NOT_ACCURATE": 0.32611, "NOT ENOUGH INFO": 0.30867}, "n_tokens": 512}
+{"id": 332, "doc_id": 1000332, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.99799, "NOT_ACCURATE": 0.00128, "NOT ENOUGH INFO": 0.00073}, "n_tokens": 512}
+{"id": 333, "doc_id": 1000333, "gold": "NOT_ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.96606, "NOT_ACCURATE": 0.03166, "NOT ENOUGH INFO": 0.00228}, "n_tokens": 512}
+{"id": 334, "doc_id": 1000334, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.99726, "NOT_ACCURATE": 0.0023, "NOT ENOUGH INFO": 0.00044}, "n_tokens": 512}
+{"id": 335, "doc_id": 1000335, "gold": "NOT_ACCURATE", "prediction": "NOT_ACCURATE", "probs": {"ACCURATE": 0.07152, "NOT_ACCURATE": 0.9105, "NOT ENOUGH INFO": 0.01798}, "n_tokens": 512}
+{"id": 336, "doc_id": 1000336, "gold": "NOT_ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.99363, "NOT_ACCURATE": 0.00531, "NOT ENOUGH INFO": 0.00106}, "n_tokens": 512}
+{"id": 337, "doc_id": 1000337, "gold": "ACCURATE", "prediction": "NOT_ACCURATE", "probs": {"ACCURATE": 0.46639, "NOT_ACCURATE": 0.53107, "NOT ENOUGH INFO": 0.00254}, "n_tokens": 512}
+{"id": 338, "doc_id": 1000338, "gold": "ACCURATE", "prediction": "NOT_ACCURATE", "probs": {"ACCURATE": 0.02472, "NOT_ACCURATE": 0.97434, "NOT ENOUGH INFO": 0.00094}, "n_tokens": 512}
+{"id": 339, "doc_id": 1000339, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.64206, "NOT_ACCURATE": 0.34183, "NOT ENOUGH INFO": 0.01611}, "n_tokens": 512}
+{"id": 340, "doc_id": 1000340, "gold": "NOT_ACCURATE", "prediction": "NOT_ACCURATE", "probs": {"ACCURATE": 0.00341, "NOT_ACCURATE": 0.99564, "NOT ENOUGH INFO": 0.00094}, "n_tokens": 512}
+{"id": 341, "doc_id": 1000341, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.99187, "NOT_ACCURATE": 0.00423, "NOT ENOUGH INFO": 0.00389}, "n_tokens": 512}
+{"id": 342, "doc_id": 1000342, "gold": "NOT_ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.99846, "NOT_ACCURATE": 0.00112, "NOT ENOUGH INFO": 0.00042}, "n_tokens": 512}
+{"id": 343, "doc_id": 1000343, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.99908, "NOT_ACCURATE": 0.00065, "NOT ENOUGH INFO": 0.00027}, "n_tokens": 512}
+{"id": 344, "doc_id": 1000344, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.99769, "NOT_ACCURATE": 0.00173, "NOT ENOUGH INFO": 0.00058}, "n_tokens": 512}
+{"id": 345, "doc_id": 1000345, "gold": "NOT_ACCURATE", "prediction": "NOT_ACCURATE", "probs": {"ACCURATE": 0.04377, "NOT_ACCURATE": 0.65199, "NOT ENOUGH INFO": 0.30424}, "n_tokens": 512}
+{"id": 346, "doc_id": 1000346, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.99731, "NOT_ACCURATE": 0.00225, "NOT ENOUGH INFO": 0.00044}, "n_tokens": 512}
+{"id": 347, "doc_id": 1000347, "gold": "NOT_ACCURATE", "prediction": "NOT_ACCURATE", "probs": {"ACCURATE": 0.04023, "NOT_ACCURATE": 0.94157, "NOT ENOUGH INFO": 0.0182}, "n_tokens": 512}
+{"id": 348, "doc_id": 1000348, "gold": "NOT_ACCURATE", "prediction": "NOT ENOUGH INFO", "probs": {"ACCURATE": 0.01239, "NOT_ACCURATE": 0.15818, "NOT ENOUGH INFO": 0.82943}, "n_tokens": 512}
+{"id": 349, "doc_id": 1000349, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.99618, "NOT_ACCURATE": 0.00346, "NOT ENOUGH INFO": 0.00036}, "n_tokens": 512}
+{"id": 350, "doc_id": 1000350, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.99675, "NOT_ACCURATE": 0.00275, "NOT ENOUGH INFO": 0.0005}, "n_tokens": 512}
+{"id": 351, "doc_id": 1000351, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.84234, "NOT_ACCURATE": 0.10915, "NOT ENOUGH INFO": 0.04851}, "n_tokens": 512}
+{"id": 352, "doc_id": 1000352, "gold": "ACCURATE", "prediction": "NOT_ACCURATE", "probs": {"ACCURATE": 0.0816, "NOT_ACCURATE": 0.90785, "NOT ENOUGH INFO": 0.01055}, "n_tokens": 512}
+{"id": 353, "doc_id": 1000353, "gold": "ACCURATE", "prediction": "NOT_ACCURATE", "probs": {"ACCURATE": 0.00694, "NOT_ACCURATE": 0.98939, "NOT ENOUGH INFO": 0.00367}, "n_tokens": 512}
+{"id": 354, "doc_id": 1000354, "gold": "NOT_ACCURATE", "prediction": "NOT_ACCURATE", "probs": {"ACCURATE": 0.00378, "NOT_ACCURATE": 0.99159, "NOT ENOUGH INFO": 0.00463}, "n_tokens": 512}
+{"id": 355, "doc_id": 1000355, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.99886, "NOT_ACCURATE": 0.00077, "NOT ENOUGH INFO": 0.00037}, "n_tokens": 512}
+{"id": 356, "doc_id": 1000356, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.98073, "NOT_ACCURATE": 0.0179, "NOT ENOUGH INFO": 0.00137}, "n_tokens": 512}
+{"id": 357, "doc_id": 1000357, "gold": "NOT_ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.94986, "NOT_ACCURATE": 0.04799, "NOT ENOUGH INFO": 0.00215}, "n_tokens": 512}
+{"id": 358, "doc_id": 1000358, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.99479, "NOT_ACCURATE": 0.00443, "NOT ENOUGH INFO": 0.00079}, "n_tokens": 512}
+{"id": 359, "doc_id": 1000359, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.97585, "NOT_ACCURATE": 0.02204, "NOT ENOUGH INFO": 0.00211}, "n_tokens": 512}
+{"id": 360, "doc_id": 1000360, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.55694, "NOT_ACCURATE": 0.40076, "NOT ENOUGH INFO": 0.0423}, "n_tokens": 434}
+{"id": 361, "doc_id": 1000361, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.99886, "NOT_ACCURATE": 0.00083, "NOT ENOUGH INFO": 0.00031}, "n_tokens": 498}
+{"id": 362, "doc_id": 1000362, "gold": "ACCURATE", "prediction": "NOT_ACCURATE", "probs": {"ACCURATE": 0.09821, "NOT_ACCURATE": 0.8803, "NOT ENOUGH INFO": 0.02149}, "n_tokens": 512}
+{"id": 363, "doc_id": 1000363, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.99666, "NOT_ACCURATE": 0.0023, "NOT ENOUGH INFO": 0.00105}, "n_tokens": 372}
+{"id": 364, "doc_id": 1000364, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.90783, "NOT_ACCURATE": 0.0415, "NOT ENOUGH INFO": 0.05067}, "n_tokens": 503}
+{"id": 365, "doc_id": 1000365, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.98921, "NOT_ACCURATE": 0.01023, "NOT ENOUGH INFO": 0.00056}, "n_tokens": 496}
+{"id": 366, "doc_id": 1000366, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.99773, "NOT_ACCURATE": 0.00193, "NOT ENOUGH INFO": 0.00033}, "n_tokens": 512}
+{"id": 367, "doc_id": 1000367, "gold": "NOT ENOUGH INFO", "prediction": "NOT ENOUGH INFO", "probs": {"ACCURATE": 0.00297, "NOT_ACCURATE": 0.00763, "NOT ENOUGH INFO": 0.9894}, "n_tokens": 469}
+{"id": 368, "doc_id": 1000368, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.96269, "NOT_ACCURATE": 0.03122, "NOT ENOUGH INFO": 0.00609}, "n_tokens": 512}
+{"id": 369, "doc_id": 1000369, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.90603, "NOT_ACCURATE": 0.07746, "NOT ENOUGH INFO": 0.01651}, "n_tokens": 481}
+{"id": 370, "doc_id": 1000370, "gold": "NOT_ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.94349, "NOT_ACCURATE": 0.05355, "NOT ENOUGH INFO": 0.00296}, "n_tokens": 508}
+{"id": 371, "doc_id": 1000371, "gold": "NOT_ACCURATE", "prediction": "NOT ENOUGH INFO", "probs": {"ACCURATE": 0.14323, "NOT_ACCURATE": 0.28334, "NOT ENOUGH INFO": 0.57344}, "n_tokens": 512}
+{"id": 372, "doc_id": 1000372, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.9892, "NOT_ACCURATE": 0.00663, "NOT ENOUGH INFO": 0.00417}, "n_tokens": 435}
+{"id": 373, "doc_id": 1000373, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.99859, "NOT_ACCURATE": 0.00114, "NOT ENOUGH INFO": 0.00027}, "n_tokens": 509}
+{"id": 374, "doc_id": 1000374, "gold": "NOT_ACCURATE", "prediction": "NOT_ACCURATE", "probs": {"ACCURATE": 0.00488, "NOT_ACCURATE": 0.85739, "NOT ENOUGH INFO": 0.13773}, "n_tokens": 512}
+{"id": 375, "doc_id": 1000375, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.99847, "NOT_ACCURATE": 0.00127, "NOT ENOUGH INFO": 0.00026}, "n_tokens": 377}
+{"id": 376, "doc_id": 1000376, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.93591, "NOT_ACCURATE": 0.03092, "NOT ENOUGH INFO": 0.03317}, "n_tokens": 430}
+{"id": 377, "doc_id": 1000377, "gold": "ACCURATE", "prediction": "NOT_ACCURATE", "probs": {"ACCURATE": 0.49017, "NOT_ACCURATE": 0.49208, "NOT ENOUGH INFO": 0.01775}, "n_tokens": 486}
+{"id": 378, "doc_id": 1000378, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.99825, "NOT_ACCURATE": 0.00123, "NOT ENOUGH INFO": 0.00052}, "n_tokens": 405}
+{"id": 379, "doc_id": 1000379, "gold": "NOT_ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.45826, "NOT_ACCURATE": 0.27319, "NOT ENOUGH INFO": 0.26854}, "n_tokens": 470}
+{"id": 380, "doc_id": 1000380, "gold": "NOT_ACCURATE", "prediction": "NOT ENOUGH INFO", "probs": {"ACCURATE": 0.02684, "NOT_ACCURATE": 0.0316, "NOT ENOUGH INFO": 0.94156}, "n_tokens": 491}
+{"id": 381, "doc_id": 1000381, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.99785, "NOT_ACCURATE": 0.0017, "NOT ENOUGH INFO": 0.00045}, "n_tokens": 512}
+{"id": 382, "doc_id": 1000382, "gold": "ACCURATE", "prediction": "NOT_ACCURATE", "probs": {"ACCURATE": 0.1501, "NOT_ACCURATE": 0.54852, "NOT ENOUGH INFO": 0.30138}, "n_tokens": 501}
+{"id": 383, "doc_id": 1000383, "gold": "NOT ENOUGH INFO", "prediction": "NOT ENOUGH INFO", "probs": {"ACCURATE": 0.01745, "NOT_ACCURATE": 0.04285, "NOT ENOUGH INFO": 0.9397}, "n_tokens": 512}
+{"id": 384, "doc_id": 1000384, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.9986, "NOT_ACCURATE": 0.00085, "NOT ENOUGH INFO": 0.00055}, "n_tokens": 512}
+{"id": 385, "doc_id": 1000385, "gold": "NOT_ACCURATE", "prediction": "NOT ENOUGH INFO", "probs": {"ACCURATE": 0.00259, "NOT_ACCURATE": 0.01424, "NOT ENOUGH INFO": 0.98317}, "n_tokens": 512}
+{"id": 386, "doc_id": 1000386, "gold": "NOT_ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.45339, "NOT_ACCURATE": 0.45162, "NOT ENOUGH INFO": 0.09499}, "n_tokens": 512}
+{"id": 387, "doc_id": 1000387, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.99435, "NOT_ACCURATE": 0.00516, "NOT ENOUGH INFO": 0.00048}, "n_tokens": 502}
+{"id": 388, "doc_id": 1000388, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.64756, "NOT_ACCURATE": 0.30919, "NOT ENOUGH INFO": 0.04326}, "n_tokens": 480}
+{"id": 389, "doc_id": 1000389, "gold": "ACCURATE", "prediction": "NOT_ACCURATE", "probs": {"ACCURATE": 0.06988, "NOT_ACCURATE": 0.92801, "NOT ENOUGH INFO": 0.00211}, "n_tokens": 378}
+{"id": 390, "doc_id": 1000390, "gold": "NOT ENOUGH INFO", "prediction": "NOT ENOUGH INFO", "probs": {"ACCURATE": 0.01091, "NOT_ACCURATE": 0.03694, "NOT ENOUGH INFO": 0.95215}, "n_tokens": 512}
+{"id": 391, "doc_id": 1000391, "gold": "NOT_ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.99823, "NOT_ACCURATE": 0.00131, "NOT ENOUGH INFO": 0.00046}, "n_tokens": 512}
+{"id": 392, "doc_id": 1000392, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.99905, "NOT_ACCURATE": 0.00076, "NOT ENOUGH INFO": 0.00019}, "n_tokens": 512}
+{"id": 393, "doc_id": 1000393, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.99901, "NOT_ACCURATE": 0.00072, "NOT ENOUGH INFO": 0.00027}, "n_tokens": 512}
+{"id": 394, "doc_id": 1000394, "gold": "NOT ENOUGH INFO", "prediction": "NOT ENOUGH INFO", "probs": {"ACCURATE": 0.01094, "NOT_ACCURATE": 0.1531, "NOT ENOUGH INFO": 0.83596}, "n_tokens": 512}
+{"id": 395, "doc_id": 1000395, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.99795, "NOT_ACCURATE": 0.00172, "NOT ENOUGH INFO": 0.00033}, "n_tokens": 512}
+{"id": 396, "doc_id": 1000396, "gold": "ACCURATE", "prediction": "NOT_ACCURATE", "probs": {"ACCURATE": 0.01107, "NOT_ACCURATE": 0.8244, "NOT ENOUGH INFO": 0.16453}, "n_tokens": 512}
+{"id": 397, "doc_id": 1000397, "gold": "ACCURATE", "prediction": "NOT_ACCURATE", "probs": {"ACCURATE": 0.00725, "NOT_ACCURATE": 0.98604, "NOT ENOUGH INFO": 0.00671}, "n_tokens": 512}
+{"id": 398, "doc_id": 1000398, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.99726, "NOT_ACCURATE": 0.00229, "NOT ENOUGH INFO": 0.00045}, "n_tokens": 512}
+{"id": 399, "doc_id": 1000399, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.50675, "NOT_ACCURATE": 0.47838, "NOT ENOUGH INFO": 0.01488}, "n_tokens": 512}
+{"id": 400, "doc_id": 1000400, "gold": "NOT ENOUGH INFO", "prediction": "NOT_ACCURATE", "probs": {"ACCURATE": 0.02783, "NOT_ACCURATE": 0.49273, "NOT ENOUGH INFO": 0.47944}, "n_tokens": 512}
+{"id": 401, "doc_id": 1000401, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.99322, "NOT_ACCURATE": 0.00627, "NOT ENOUGH INFO": 0.00051}, "n_tokens": 512}
+{"id": 402, "doc_id": 1000402, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.70405, "NOT_ACCURATE": 0.2932, "NOT ENOUGH INFO": 0.00275}, "n_tokens": 512}
+{"id": 403, "doc_id": 1000403, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.9419, "NOT_ACCURATE": 0.05652, "NOT ENOUGH INFO": 0.00157}, "n_tokens": 512}
+{"id": 404, "doc_id": 1000404, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.99572, "NOT_ACCURATE": 0.00366, "NOT ENOUGH INFO": 0.00062}, "n_tokens": 512}
+{"id": 405, "doc_id": 1000405, "gold": "NOT_ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.98171, "NOT_ACCURATE": 0.01776, "NOT ENOUGH INFO": 0.00053}, "n_tokens": 512}
+{"id": 406, "doc_id": 1000406, "gold": "NOT ENOUGH INFO", "prediction": "NOT_ACCURATE", "probs": {"ACCURATE": 0.00228, "NOT_ACCURATE": 0.97434, "NOT ENOUGH INFO": 0.02338}, "n_tokens": 512}
+{"id": 407, "doc_id": 1000407, "gold": "NOT_ACCURATE", "prediction": "NOT_ACCURATE", "probs": {"ACCURATE": 0.33666, "NOT_ACCURATE": 0.63143, "NOT ENOUGH INFO": 0.0319}, "n_tokens": 512}
+{"id": 408, "doc_id": 1000408, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.99893, "NOT_ACCURATE": 0.00085, "NOT ENOUGH INFO": 0.00022}, "n_tokens": 512}
+{"id": 409, "doc_id": 1000409, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.9957, "NOT_ACCURATE": 0.00384, "NOT ENOUGH INFO": 0.00046}, "n_tokens": 512}
+{"id": 410, "doc_id": 1000410, "gold": "NOT ENOUGH INFO", "prediction": "NOT ENOUGH INFO", "probs": {"ACCURATE": 0.00029, "NOT_ACCURATE": 0.00482, "NOT ENOUGH INFO": 0.99489}, "n_tokens": 512}
+{"id": 411, "doc_id": 1000411, "gold": "ACCURATE", "prediction": "NOT_ACCURATE", "probs": {"ACCURATE": 0.26864, "NOT_ACCURATE": 0.72316, "NOT ENOUGH INFO": 0.0082}, "n_tokens": 512}
+{"id": 412, "doc_id": 1000412, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.99796, "NOT_ACCURATE": 0.00169, "NOT ENOUGH INFO": 0.00035}, "n_tokens": 512}
+{"id": 413, "doc_id": 1000413, "gold": "ACCURATE", "prediction": "NOT ENOUGH INFO", "probs": {"ACCURATE": 0.05113, "NOT_ACCURATE": 0.21278, "NOT ENOUGH INFO": 0.73609}, "n_tokens": 512}
+{"id": 414, "doc_id": 1000414, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.99839, "NOT_ACCURATE": 0.00123, "NOT ENOUGH INFO": 0.00037}, "n_tokens": 512}
+{"id": 415, "doc_id": 1000415, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.99247, "NOT_ACCURATE": 0.00713, "NOT ENOUGH INFO": 0.00041}, "n_tokens": 512}
+{"id": 416, "doc_id": 1000416, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.94225, "NOT_ACCURATE": 0.05714, "NOT ENOUGH INFO": 0.00061}, "n_tokens": 512}
+{"id": 417, "doc_id": 1000417, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.99791, "NOT_ACCURATE": 0.00171, "NOT ENOUGH INFO": 0.00038}, "n_tokens": 512}
+{"id": 418, "doc_id": 1000418, "gold": "NOT_ACCURATE", "prediction": "NOT_ACCURATE", "probs": {"ACCURATE": 0.15698, "NOT_ACCURATE": 0.83749, "NOT ENOUGH INFO": 0.00553}, "n_tokens": 512}
+{"id": 419, "doc_id": 1000419, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.84429, "NOT_ACCURATE": 0.15428, "NOT ENOUGH INFO": 0.00143}, "n_tokens": 512}
+{"id": 420, "doc_id": 1000420, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.99032, "NOT_ACCURATE": 0.00869, "NOT ENOUGH INFO": 0.00098}, "n_tokens": 512}
+{"id": 421, "doc_id": 1000421, "gold": "NOT_ACCURATE", "prediction": "NOT_ACCURATE", "probs": {"ACCURATE": 0.04443, "NOT_ACCURATE": 0.92217, "NOT ENOUGH INFO": 0.03339}, "n_tokens": 512}
+{"id": 422, "doc_id": 1000422, "gold": "NOT_ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.98252, "NOT_ACCURATE": 0.01664, "NOT ENOUGH INFO": 0.00084}, "n_tokens": 512}
+{"id": 423, "doc_id": 1000423, "gold": "NOT ENOUGH INFO", "prediction": "NOT ENOUGH INFO", "probs": {"ACCURATE": 0.00023, "NOT_ACCURATE": 0.00151, "NOT ENOUGH INFO": 0.99826}, "n_tokens": 512}
+{"id": 424, "doc_id": 1000424, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.66245, "NOT_ACCURATE": 0.33506, "NOT ENOUGH INFO": 0.00248}, "n_tokens": 512}
+{"id": 425, "doc_id": 1000425, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.97838, "NOT_ACCURATE": 0.02091, "NOT ENOUGH INFO": 0.00071}, "n_tokens": 512}
+{"id": 426, "doc_id": 1000426, "gold": "NOT_ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.99638, "NOT_ACCURATE": 0.00313, "NOT ENOUGH INFO": 0.00049}, "n_tokens": 512}
+{"id": 427, "doc_id": 1000427, "gold": "NOT ENOUGH INFO", "prediction": "NOT ENOUGH INFO", "probs": {"ACCURATE": 0.09267, "NOT_ACCURATE": 0.2485, "NOT ENOUGH INFO": 0.65883}, "n_tokens": 512}
+{"id": 428, "doc_id": 1000428, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.98513, "NOT_ACCURATE": 0.01427, "NOT ENOUGH INFO": 0.0006}, "n_tokens": 512}
+{"id": 429, "doc_id": 1000429, "gold": "ACCURATE", "prediction": "NOT_ACCURATE", "probs": {"ACCURATE": 0.0089, "NOT_ACCURATE": 0.99076, "NOT ENOUGH INFO": 0.00034}, "n_tokens": 512}
+{"id": 430, "doc_id": 1000430, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.99821, "NOT_ACCURATE": 0.00111, "NOT ENOUGH INFO": 0.00068}, "n_tokens": 512}
+{"id": 431, "doc_id": 1000431, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.99809, "NOT_ACCURATE": 0.00157, "NOT ENOUGH INFO": 0.00034}, "n_tokens": 512}
+{"id": 432, "doc_id": 1000432, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.99374, "NOT_ACCURATE": 0.00572, "NOT ENOUGH INFO": 0.00054}, "n_tokens": 512}
+{"id": 433, "doc_id": 1000433, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.8778, "NOT_ACCURATE": 0.12108, "NOT ENOUGH INFO": 0.00112}, "n_tokens": 512}
+{"id": 434, "doc_id": 1000434, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.99851, "NOT_ACCURATE": 0.00113, "NOT ENOUGH INFO": 0.00037}, "n_tokens": 512}
+{"id": 435, "doc_id": 1000435, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.95024, "NOT_ACCURATE": 0.04253, "NOT ENOUGH INFO": 0.00723}, "n_tokens": 512}
+{"id": 436, "doc_id": 1000436, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.9935, "NOT_ACCURATE": 0.00607, "NOT ENOUGH INFO": 0.00043}, "n_tokens": 512}
+{"id": 437, "doc_id": 1000437, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.91623, "NOT_ACCURATE": 0.08232, "NOT ENOUGH INFO": 0.00145}, "n_tokens": 512}
+{"id": 438, "doc_id": 1000438, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.99865, "NOT_ACCURATE": 0.0011, "NOT ENOUGH INFO": 0.00025}, "n_tokens": 512}
+{"id": 439, "doc_id": 1000439, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.9981, "NOT_ACCURATE": 0.00159, "NOT ENOUGH INFO": 0.00031}, "n_tokens": 512}
+{"id": 440, "doc_id": 1000440, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.97003, "NOT_ACCURATE": 0.02856, "NOT ENOUGH INFO": 0.00141}, "n_tokens": 512}
+{"id": 441, "doc_id": 1000441, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.99865, "NOT_ACCURATE": 0.00106, "NOT ENOUGH INFO": 0.00029}, "n_tokens": 512}
+{"id": 442, "doc_id": 1000442, "gold": "ACCURATE", "prediction": "NOT_ACCURATE", "probs": {"ACCURATE": 0.16907, "NOT_ACCURATE": 0.66331, "NOT ENOUGH INFO": 0.16763}, "n_tokens": 512}
+{"id": 443, "doc_id": 1000443, "gold": "ACCURATE", "prediction": "NOT_ACCURATE", "probs": {"ACCURATE": 0.1828, "NOT_ACCURATE": 0.81328, "NOT ENOUGH INFO": 0.00392}, "n_tokens": 512}
+{"id": 444, "doc_id": 1000444, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.99857, "NOT_ACCURATE": 0.00104, "NOT ENOUGH INFO": 0.00039}, "n_tokens": 512}
+{"id": 445, "doc_id": 1000445, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.98977, "NOT_ACCURATE": 0.00905, "NOT ENOUGH INFO": 0.00118}, "n_tokens": 512}
+{"id": 446, "doc_id": 1000446, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.96419, "NOT_ACCURATE": 0.03156, "NOT ENOUGH INFO": 0.00425}, "n_tokens": 512}
+{"id": 447, "doc_id": 1000447, "gold": "ACCURATE", "prediction": "NOT_ACCURATE", "probs": {"ACCURATE": 0.04541, "NOT_ACCURATE": 0.94528, "NOT ENOUGH INFO": 0.0093}, "n_tokens": 512}
+{"id": 448, "doc_id": 1000448, "gold": "ACCURATE", "prediction": "NOT_ACCURATE", "probs": {"ACCURATE": 0.01445, "NOT_ACCURATE": 0.98361, "NOT ENOUGH INFO": 0.00194}, "n_tokens": 512}
+{"id": 449, "doc_id": 1000449, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.99834, "NOT_ACCURATE": 0.00129, "NOT ENOUGH INFO": 0.00037}, "n_tokens": 512}
+{"id": 450, "doc_id": 1000450, "gold": "ACCURATE", "prediction": "NOT_ACCURATE", "probs": {"ACCURATE": 0.46053, "NOT_ACCURATE": 0.49095, "NOT ENOUGH INFO": 0.04852}, "n_tokens": 512}
+{"id": 451, "doc_id": 1000451, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.9682, "NOT_ACCURATE": 0.0306, "NOT ENOUGH INFO": 0.0012}, "n_tokens": 512}
+{"id": 452, "doc_id": 1000452, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.68577, "NOT_ACCURATE": 0.31183, "NOT ENOUGH INFO": 0.0024}, "n_tokens": 512}
+{"id": 453, "doc_id": 1000453, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.99891, "NOT_ACCURATE": 0.0008, "NOT ENOUGH INFO": 0.0003}, "n_tokens": 512}
+{"id": 454, "doc_id": 1000454, "gold": "ACCURATE", "prediction": "NOT ENOUGH INFO", "probs": {"ACCURATE": 0.00351, "NOT_ACCURATE": 0.02997, "NOT ENOUGH INFO": 0.96653}, "n_tokens": 512}
+{"id": 455, "doc_id": 1000455, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.99909, "NOT_ACCURATE": 0.0007, "NOT ENOUGH INFO": 0.00022}, "n_tokens": 512}
+{"id": 456, "doc_id": 1000456, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.99856, "NOT_ACCURATE": 0.00114, "NOT ENOUGH INFO": 0.0003}, "n_tokens": 512}
+{"id": 457, "doc_id": 1000457, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.99901, "NOT_ACCURATE": 0.00076, "NOT ENOUGH INFO": 0.00023}, "n_tokens": 512}
+{"id": 458, "doc_id": 1000458, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.99845, "NOT_ACCURATE": 0.00126, "NOT ENOUGH INFO": 0.00029}, "n_tokens": 512}
+{"id": 459, "doc_id": 1000459, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.79763, "NOT_ACCURATE": 0.2001, "NOT ENOUGH INFO": 0.00227}, "n_tokens": 512}
+{"id": 460, "doc_id": 1000460, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.84009, "NOT_ACCURATE": 0.15731, "NOT ENOUGH INFO": 0.0026}, "n_tokens": 512}
+{"id": 461, "doc_id": 1000461, "gold": "ACCURATE", "prediction": "NOT_ACCURATE", "probs": {"ACCURATE": 0.00458, "NOT_ACCURATE": 0.99454, "NOT ENOUGH INFO": 0.00088}, "n_tokens": 512}
+{"id": 462, "doc_id": 1000462, "gold": "NOT ENOUGH INFO", "prediction": "NOT_ACCURATE", "probs": {"ACCURATE": 0.3667, "NOT_ACCURATE": 0.58556, "NOT ENOUGH INFO": 0.04774}, "n_tokens": 512}
+{"id": 463, "doc_id": 1000463, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.99725, "NOT_ACCURATE": 0.00243, "NOT ENOUGH INFO": 0.00032}, "n_tokens": 512}
+{"id": 464, "doc_id": 1000464, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.84701, "NOT_ACCURATE": 0.15134, "NOT ENOUGH INFO": 0.00165}, "n_tokens": 512}
+{"id": 465, "doc_id": 1000465, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.87233, "NOT_ACCURATE": 0.12647, "NOT ENOUGH INFO": 0.0012}, "n_tokens": 512}
+{"id": 466, "doc_id": 1000466, "gold": "NOT_ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.91844, "NOT_ACCURATE": 0.0764, "NOT ENOUGH INFO": 0.00516}, "n_tokens": 512}
+{"id": 467, "doc_id": 1000467, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.87883, "NOT_ACCURATE": 0.11755, "NOT ENOUGH INFO": 0.00362}, "n_tokens": 512}
+{"id": 468, "doc_id": 1000468, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.97053, "NOT_ACCURATE": 0.0279, "NOT ENOUGH INFO": 0.00157}, "n_tokens": 512}
+{"id": 469, "doc_id": 1000469, "gold": "NOT_ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.99691, "NOT_ACCURATE": 0.00252, "NOT ENOUGH INFO": 0.00058}, "n_tokens": 512}
+{"id": 470, "doc_id": 1000470, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.99754, "NOT_ACCURATE": 0.00216, "NOT ENOUGH INFO": 0.0003}, "n_tokens": 512}
+{"id": 471, "doc_id": 1000471, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.99274, "NOT_ACCURATE": 0.00681, "NOT ENOUGH INFO": 0.00045}, "n_tokens": 512}
+{"id": 472, "doc_id": 1000472, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.99857, "NOT_ACCURATE": 0.00112, "NOT ENOUGH INFO": 0.00031}, "n_tokens": 512}
+{"id": 473, "doc_id": 1000473, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.99768, "NOT_ACCURATE": 0.00197, "NOT ENOUGH INFO": 0.00035}, "n_tokens": 512}
+{"id": 474, "doc_id": 1000474, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.99484, "NOT_ACCURATE": 0.00464, "NOT ENOUGH INFO": 0.00052}, "n_tokens": 512}
+{"id": 475, "doc_id": 1000475, "gold": "NOT ENOUGH INFO", "prediction": "NOT_ACCURATE", "probs": {"ACCURATE": 0.01132, "NOT_ACCURATE": 0.98561, "NOT ENOUGH INFO": 0.00307}, "n_tokens": 512}
+{"id": 476, "doc_id": 1000476, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.99776, "NOT_ACCURATE": 0.00192, "NOT ENOUGH INFO": 0.00032}, "n_tokens": 512}
+{"id": 477, "doc_id": 1000477, "gold": "NOT_ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.85244, "NOT_ACCURATE": 0.13165, "NOT ENOUGH INFO": 0.01591}, "n_tokens": 512}
+{"id": 478, "doc_id": 1000478, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.99751, "NOT_ACCURATE": 0.00217, "NOT ENOUGH INFO": 0.00031}, "n_tokens": 512}
+{"id": 479, "doc_id": 1000479, "gold": "NOT_ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.83247, "NOT_ACCURATE": 0.16634, "NOT ENOUGH INFO": 0.00118}, "n_tokens": 512}
+{"id": 480, "doc_id": 1000480, "gold": "NOT_ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.87849, "NOT_ACCURATE": 0.11988, "NOT ENOUGH INFO": 0.00162}, "n_tokens": 512}
+{"id": 481, "doc_id": 1000481, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.99686, "NOT_ACCURATE": 0.00266, "NOT ENOUGH INFO": 0.00048}, "n_tokens": 512}
+{"id": 482, "doc_id": 1000482, "gold": "NOT_ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.94983, "NOT_ACCURATE": 0.0486, "NOT ENOUGH INFO": 0.00157}, "n_tokens": 512}
+{"id": 483, "doc_id": 1000483, "gold": "NOT ENOUGH INFO", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.69942, "NOT_ACCURATE": 0.17274, "NOT ENOUGH INFO": 0.12784}, "n_tokens": 512}
+{"id": 484, "doc_id": 1000484, "gold": "NOT_ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.9922, "NOT_ACCURATE": 0.00711, "NOT ENOUGH INFO": 0.00069}, "n_tokens": 512}
+{"id": 485, "doc_id": 1000485, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.92083, "NOT_ACCURATE": 0.07028, "NOT ENOUGH INFO": 0.00889}, "n_tokens": 512}
+{"id": 486, "doc_id": 1000486, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.9659, "NOT_ACCURATE": 0.03313, "NOT ENOUGH INFO": 0.00097}, "n_tokens": 512}
+{"id": 487, "doc_id": 1000487, "gold": "NOT ENOUGH INFO", "prediction": "NOT_ACCURATE", "probs": {"ACCURATE": 0.04561, "NOT_ACCURATE": 0.9463, "NOT ENOUGH INFO": 0.00809}, "n_tokens": 512}
+{"id": 488, "doc_id": 1000488, "gold": "ACCURATE", "prediction": "NOT_ACCURATE", "probs": {"ACCURATE": 0.26564, "NOT_ACCURATE": 0.73202, "NOT ENOUGH INFO": 0.00234}, "n_tokens": 512}
+{"id": 489, "doc_id": 1000489, "gold": "NOT ENOUGH INFO", "prediction": "NOT_ACCURATE", "probs": {"ACCURATE": 0.29204, "NOT_ACCURATE": 0.36148, "NOT ENOUGH INFO": 0.34649}, "n_tokens": 512}
+{"id": 490, "doc_id": 1000490, "gold": "NOT_ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.98636, "NOT_ACCURATE": 0.01297, "NOT ENOUGH INFO": 0.00067}, "n_tokens": 512}
+{"id": 491, "doc_id": 1000491, "gold": "NOT_ACCURATE", "prediction": "NOT_ACCURATE", "probs": {"ACCURATE": 0.46971, "NOT_ACCURATE": 0.51436, "NOT ENOUGH INFO": 0.01593}, "n_tokens": 512}
+{"id": 492, "doc_id": 1000492, "gold": "NOT ENOUGH INFO", "prediction": "NOT_ACCURATE", "probs": {"ACCURATE": 0.06864, "NOT_ACCURATE": 0.93052, "NOT ENOUGH INFO": 0.00085}, "n_tokens": 512}
+{"id": 493, "doc_id": 1000493, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.96881, "NOT_ACCURATE": 0.02897, "NOT ENOUGH INFO": 0.00222}, "n_tokens": 512}
+{"id": 494, "doc_id": 1000494, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.99774, "NOT_ACCURATE": 0.00182, "NOT ENOUGH INFO": 0.00043}, "n_tokens": 512}
+{"id": 495, "doc_id": 1000495, "gold": "NOT_ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.9776, "NOT_ACCURATE": 0.02164, "NOT ENOUGH INFO": 0.00076}, "n_tokens": 512}
+{"id": 496, "doc_id": 1000496, "gold": "NOT ENOUGH INFO", "prediction": "NOT ENOUGH INFO", "probs": {"ACCURATE": 0.0021, "NOT_ACCURATE": 0.00401, "NOT ENOUGH INFO": 0.99389}, "n_tokens": 512}
+{"id": 497, "doc_id": 1000497, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.95136, "NOT_ACCURATE": 0.04781, "NOT ENOUGH INFO": 0.00084}, "n_tokens": 512}
+{"id": 498, "doc_id": 1000498, "gold": "NOT_ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.99841, "NOT_ACCURATE": 0.00131, "NOT ENOUGH INFO": 0.00028}, "n_tokens": 512}
+{"id": 499, "doc_id": 1000499, "gold": "NOT ENOUGH INFO", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.64543, "NOT_ACCURATE": 0.33338, "NOT ENOUGH INFO": 0.0212}, "n_tokens": 512}
+{"id": 500, "doc_id": 1000500, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.99814, "NOT_ACCURATE": 0.00143, "NOT ENOUGH INFO": 0.00043}, "n_tokens": 512}
+{"id": 501, "doc_id": 1000501, "gold": "NOT ENOUGH INFO", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.87564, "NOT_ACCURATE": 0.12143, "NOT ENOUGH INFO": 0.00292}, "n_tokens": 512}
+{"id": 502, "doc_id": 1000502, "gold": "NOT_ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.99774, "NOT_ACCURATE": 0.00176, "NOT ENOUGH INFO": 0.0005}, "n_tokens": 512}
+{"id": 503, "doc_id": 1000503, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.99867, "NOT_ACCURATE": 0.00106, "NOT ENOUGH INFO": 0.00028}, "n_tokens": 512}
+{"id": 504, "doc_id": 1000504, "gold": "NOT_ACCURATE", "prediction": "NOT_ACCURATE", "probs": {"ACCURATE": 0.17147, "NOT_ACCURATE": 0.82447, "NOT ENOUGH INFO": 0.00406}, "n_tokens": 512}
+{"id": 505, "doc_id": 1000505, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.78717, "NOT_ACCURATE": 0.21021, "NOT ENOUGH INFO": 0.00262}, "n_tokens": 512}
+{"id": 506, "doc_id": 1000506, "gold": "NOT_ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.97616, "NOT_ACCURATE": 0.02354, "NOT ENOUGH INFO": 0.0003}, "n_tokens": 512}
+{"id": 507, "doc_id": 1000507, "gold": "NOT_ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.95189, "NOT_ACCURATE": 0.04693, "NOT ENOUGH INFO": 0.00118}, "n_tokens": 512}
+{"id": 508, "doc_id": 1000508, "gold": "NOT_ACCURATE", "prediction": "NOT_ACCURATE", "probs": {"ACCURATE": 0.22254, "NOT_ACCURATE": 0.77446, "NOT ENOUGH INFO": 0.003}, "n_tokens": 512}
+{"id": 509, "doc_id": 1000509, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.99416, "NOT_ACCURATE": 0.00543, "NOT ENOUGH INFO": 0.00041}, "n_tokens": 512}
+{"id": 510, "doc_id": 1000510, "gold": "ACCURATE", "prediction": "NOT_ACCURATE", "probs": {"ACCURATE": 0.02707, "NOT_ACCURATE": 0.95764, "NOT ENOUGH INFO": 0.01528}, "n_tokens": 512}
+{"id": 511, "doc_id": 1000511, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.99865, "NOT_ACCURATE": 0.00105, "NOT ENOUGH INFO": 0.0003}, "n_tokens": 512}
+{"id": 512, "doc_id": 1000512, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.99895, "NOT_ACCURATE": 0.00084, "NOT ENOUGH INFO": 0.00022}, "n_tokens": 512}
+{"id": 513, "doc_id": 1000513, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.9978, "NOT_ACCURATE": 0.00193, "NOT ENOUGH INFO": 0.00026}, "n_tokens": 512}
+{"id": 514, "doc_id": 1000514, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.99832, "NOT_ACCURATE": 0.00141, "NOT ENOUGH INFO": 0.00027}, "n_tokens": 512}
+{"id": 515, "doc_id": 1000515, "gold": "NOT_ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.45559, "NOT_ACCURATE": 0.44984, "NOT ENOUGH INFO": 0.09457}, "n_tokens": 512}
+{"id": 516, "doc_id": 1000516, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.9994, "NOT_ACCURATE": 0.00049, "NOT ENOUGH INFO": 0.00011}, "n_tokens": 512}
+{"id": 517, "doc_id": 1000517, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.99844, "NOT_ACCURATE": 0.00128, "NOT ENOUGH INFO": 0.00028}, "n_tokens": 512}
+{"id": 518, "doc_id": 1000518, "gold": "NOT_ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.55651, "NOT_ACCURATE": 0.43895, "NOT ENOUGH INFO": 0.00455}, "n_tokens": 512}
+{"id": 519, "doc_id": 1000519, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.9991, "NOT_ACCURATE": 0.00073, "NOT ENOUGH INFO": 0.00018}, "n_tokens": 512}
+{"id": 520, "doc_id": 1000520, "gold": "ACCURATE", "prediction": "NOT_ACCURATE", "probs": {"ACCURATE": 0.46692, "NOT_ACCURATE": 0.52909, "NOT ENOUGH INFO": 0.004}, "n_tokens": 512}
+{"id": 521, "doc_id": 1000521, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.99939, "NOT_ACCURATE": 0.00045, "NOT ENOUGH INFO": 0.00016}, "n_tokens": 512}
+{"id": 522, "doc_id": 1000522, "gold": "NOT_ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.99829, "NOT_ACCURATE": 0.00143, "NOT ENOUGH INFO": 0.00028}, "n_tokens": 512}
+{"id": 523, "doc_id": 1000523, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.93027, "NOT_ACCURATE": 0.06868, "NOT ENOUGH INFO": 0.00104}, "n_tokens": 512}
+{"id": 524, "doc_id": 1000524, "gold": "NOT_ACCURATE", "prediction": "NOT ENOUGH INFO", "probs": {"ACCURATE": 0.04833, "NOT_ACCURATE": 0.39181, "NOT ENOUGH INFO": 0.55987}, "n_tokens": 512}
+{"id": 525, "doc_id": 1000525, "gold": "NOT_ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.98976, "NOT_ACCURATE": 0.00967, "NOT ENOUGH INFO": 0.00057}, "n_tokens": 512}
+{"id": 526, "doc_id": 1000526, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.99552, "NOT_ACCURATE": 0.00421, "NOT ENOUGH INFO": 0.00027}, "n_tokens": 512}
+{"id": 527, "doc_id": 1000527, "gold": "NOT_ACCURATE", "prediction": "NOT_ACCURATE", "probs": {"ACCURATE": 0.03351, "NOT_ACCURATE": 0.96545, "NOT ENOUGH INFO": 0.00103}, "n_tokens": 512}
+{"id": 528, "doc_id": 1000528, "gold": "NOT_ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.94546, "NOT_ACCURATE": 0.05378, "NOT ENOUGH INFO": 0.00076}, "n_tokens": 512}
+{"id": 529, "doc_id": 1000529, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.99537, "NOT_ACCURATE": 0.00421, "NOT ENOUGH INFO": 0.00042}, "n_tokens": 512}
+{"id": 530, "doc_id": 1000530, "gold": "NOT ENOUGH INFO", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.6743, "NOT_ACCURATE": 0.31159, "NOT ENOUGH INFO": 0.0141}, "n_tokens": 512}
+{"id": 531, "doc_id": 1000531, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.99868, "NOT_ACCURATE": 0.00097, "NOT ENOUGH INFO": 0.00035}, "n_tokens": 512}
+{"id": 532, "doc_id": 1000532, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.99872, "NOT_ACCURATE": 0.00105, "NOT ENOUGH INFO": 0.00023}, "n_tokens": 512}
+{"id": 533, "doc_id": 1000533, "gold": "NOT_ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.99623, "NOT_ACCURATE": 0.00322, "NOT ENOUGH INFO": 0.00054}, "n_tokens": 512}
+{"id": 534, "doc_id": 1000534, "gold": "NOT ENOUGH INFO", "prediction": "NOT_ACCURATE", "probs": {"ACCURATE": 0.00242, "NOT_ACCURATE": 0.99411, "NOT ENOUGH INFO": 0.00348}, "n_tokens": 512}
+{"id": 535, "doc_id": 1000535, "gold": "NOT_ACCURATE", "prediction": "NOT ENOUGH INFO", "probs": {"ACCURATE": 0.07509, "NOT_ACCURATE": 0.11281, "NOT ENOUGH INFO": 0.81209}, "n_tokens": 512}
+{"id": 536, "doc_id": 1000536, "gold": "NOT_ACCURATE", "prediction": "NOT_ACCURATE", "probs": {"ACCURATE": 0.18403, "NOT_ACCURATE": 0.73242, "NOT ENOUGH INFO": 0.08355}, "n_tokens": 512}
+{"id": 537, "doc_id": 1000537, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.5303, "NOT_ACCURATE": 0.39408, "NOT ENOUGH INFO": 0.07562}, "n_tokens": 512}
+{"id": 538, "doc_id": 1000538, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.83239, "NOT_ACCURATE": 0.13174, "NOT ENOUGH INFO": 0.03587}, "n_tokens": 512}
+{"id": 539, "doc_id": 1000539, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.97578, "NOT_ACCURATE": 0.02179, "NOT ENOUGH INFO": 0.00243}, "n_tokens": 512}
+{"id": 540, "doc_id": 1000540, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.99784, "NOT_ACCURATE": 0.00178, "NOT ENOUGH INFO": 0.00038}, "n_tokens": 512}
+{"id": 541, "doc_id": 1000541, "gold": "NOT_ACCURATE", "prediction": "NOT_ACCURATE", "probs": {"ACCURATE": 0.01697, "NOT_ACCURATE": 0.97886, "NOT ENOUGH INFO": 0.00418}, "n_tokens": 512}
+{"id": 542, "doc_id": 1000542, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.99308, "NOT_ACCURATE": 0.00633, "NOT ENOUGH INFO": 0.00059}, "n_tokens": 512}
+{"id": 543, "doc_id": 1000543, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.92617, "NOT_ACCURATE": 0.04996, "NOT ENOUGH INFO": 0.02388}, "n_tokens": 512}
+{"id": 544, "doc_id": 1000544, "gold": "NOT_ACCURATE", "prediction": "NOT_ACCURATE", "probs": {"ACCURATE": 0.19206, "NOT_ACCURATE": 0.73115, "NOT ENOUGH INFO": 0.0768}, "n_tokens": 512}
+{"id": 545, "doc_id": 1000545, "gold": "ACCURATE", "prediction": "NOT ENOUGH INFO", "probs": {"ACCURATE": 0.04008, "NOT_ACCURATE": 0.25908, "NOT ENOUGH INFO": 0.70083}, "n_tokens": 512}
+{"id": 546, "doc_id": 1000546, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.99428, "NOT_ACCURATE": 0.00518, "NOT ENOUGH INFO": 0.00053}, "n_tokens": 512}
+{"id": 547, "doc_id": 1000547, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.48151, "NOT_ACCURATE": 0.36918, "NOT ENOUGH INFO": 0.14931}, "n_tokens": 512}
+{"id": 548, "doc_id": 1000548, "gold": "NOT ENOUGH INFO", "prediction": "NOT ENOUGH INFO", "probs": {"ACCURATE": 0.00182, "NOT_ACCURATE": 0.04051, "NOT ENOUGH INFO": 0.95767}, "n_tokens": 512}
+{"id": 549, "doc_id": 1000549, "gold": "NOT_ACCURATE", "prediction": "NOT_ACCURATE", "probs": {"ACCURATE": 0.1625, "NOT_ACCURATE": 0.51441, "NOT ENOUGH INFO": 0.32309}, "n_tokens": 512}
+{"id": 550, "doc_id": 1000550, "gold": "ACCURATE", "prediction": "NOT ENOUGH INFO", "probs": {"ACCURATE": 0.24762, "NOT_ACCURATE": 0.3071, "NOT ENOUGH INFO": 0.44528}, "n_tokens": 512}
+{"id": 551, "doc_id": 1000551, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.99926, "NOT_ACCURATE": 0.0006, "NOT ENOUGH INFO": 0.00014}, "n_tokens": 512}
+{"id": 552, "doc_id": 1000552, "gold": "ACCURATE", "prediction": "NOT_ACCURATE", "probs": {"ACCURATE": 0.19639, "NOT_ACCURATE": 0.7911, "NOT ENOUGH INFO": 0.0125}, "n_tokens": 512}
+{"id": 553, "doc_id": 1000553, "gold": "NOT_ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.76953, "NOT_ACCURATE": 0.17107, "NOT ENOUGH INFO": 0.0594}, "n_tokens": 512}
+{"id": 554, "doc_id": 1000554, "gold": "NOT_ACCURATE", "prediction": "NOT_ACCURATE", "probs": {"ACCURATE": 0.01907, "NOT_ACCURATE": 0.97309, "NOT ENOUGH INFO": 0.00785}, "n_tokens": 512}
+{"id": 555, "doc_id": 1000555, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.99761, "NOT_ACCURATE": 0.00188, "NOT ENOUGH INFO": 0.00051}, "n_tokens": 512}
+{"id": 556, "doc_id": 1000556, "gold": "NOT_ACCURATE", "prediction": "NOT ENOUGH INFO", "probs": {"ACCURATE": 0.01267, "NOT_ACCURATE": 0.48354, "NOT ENOUGH INFO": 0.50379}, "n_tokens": 512}
+{"id": 557, "doc_id": 1000557, "gold": "ACCURATE", "prediction": "NOT_ACCURATE", "probs": {"ACCURATE": 0.07826, "NOT_ACCURATE": 0.77438, "NOT ENOUGH INFO": 0.14736}, "n_tokens": 512}
+{"id": 558, "doc_id": 1000558, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.99834, "NOT_ACCURATE": 0.00119, "NOT ENOUGH INFO": 0.00047}, "n_tokens": 512}
+{"id": 559, "doc_id": 1000559, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.79284, "NOT_ACCURATE": 0.19016, "NOT ENOUGH INFO": 0.01699}, "n_tokens": 512}
+{"id": 560, "doc_id": 1000560, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.99249, "NOT_ACCURATE": 0.00715, "NOT ENOUGH INFO": 0.00035}, "n_tokens": 512}
+{"id": 561, "doc_id": 1000561, "gold": "NOT_ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.99869, "NOT_ACCURATE": 0.00101, "NOT ENOUGH INFO": 0.00031}, "n_tokens": 512}
+{"id": 562, "doc_id": 1000562, "gold": "NOT_ACCURATE", "prediction": "NOT_ACCURATE", "probs": {"ACCURATE": 0.00638, "NOT_ACCURATE": 0.99183, "NOT ENOUGH INFO": 0.00179}, "n_tokens": 512}
+{"id": 563, "doc_id": 1000563, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.98206, "NOT_ACCURATE": 0.01708, "NOT ENOUGH INFO": 0.00085}, "n_tokens": 512}
+{"id": 564, "doc_id": 1000564, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.99852, "NOT_ACCURATE": 0.00122, "NOT ENOUGH INFO": 0.00026}, "n_tokens": 512}
+{"id": 565, "doc_id": 1000565, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.99878, "NOT_ACCURATE": 0.00098, "NOT ENOUGH INFO": 0.00024}, "n_tokens": 512}
+{"id": 566, "doc_id": 1000566, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.98541, "NOT_ACCURATE": 0.01406, "NOT ENOUGH INFO": 0.00053}, "n_tokens": 512}
+{"id": 567, "doc_id": 1000567, "gold": "ACCURATE", "prediction": "NOT_ACCURATE", "probs": {"ACCURATE": 0.026, "NOT_ACCURATE": 0.71928, "NOT ENOUGH INFO": 0.25472}, "n_tokens": 512}
+{"id": 568, "doc_id": 1000568, "gold": "NOT_ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.97965, "NOT_ACCURATE": 0.01832, "NOT ENOUGH INFO": 0.00203}, "n_tokens": 512}
+{"id": 569, "doc_id": 1000569, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.99897, "NOT_ACCURATE": 0.00062, "NOT ENOUGH INFO": 0.00041}, "n_tokens": 512}
+{"id": 570, "doc_id": 1000570, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.99728, "NOT_ACCURATE": 0.00225, "NOT ENOUGH INFO": 0.00047}, "n_tokens": 512}
+{"id": 571, "doc_id": 1000571, "gold": "NOT ENOUGH INFO", "prediction": "NOT ENOUGH INFO", "probs": {"ACCURATE": 0.0007, "NOT_ACCURATE": 0.00329, "NOT ENOUGH INFO": 0.99602}, "n_tokens": 512}
+{"id": 572, "doc_id": 1000572, "gold": "NOT ENOUGH INFO", "prediction": "NOT ENOUGH INFO", "probs": {"ACCURATE": 0.04294, "NOT_ACCURATE": 0.13403, "NOT ENOUGH INFO": 0.82303}, "n_tokens": 512}
+{"id": 573, "doc_id": 1000573, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.99884, "NOT_ACCURATE": 0.00074, "NOT ENOUGH INFO": 0.00042}, "n_tokens": 512}
+{"id": 574, "doc_id": 1000574, "gold": "ACCURATE", "prediction": "NOT ENOUGH INFO", "probs": {"ACCURATE": 0.12822, "NOT_ACCURATE": 0.17082, "NOT ENOUGH INFO": 0.70097}, "n_tokens": 512}
+{"id": 575, "doc_id": 1000575, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.87, "NOT_ACCURATE": 0.12345, "NOT ENOUGH INFO": 0.00655}, "n_tokens": 512}
+{"id": 576, "doc_id": 1000576, "gold": "ACCURATE", "prediction": "NOT_ACCURATE", "probs": {"ACCURATE": 0.00519, "NOT_ACCURATE": 0.99125, "NOT ENOUGH INFO": 0.00356}, "n_tokens": 512}
+{"id": 577, "doc_id": 1000577, "gold": "ACCURATE", "prediction": "NOT_ACCURATE", "probs": {"ACCURATE": 0.03682, "NOT_ACCURATE": 0.92658, "NOT ENOUGH INFO": 0.0366}, "n_tokens": 512}
+{"id": 578, "doc_id": 1000578, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.99815, "NOT_ACCURATE": 0.00165, "NOT ENOUGH INFO": 0.0002}, "n_tokens": 512}
+{"id": 579, "doc_id": 1000579, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.99784, "NOT_ACCURATE": 0.00185, "NOT ENOUGH INFO": 0.00031}, "n_tokens": 512}
+{"id": 580, "doc_id": 1000580, "gold": "NOT_ACCURATE", "prediction": "NOT_ACCURATE", "probs": {"ACCURATE": 0.01064, "NOT_ACCURATE": 0.9663, "NOT ENOUGH INFO": 0.02306}, "n_tokens": 512}
+{"id": 581, "doc_id": 1000581, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.99414, "NOT_ACCURATE": 0.00405, "NOT ENOUGH INFO": 0.00181}, "n_tokens": 512}
+{"id": 582, "doc_id": 1000582, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.88753, "NOT_ACCURATE": 0.09633, "NOT ENOUGH INFO": 0.01614}, "n_tokens": 512}
+{"id": 583, "doc_id": 1000583, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.99901, "NOT_ACCURATE": 0.00075, "NOT ENOUGH INFO": 0.00024}, "n_tokens": 512}
+{"id": 584, "doc_id": 1000584, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.99623, "NOT_ACCURATE": 0.00293, "NOT ENOUGH INFO": 0.00084}, "n_tokens": 512}
+{"id": 585, "doc_id": 1000585, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.99802, "NOT_ACCURATE": 0.00154, "NOT ENOUGH INFO": 0.00043}, "n_tokens": 512}
+{"id": 586, "doc_id": 1000586, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.94583, "NOT_ACCURATE": 0.03527, "NOT ENOUGH INFO": 0.0189}, "n_tokens": 512}
+{"id": 587, "doc_id": 1000587, "gold": "ACCURATE", "prediction": "NOT ENOUGH INFO", "probs": {"ACCURATE": 0.01731, "NOT_ACCURATE": 0.48271, "NOT ENOUGH INFO": 0.49998}, "n_tokens": 512}
+{"id": 588, "doc_id": 1000588, "gold": "NOT_ACCURATE", "prediction": "NOT ENOUGH INFO", "probs": {"ACCURATE": 0.03458, "NOT_ACCURATE": 0.23678, "NOT ENOUGH INFO": 0.72863}, "n_tokens": 512}
+{"id": 589, "doc_id": 1000589, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.99943, "NOT_ACCURATE": 0.00045, "NOT ENOUGH INFO": 0.00012}, "n_tokens": 461}
+{"id": 590, "doc_id": 1000590, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.99651, "NOT_ACCURATE": 0.00271, "NOT ENOUGH INFO": 0.00079}, "n_tokens": 512}
+{"id": 591, "doc_id": 1000591, "gold": "NOT_ACCURATE", "prediction": "NOT_ACCURATE", "probs": {"ACCURATE": 0.32488, "NOT_ACCURATE": 0.61232, "NOT ENOUGH INFO": 0.0628}, "n_tokens": 512}
+{"id": 592, "doc_id": 1000592, "gold": "NOT_ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.99958, "NOT_ACCURATE": 0.00031, "NOT ENOUGH INFO": 0.00011}, "n_tokens": 512}
+{"id": 593, "doc_id": 1000593, "gold": "NOT_ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.72853, "NOT_ACCURATE": 0.26244, "NOT ENOUGH INFO": 0.00903}, "n_tokens": 512}
+{"id": 594, "doc_id": 1000594, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.98644, "NOT_ACCURATE": 0.01251, "NOT ENOUGH INFO": 0.00105}, "n_tokens": 512}
+{"id": 595, "doc_id": 1000595, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.95083, "NOT_ACCURATE": 0.03995, "NOT ENOUGH INFO": 0.00922}, "n_tokens": 512}
+{"id": 596, "doc_id": 1000596, "gold": "NOT ENOUGH INFO", "prediction": "NOT ENOUGH INFO", "probs": {"ACCURATE": 0.0593, "NOT_ACCURATE": 0.05381, "NOT ENOUGH INFO": 0.88689}, "n_tokens": 512}
+{"id": 597, "doc_id": 1000597, "gold": "ACCURATE", "prediction": "NOT ENOUGH INFO", "probs": {"ACCURATE": 0.00872, "NOT_ACCURATE": 0.02747, "NOT ENOUGH INFO": 0.9638}, "n_tokens": 512}
+{"id": 598, "doc_id": 1000598, "gold": "ACCURATE", "prediction": "NOT_ACCURATE", "probs": {"ACCURATE": 0.2307, "NOT_ACCURATE": 0.75385, "NOT ENOUGH INFO": 0.01545}, "n_tokens": 512}
+{"id": 599, "doc_id": 1000599, "gold": "NOT_ACCURATE", "prediction": "NOT ENOUGH INFO", "probs": {"ACCURATE": 0.05255, "NOT_ACCURATE": 0.41675, "NOT ENOUGH INFO": 0.5307}, "n_tokens": 512}
+{"id": 600, "doc_id": 1000600, "gold": "NOT_ACCURATE", "prediction": "NOT ENOUGH INFO", "probs": {"ACCURATE": 0.05332, "NOT_ACCURATE": 0.0618, "NOT ENOUGH INFO": 0.88488}, "n_tokens": 512}
+{"id": 601, "doc_id": 1000601, "gold": "NOT_ACCURATE", "prediction": "NOT_ACCURATE", "probs": {"ACCURATE": 0.01209, "NOT_ACCURATE": 0.5778, "NOT ENOUGH INFO": 0.41012}, "n_tokens": 512}
+{"id": 602, "doc_id": 1000602, "gold": "ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.97633, "NOT_ACCURATE": 0.01749, "NOT ENOUGH INFO": 0.00618}, "n_tokens": 512}
+{"id": 603, "doc_id": 1000603, "gold": "NOT_ACCURATE", "prediction": "NOT ENOUGH INFO", "probs": {"ACCURATE": 0.00316, "NOT_ACCURATE": 0.0566, "NOT ENOUGH INFO": 0.94024}, "n_tokens": 512}
+{"id": 604, "doc_id": 1000604, "gold": "NOT_ACCURATE", "prediction": "ACCURATE", "probs": {"ACCURATE": 0.99939, "NOT_ACCURATE": 0.00046, "NOT ENOUGH INFO": 0.00015}, "n_tokens": 512}
+{"id": 605, "doc_id": 1000605, "gold": "ACCURATE", "prediction": "NOT ENOUGH INFO", "probs": {"ACCURATE": 0.00405, "NOT_ACCURATE": 0.02464, "NOT ENOUGH INFO": 0.97131}, "n_tokens": 512}
