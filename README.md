@@ -151,6 +151,7 @@ Improving on the paper took many experiments, and most of them did not help. All
 | Keep citation markers in the citing sentence (`[CITED]`, `[CITED, with others]`) | Accuracy up (CV 0.676 → 0.695, p = 0.015) but macro-F1 unchanged (0.569); after recalibration the same as without | [`markers_v1.md`](results/markers_v1.md) |
 | Give the classifier perfect (gold) evidence | No change: 20 test citations fixed, 20 broken | [`EXTERNAL_REVIEWS.md`](docs/EXTERNAL_REVIEWS.md) |
 | Audit the model's confident errors by hand | About half are not clear model errors (13 of 30 debatable, 4 likely mislabelled); the rest are numbers, swapped entities and negation | [`label_audit_v1.md`](results/label_audit_v1.md) |
+| Rule-based checks for missing numbers, gene names and negation, stacked on the classifier | Real signal (+0.03 over a matched stacker) but rare errors: never beats the classifier itself (best −0.026 CV macro-F1) | [`checks_v1.md`](results/checks_v1.md) |
 | Train on ~1000 LLM-written misrepresentations of accurate citations | Better at misrepresentations, worse at accurate citations; no net gain | [`synthetic_v1.md`](results/synthetic_v1.md), [`synthetic_v2.md`](results/synthetic_v2.md) |
 
 The error analysis that led to the NLI model is in [`results/error_analysis.md`](results/error_analysis.md) and [`results/diagnosis_v1.md`](results/diagnosis_v1.md).

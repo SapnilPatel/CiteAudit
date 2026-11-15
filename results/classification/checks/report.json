@@ -1,0 +1,131 @@
+{
+  "cv": {
+    "nli/none": [
+      0.6954694068192433,
+      0.5282090541489316,
+      0.8045086297992251,
+      0.5127388535031847,
+      0.26737967914438504
+    ],
+    "checks/none": [
+      0.7038766931340495,
+      0.5442821129723788,
+      0.8085991678224688,
+      0.5188284518828452,
+      0.3054187192118227
+    ],
+    "nli/balanced": [
+      0.5908453993460999,
+      0.4878287358213906,
+      0.7429034874290349,
+      0.42255758538522636,
+      0.2980251346499102
+    ],
+    "checks/balanced": [
+      0.6184026156001868,
+      0.5195920305010804,
+      0.7398373983739838,
+      0.5106382978723404,
+      0.308300395256917
+    ]
+  },
+  "gate": {
+    "weight": "balanced",
+    "gain_vs_nli_stacker": 0.0317632946796898,
+    "gain_vs_argmax": -0.05060614702077537,
+    "passed": false
+  },
+  "test": {},
+  "coefficients": {
+    "has_num": {
+      "ACCURATE": -0.02,
+      "NOT_ACCURATE": -0.04,
+      "NOT ENOUGH INFO": 0.07
+    },
+    "num_missing": {
+      "ACCURATE": 0.03,
+      "NOT_ACCURATE": 0.05,
+      "NOT ENOUGH INFO": -0.08
+    },
+    "num_missing_frac": {
+      "ACCURATE": 0.02,
+      "NOT_ACCURATE": -0.01,
+      "NOT ENOUGH INFO": -0.01
+    },
+    "has_ent": {
+      "ACCURATE": -0.07,
+      "NOT_ACCURATE": 0.04,
+      "NOT ENOUGH INFO": 0.03
+    },
+    "ent_missing": {
+      "ACCURATE": 0.04,
+      "NOT_ACCURATE": 0.08,
+      "NOT ENOUGH INFO": -0.12
+    },
+    "ent_missing_frac": {
+      "ACCURATE": -0.13,
+      "NOT_ACCURATE": -0.08,
+      "NOT ENOUGH INFO": 0.21
+    },
+    "contrast": {
+      "ACCURATE": 0.11,
+      "NOT_ACCURATE": 0.1,
+      "NOT ENOUGH INFO": -0.21
+    },
+    "claim_neg": {
+      "ACCURATE": -0.03,
+      "NOT_ACCURATE": 0.04,
+      "NOT ENOUGH INFO": -0.01
+    },
+    "best_neg": {
+      "ACCURATE": 0.05,
+      "NOT_ACCURATE": 0.04,
+      "NOT ENOUGH INFO": -0.09
+    },
+    "claim_hedge": {
+      "ACCURATE": -0.07,
+      "NOT_ACCURATE": -0.06,
+      "NOT ENOUGH INFO": 0.13
+    },
+    "best_hedge": {
+      "ACCURATE": 0.01,
+      "NOT_ACCURATE": 0.03,
+      "NOT ENOUGH INFO": -0.04
+    },
+    "claim_boost": {
+      "ACCURATE": -0.05,
+      "NOT_ACCURATE": -0.04,
+      "NOT ENOUGH INFO": 0.09
+    },
+    "overlap_recall": {
+      "ACCURATE": 0.09,
+      "NOT_ACCURATE": 0.11,
+      "NOT ENOUGH INFO": -0.2
+    },
+    "overlap_best": {
+      "ACCURATE": 0.07,
+      "NOT_ACCURATE": -0.17,
+      "NOT ENOUGH INFO": 0.1
+    },
+    "overlap_top3": {
+      "ACCURATE": 0.19,
+      "NOT_ACCURATE": 0.21,
+      "NOT ENOUGH INFO": -0.4
+    },
+    "claim_len": {
+      "ACCURATE": 0.07,
+      "NOT_ACCURATE": 0.14,
+      "NOT ENOUGH INFO": -0.21
+    },
+    "multi_cit": {
+      "ACCURATE": -0.15,
+      "NOT_ACCURATE": 0.29,
+      "NOT ENOUGH INFO": -0.14
+    },
+    "other_cit": {
+      "ACCURATE": 0.23,
+      "NOT_ACCURATE": -0.08,
+      "NOT ENOUGH INFO": -0.15
+    }
+  }
+}
