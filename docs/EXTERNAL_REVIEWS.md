@@ -8,7 +8,7 @@ are running them in. The numbers here were measured in this repository.
 
 | # | Proposal | Who | Verdict after checking |
 |---|---|---|---|
-| 1 | Keep citation markers in the hypothesis (`[CITED]`, `[CITED, with others]`, `[other]`) and fine-tune end to end | both, first priority | **Running now** (`notebooks/nli_markers_colab.ipynb`, v9). See the caveat below |
+| 1 | Keep citation markers in the hypothesis (`[CITED]`, `[CITED, with others]`, `[other]`) and fine-tune end to end | both, first priority | **Done: CV accuracy 0.676 → 0.695 (p = 0.015), macro-F1 unchanged, gate not passed;** same as current after recalibration ([`markers_v1.md`](../results/markers_v1.md)) |
 | 2 | Oracle: hypothesis = gold `citation_context` span, then a span extractor if it helps | both | **Little room: see "Citation scope" below.** The claim already equals the gold span for 91% of citations |
 | 3 | Oracle: gold evidence with the current classifier, same budget, to see if retrieval still limits | both (Gemini: do it first) | **Done: perfect evidence changes nothing (test 20 fixed, 20 broken).** Retrieval is not the bottleneck |
 | 4 | Decompose into relevance / attribution / faithfulness heads on a shared encoder, combined by an out-of-fold stacker | both (ChatGPT: most important architecture) | Next, after v9. Not the failed 9-way head: three binary heads with masked losses |
@@ -77,6 +77,6 @@ retrieval work.
 
 ## Order
 
-1. v9 markers (on Colab): one CV, gated, then 3 seeds on test.
-2. The three-head verifier (#4, with #5, #6, #8), same folds, with the v9 input if v9 passes.
+1. ~~v9 markers~~: done, no macro-F1 gain (`results/markers_v1.md`).
+2. The three-head verifier (#4, with #5, #6, #8), same folds, with the plain input (v9 did not pass).
 3. Label-noise audit of confident disagreements (#9) before any claim.
