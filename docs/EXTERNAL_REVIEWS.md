@@ -10,7 +10,7 @@ are running them in. The numbers here were measured in this repository.
 |---|---|---|---|
 | 1 | Keep citation markers in the hypothesis (`[CITED]`, `[CITED, with others]`, `[other]`) and fine-tune end to end | both, first priority | **Running now** (`notebooks/nli_markers_colab.ipynb`, v9). See the caveat below |
 | 2 | Oracle: hypothesis = gold `citation_context` span, then a span extractor if it helps | both | **Little room: see "Citation scope" below.** The claim already equals the gold span for 91% of citations |
-| 3 | Oracle: gold evidence with the current classifier, same budget, to see if retrieval still limits | both (Gemini: do it first) | **Done**, see "Oracle evidence" below |
+| 3 | Oracle: gold evidence with the current classifier, same budget, to see if retrieval still limits | both (Gemini: do it first) | **Done: perfect evidence changes nothing (test 20 fixed, 20 broken).** Retrieval is not the bottleneck |
 | 4 | Decompose into relevance / attribution / faithfulness heads on a shared encoder, combined by an out-of-fold stacker | both (ChatGPT: most important architecture) | Next, after v9. Not the failed 9-way head: three binary heads with masked losses |
 | 5 | Attribution cue: does the matching evidence sentence itself carry a citation ("[3]", "(12)")? | Gemini | Cheap feature for #4; to measure |
 | 6 | NLI mismatch: overgeneralised claims are "neutral" to NLI but NOT_ACCURATE here | ChatGPT | Valid. Fine-tuning relearns the head, but it argues for #4's separate faithfulness head |
@@ -45,10 +45,38 @@ may still matter.
 
 ## Oracle evidence (proposal 3)
 
-Pending: `scripts/oracle_evidence.py` (local, about 45 minutes on Apple Silicon). Partial run: dev with retrieved evidence gives macro-F1 0.616, matching the release run.
+`scripts/oracle_evidence.py` scored the released classifier (`Sapnil/citeaudit-nli`) on the same
+claims with three premises: our retrieved top 20; the gold evidence sentences first, then retrieved
+ones up to 20 (same budget); and the gold sentences only. Predictions are in
+[`results/classification/oracle_evidence/`](../results/classification/oracle_evidence/).
+
+| Premise | Dev acc | Dev macro-F1 | Test acc | Test macro-F1 | Test NOT ACC F1 | Test vs retrieved (right only here / only retrieved, McNemar p) |
+|---|---|---|---|---|---|---|
+| Retrieved top 20 | 0.703 | 0.616 | 0.662 | 0.546 | 0.394 | — |
+| Gold first, same budget | 0.696 | 0.608 | 0.662 | 0.547 | 0.383 | 20 / 20, p = 1.00 |
+| Gold only | 0.516 | 0.453 | 0.500 | 0.428 | 0.435 | 33 / 131, p < 0.001 |
+
+**Perfect evidence changes nothing.** With gold evidence guaranteed at the front of the premise,
+the classifier fixes 20 test citations and breaks 20 others. Retrieval is not what limits this
+classifier, as it was not for the paper's MultiVerS (`repro/`). Gold-only premises are much worse,
+because the model was trained on 20-sentence premises and loses most of its NOT ENOUGH INFO
+calibration on short ones. So focused-evidence aggregation would need retraining to test, and
+nothing here suggests it would help.
+
+Where the classifier fails, by fine label (test, share recalled as NOT ACCURATE, or as NEI for
+IRRELEVANT; identical with gold evidence except CONTRADICT 0.50 → 0.42):
+
+| ETIQUETTE (73) | NOT_SUBSTANTIATE (29) | OVERSIMPLIFY (47) | CONTRADICT (12) | MISQUOTE (9) | IRRELEVANT (50) |
+|---|---|---|---|---|---|
+| 0.48 | 0.28 | **0.13** | 0.50 | **0.11** | 0.54 |
+
+The weakest errors are oversimplification and misquotation: subtle wording differences between a
+claim and evidence that the model *already has*. That is a judgement problem, which supports the
+faithfulness head of the three-head design (#4) and ChatGPT's point #6, and argues against more
+retrieval work.
 
 ## Order
 
-1. v9 markers (running): one CV, gated, then 3 seeds on test.
+1. v9 markers (on Colab): one CV, gated, then 3 seeds on test.
 2. The three-head verifier (#4, with #5, #6, #8), same folds, with the v9 input if v9 passes.
 3. Label-noise audit of confident disagreements (#9) before any claim.

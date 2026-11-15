@@ -1,0 +1,26 @@
+{
+ "dev_retrieved": [
+  0.703,
+  0.616
+ ],
+ "dev_gold_first": [
+  0.696,
+  0.608
+ ],
+ "dev_gold_only": [
+  0.516,
+  0.453
+ ],
+ "test_retrieved": [
+  0.662,
+  0.546
+ ],
+ "test_gold_first": [
+  0.662,
+  0.547
+ ],
+ "test_gold_only": [
+  0.5,
+  0.429
+ ]
+}
