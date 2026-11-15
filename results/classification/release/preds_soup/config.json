@@ -1,0 +1,38 @@
+{
+  "model": "/content/drive/MyDrive/CiteAudit_runs/release/soup",
+  "best_epoch": 0,
+  "best_dev_macro_f1": 0.6002983114149615,
+  "args": {
+    "train": "data_train/target/ours_20r_train_cv",
+    "dev": "data_train/target/ours_20r",
+    "out": "checkpoints/soup",
+    "pred_dir": "/content/drive/MyDrive/CiteAudit_runs/release/preds_soup",
+    "predict": "['test=data_train/target/ours_20r_test']",
+    "model": "/content/drive/MyDrive/CiteAudit_runs/release/soup",
+    "epochs": "0",
+    "lr": "1e-05",
+    "batch": "2",
+    "accum": "4",
+    "eval_batch": "16",
+    "max_len": "512",
+    "class_weight": "sqrt",
+    "folds": "0",
+    "fold": "0",
+    "context_dir": "data_train/context",
+    "synthetic": "None",
+    "synth_frac": "1.0",
+    "save_model": "None",
+    "grad_ckpt": "False",
+    "amp": "True",
+    "seed": "0",
+    "device": "auto",
+    "limit": "None"
+  },
+  "log": [
+    {
+      "epoch": 0,
+      "dev_macro_f1": 0.6002983114149615,
+      "dev_accuracy": 0.7088607594936709
+    }
+  ]
+}

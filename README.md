@@ -103,8 +103,11 @@ Every number below was measured in this repository. None are copied from the pap
 | Our earlier best: MultiVerS + BiomedBERT ensemble | 0.642 | 0.538 | 0.764 | 0.426 | 0.424 |
 | **CiteAudit**, one model (mean ± sd of 3 training seeds) | **0.668 ± 0.015** | **0.556 ± 0.015** | — | — | — |
 | **CiteAudit**, 3 seeds averaged | **0.680** | **0.575** | **0.796** | **0.439** | **0.490** |
+| CiteAudit, the released checkpoint ([`citeaudit-nli`](https://huggingface.co/Sapnil/citeaudit-nli), chosen on dev) | 0.662 | 0.546 | 0.785 | 0.394 | 0.458 |
 
 Against the reproduced paper system, CiteAudit is right on 134 citations the paper's system gets wrong, and wrong on 76 it gets right: **+9.6 points of accuracy, McNemar exact p = 0.00008**. Macro-F1 rises by 0.050, with a paired bootstrap 95% CI of −0.009 to +0.111, so the macro-F1 gain is not yet conclusive. Each training seed on its own beats the paper's system on both metrics. Details: [`results/nli_classifier_v1.md`](results/nli_classifier_v1.md).
+
+The released checkpoint is one seed from a retraining, picked by a rule fixed in advance on dev. On test it is +7.8 points of accuracy over the paper's system (McNemar p = 0.002), but it is the weakest of the three seeds on test: across seeds, macro-F1 varies by ±0.02. Details: [`results/release_v1.md`](results/release_v1.md).
 
 **What it still gets wrong.** NOT ACCURATE F1 is 0.44, barely above the paper's 0.43. The gains come from recognising accurate citations and irrelevant ones. Telling a subtly overstated or unsupported citation from a faithful one is still the hard, open part of the problem.
 
