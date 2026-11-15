@@ -47,6 +47,16 @@ citeaudit check --pmcid PMC3643595 --citing "loc285194 is a p53-regulated tumor 
 
 CiteAudit prints the label, the probability of each label, and the sentences of the cited paper it based the decision on, so you can check them yourself. Citation markers such as `[12]` or `(Smith et al., 2020)` are removed before checking.
 
+**A real run.** Here are three citations of Koeth et al. 2013 ([PMC3650111](https://europepmc.org/article/PMC/PMC3650111)), checked with the released models (about 40 s on a laptop, including fetching the paper):
+
+| Citing sentence | Label | Top evidence it found in the paper |
+|---|---|---|
+| Gut microbiota metabolism of dietary L-carnitine produces TMAO and accelerates atherosclerosis in mice [12]. | ACCURATE (0.998) | "intestinal microbiota metabolism of dietary L-carnitine … also produces TMAO and accelerates atherosclerosis" |
+| Dietary L-carnitine supplementation protects against atherosclerosis in mice by lowering plasma TMAO [12]. | NOT_ACCURATE (0.999) | "Chronic dietary L-carnitine supplementation in mice … markedly enhanced synthesis of TMA/TMAO, and increased atherosclerosis" |
+| Statin therapy reduces LDL cholesterol by roughly 30% in patients with familial hypercholesterolemia [12]. | NOT ENOUGH INFO (0.999) | Nothing relevant: the best match is a general sentence about meat and cardiovascular risk |
+
+These are clear-cut cases. Real misrepresentations are usually subtler, and that is where the model makes most of its mistakes.
+
 To check many citations, put one JSON object per line, each with `citing` and the cited paper as `paper` (a path), `pmcid`, `text` or `sentences`:
 
 ```bash
