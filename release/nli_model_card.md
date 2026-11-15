@@ -36,7 +36,7 @@ epoch chosen on dev.
 | Sarol et al. 2024 (MultiVerS, BM25 + MonoT5 evidence), our reproduction | 0.584 | 0.524 |
 | This model, mean of 3 training seeds | 0.668 ± 0.015 | 0.556 ± 0.015 |
 
-The test score of this exact checkpoint is in `test_metrics.json`.
+CHECKPOINT_NOTE The test score of this exact checkpoint is in `test_metrics.json`.
 
 ## Use
 
